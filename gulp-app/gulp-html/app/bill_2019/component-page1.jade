@@ -1,0 +1,23 @@
+section.swiper-slide.page1.swiper-no-swiping(data-hash="slide1")
+  .slide-main
+    .imgmd_box(style="display:none")
+      -var imglist = ['page1_bg.png','pImg1.png','pImg2.png','pImg3.png','pImg4.png','pImg5.png','pImg6.png','pImg7.png','pImg8.png','pImg9.png','pImg10.png','pImg11.png','pImg12.png','pImg13.png','down_up.png','music.png']
+      each item in imglist
+        img(src="#{webtop}images/#{item}")
+    img.page_bg(src='#{webtop}/images/page1_bg.png')
+    .slide-main_box
+      .pimg_box1.ptabsolet
+      .pimg_box2.ptabsolet
+      .pimg_box3.ptabsolet
+      .pimg_box4.ptabsolet
+      .pimg_box5.ptabsolet
+      .pimg_box6.ptabsolet
+      .pimg_box7.ptabsolet
+      .pimg_box8.ptabsolet
+      .pimg_box9.ptabsolet
+      .pimg_box10.ptabsolet
+      .pimg_box11.ptabsolet
+      .pimg_box12.ptabsolet
+      .pimg_box13.ptabsolet.j_open(style="display:none")
+      .pimg_box14.ptabsolet.j_imgload 0%
+  

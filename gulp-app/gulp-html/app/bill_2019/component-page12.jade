@@ -1,0 +1,37 @@
+section.swiper-slide.page12(data-hash="slide12")
+  .slide-main
+    .imgmd_box(style="display:none")
+      -var imglist = ['page12_bg.png','pImg12_1.png']
+      each item in imglist
+        img(src="#{webtop}images/#{item}")
+    img.page_bg(src='#{webtop}/images/page12_bg.png')
+    .slide-main_box
+      .page-up.ptabsolet
+      .pimg_box12_1.ani.ptabsolet
+      .pimg_box12_5.ptabsolet
+      .pimg_box12_2.ani.ptabsolet(swiper-animate-effect="fadeIn",swiper-animate-duration="0.5s",swiper-animate-delay="0.5s") 2018行业大事件
+      .pimg_box12_3.ani.ptabsolet(swiper-animate-effect="fadeIn",swiper-animate-duration="0.5s",swiper-animate-delay="0.5s") 你关心的就是我们关注的
+      .pimg_box12_4.ptabsolet.ani(swiper-animate-effect="bounceIn",swiper-animate-duration="0.5s",swiper-animate-delay="0.8s")
+        .biginfo_main
+          .biginfo_bottom
+          .swiper-container.spt_info
+            .swiper-wrapper
+              -var list = [{hf:'http://m.zz91.com/news/hydt/243414.html',name:'禁废：国内国外，“好戏”不断！'},{hf:'http://m.zz91.com/news/hydt/243518.html',name:'环保督查风暴：一刀切？切一刀！'},{hf:'http://m.zz91.com/news/hydt/243482.html',name:'中美贸易战：烽烟四起，谁主沉浮？'},{hf:'http://m.zz91.com/news/hydt/243449.html',name:'海关行动：隐藏的雷区，千万别踩！'},{hf:'http://m.zz91.com/news/hydt/243469.html',name:'错峰停产：空气污染的锅该谁背？'},{hf:'http://m.zz91.com/news/hydt/243454.html',name:'油市风云：8元时代终结，6元时代开启！'},{hf:'http://m.zz91.com/news/hydt/243459.html',name:'排污许可：心酸呐！这些政策谁能懂？'},{hf:'http://m.zz91.com/news/hydt/243477.html',name:'民营化工：生存如此艰难，请求国家关照！'},{hf:'http://m.zz91.com/news/hydt/243514.html',name:'税：避不了！躲不过！不想坐牢请照做！'}]
+              each item in list
+                section.swiper-slide 
+                  .biginfo_li
+                    a.b_hf(href="#{item.hf}")=item.name
+              section.swiper-slide
+              .biginfo_li_last
+
+              
+script.
+   var swiper = new Swiper('.spt_info', {
+      direction : 'vertical',
+      slidesPerView: 5,
+      spaceBetween: 0,
+      freeMode: true,
+      pagination: {
+        clickable: true,
+      },
+    });

@@ -1,0 +1,23 @@
+section.swiper-slide.page3(data-hash="slide3")
+  .slide-main
+    .imgmd_box(style="display:none")
+      -var imglist = ['zz91.png','page3_bg.png','pImg3_2.png','pImg3_1.png','pImg3_3.png']
+      each item in imglist
+        img(src="#{webtop}images/#{item}")
+    img.page_bg(src='#{webtop}/images/page3_bg.png')
+    .slide-main_box
+      .page-up.ptabsolet
+      .pimg_box3_1.ani.ptabsolet.animated(swiper-animate-effect="fadeIn",swiper-animate-duration="0.5s",swiper-animate-delay="0s")
+        .pimg3_text_1.ani(swiper-animate-effect="fadeInRight",swiper-animate-duration="0.8s",swiper-animate-delay=".5s").
+          这一年你共登录了<span>300</span>次
+        .pimg3_text_2.ani(swiper-animate-effect="fadeInRight",swiper-animate-duration="0.8s",swiper-animate-delay=".6s").
+          最后一次登录在<span>2018年12月31日</span>
+        .pimg3_text_3.ani(swiper-animate-effect="fadeInRight",swiper-animate-duration="0.8s",swiper-animate-delay=".7s").
+          超越全网<span>85%</span>的用户  
+        .pimg3_text_4.ani(swiper-animate-effect="fadeInRight",swiper-animate-duration="0.8s",swiper-animate-delay=".8s").
+          保持活跃，商机不断！
+      .pimg_box3_2.ptabsolet
+      .pimg_box3_3.ptabsolet
+
+      .pimg_box3_4.ptabsolet
+        img.page_bg(src='#{webtop}/images/zz91.png')

@@ -1,0 +1,22 @@
+section.swiper-slide.page4(data-hash="slide3")
+  .slide-main
+    .imgmd_box(style="display:none")
+      -var imglist = ['pImg4_1.png','page4_bg.png','zz91.png','pImg4_2.png','pImg3_2.png']
+      each item in imglist
+        img(src="#{webtop}images/#{item}")
+    img.page_bg(src='#{webtop}/images/page4_bg.png')
+    .slide-main_box
+      .page-up.ptabsolet
+      .pimg_box3_1.ani.ptabsolet.animated(swiper-animate-effect="fadeIn",swiper-animate-duration="0.5s",swiper-animate-delay="0s")
+        .pimg3_text_1.ani(swiper-animate-effect="fadeInRight",swiper-animate-duration="0.8s",swiper-animate-delay=".5s").
+          这一年你共登录了<span>50</span>次
+        .pimg3_text_2.ani(swiper-animate-effect="fadeInRight",swiper-animate-duration="0.8s",swiper-animate-delay=".6s").
+          最后一次登录在<span>2018年12月31日</span>
+        .pimg3_text_3.ani(swiper-animate-effect="fadeInRight",swiper-animate-duration="0.8s",swiper-animate-delay=".7s").
+          全网日均登录用户达<span>714,815</span>人 
+        .pimg3_text_4.ani(swiper-animate-effect="fadeInRight",swiper-animate-duration="0.8s",swiper-animate-delay=".8s").
+          商机无限，你还等什么呢？
+      .pimg_box4_1.ptabsolet
+      .pimg_box4_2.ptabsolet
+      .pimg_box3_4.ptabsolet
+        img.page_bg(src='#{webtop}/images/zz91.png')

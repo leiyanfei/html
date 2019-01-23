@@ -1,0 +1,25 @@
+section.swiper-slide.page5(data-hash="slide4")
+  .slide-main
+    .imgmd_box(style="display:none")
+      -var imglist = ['page5_bg.png','pImg5_5.png','pImg5_6.png','pImg5_7.png','pImg5_4.png','pImg5_3.png','pImg5_2.png','pImg5_1.png']
+      each item in imglist
+        img(src="#{webtop}images/#{item}")
+    img.page_bg(src='#{webtop}/images/page5_bg.png')
+    .slide-main_box
+      .page-up.ptabsolet
+      .pimg_box3_1.ani.ptabsolet.animated(swiper-animate-effect="fadeIn",swiper-animate-duration="0.5s",swiper-animate-delay="0s")
+        .pimg3_text_1.ani(swiper-animate-effect="fadeInRight",swiper-animate-duration="0.8s",swiper-animate-delay=".5s").
+          这一年你共登录了<span>0</span>次
+        .pimg3_text_2.ani(swiper-animate-effect="fadeInRight",swiper-animate-duration="0.8s",swiper-animate-delay=".6s").
+          最后一次登录在<span>2018年12月31日</span>
+        .pimg3_text_3.ani(swiper-animate-effect="fadeInRight",swiper-animate-duration="0.8s",swiper-animate-delay=".7s").
+          <span>485,632</span>位用户都收到了询盘
+        .pimg3_text_4.ani(swiper-animate-effect="fadeInRight",swiper-animate-duration="0.8s",swiper-animate-delay=".8s").
+          别错过你的，可能有大单哦！
+      .pimg_box5_1.ptabsolet
+      .pimg_box5_2.ptabsolet
+      .pimg_box5_3.ptabsolet
+      .pimg_box5_4.ptabsolet
+      .pimg_box5_5.ptabsolet
+      .pimg_box5_6.ptabsolet
+      .pimg_box5_7.ptabsolet

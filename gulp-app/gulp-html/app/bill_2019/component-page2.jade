@@ -1,0 +1,22 @@
+section.swiper-slide.page2(data-hash="slide2")
+  .slide-main
+    .imgmd_box(style="display:none")
+      -var imglist = ['page2_bg.png','pImg2_1.png','pImg2_2.png','pImg2_3.png','pImg2_4.png','pImg2_5.png','pImg2_6.png']
+      each item in imglist
+        img(src="#{webtop}images/#{item}")
+    img.page_bg(src='#{webtop}/images/page2_bg.png')
+    .slide-main_box
+      .page-up.ptabsolet
+      
+      .pimg_box2_1.ptabsolet
+      .pimg_box2_2.ptabsolet
+      .pimg_box2_3.ptabsolet
+      .pimg_box2_4.ptabsolet.
+      .pimg_box2_5.ani.ptabsolet.animated(swiper-animate-effect="fadeIn",swiper-animate-duration="0.5s",swiper-animate-delay="0s")
+        .pimg2_5_time.ani.ptabsolet(swiper-animate-effect="fadeInRight",swiper-animate-duration="0.8s",swiper-animate-delay=".5s").
+          <span>2015</span>年<span>12</span>月<span>25</span>日
+        .pimg2_5_line.ani.ptabsolet(swiper-animate-effect="fadeInRight",swiper-animate-duration="0.8s",swiper-animate-delay=".6s").
+          91再生与你第一次相遇！
+        .pimg2_5_data.ani.ptabsolet(swiper-animate-effect="fadeInRight",swiper-animate-duration="0.8s",swiper-animate-delay=".7s").
+          今天，是我们相识的第<span>1530</span>天
+      .pimg_box2_6.ptabsolet
