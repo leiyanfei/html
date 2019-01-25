@@ -8,7 +8,7 @@ var $ = require('gulp-load-plugins')({
 var _ = require('lodash');
 var dest = './dest';
 
-var appList = ['bill_2019']
+var appList = ['pig-give-good']
 
 function errorHandler(title) {
   return function (err) {
@@ -48,7 +48,7 @@ gulp.task('addFileWatch', function() {
 });
 
 function jadeList(){
-  let jade_list = []
+  let jade_list = ['./app/*.jade']
   if(appList.length>0){
     appList.forEach((item)=>{
       let jade = './app/**/'+ item+'/**/*.jade';
@@ -64,7 +64,10 @@ gulp.task('jade', function() {
   let jade_list = jadeList().concat(['!./app/**/component-*.jade'])
   return gulp.src(jade_list)
       .pipe($.data(function(file) {
-          return { 'webtop': '//m.zz91.com/zt/zhangdan2018/' }
+          return { 
+            'webtop': '//m.zz91.com/zt/2019givegood/',
+            'shareTitle':'万元现金红包大派送，快来和我一起抢红包'
+           }
         }))
       .pipe($.jade({pretty : true}))
       .on('error', errorHandler('jade'))

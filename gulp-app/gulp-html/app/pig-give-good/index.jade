@@ -1,0 +1,219 @@
+extends ../component-header
+
+block css
+  link(rel="stylesheet",type="text/css",href="#{webtop}css/index.css")
+
+block title
+  title
+    金猪送福，万元红包从天而降-91再生
+
+block content
+  header.header_page
+    div.header-main.weui-flex
+      a.header-left.container(href="javascript:void(0)",onclick='javascript :history.back(-1)')
+        span.go_prev
+      div.weui-flex__item.container.header-title 金猪送福，红包来袭
+      div.header-right
+  
+  img(src="#{webtop}images/share_pic.png", alt="",style="display:none")
+  .pig_money_box
+    .pig_money_pic
+
+  .give_money_pp
+    .surp_packet.
+      红包剩余：<span>xxx</span>个
+    .pp_center
+      .count_down
+        .count_down_title 距活动开始还有：
+        .count_down_time#show.
+          <span>0</span>天<span>0</span>小时<span>0</span>分<span>0</span>秒
+
+    .loot_btns
+      button.loot_btn_1 即将开始
+      button.loot_btn_2 领取现金红包
+
+    .coupet_left
+    .coupet_right
+
+  .activeity
+    .weui-flex
+      .rule_title 活动时间：
+      .weui-flex__item.activeity_time 2月4日20:00-2月5日24：00
+    .weui-flex
+      .rule_title 活动规则：
+      .weui-flex__item.
+        每个微信账号只能领取一次红包。<br>
+        领取成功后，系统会自动把红包充值到<br>
+        您的微信钱包，请注意查收。
+  
+  .get_packet
+    img(src="#{webtop}images/wximg.png")
+    //- .packet_much.vdmiddle
+    //-   div.much_main
+    //-     .much_title 入账金额
+    //-     .much_money <span class="myutils">￥</span>8.88
+    //- .packet_detail
+    //-   入账账户 <span>零钱</span><br>
+    //-   付款商户 <span>91再生</span><br>
+    //-   入账详情 <span>新年红包</span>
+    //- a.see_detail(href="#")
+    //-   查看详情
+
+  .page_bottom *本活动最终解释权归91再生所有
+
+  .share_fixed.j_share.shake-hash
+
+  .sign_up(style="display:none")
+    .sp_title 完善信息，马上领取红包
+    .sp_from
+      .weui-flex.from_li
+        .from_name 联系人
+        .weui-flex__item
+          input.ipt_text.j_people
+      .weui-flex.from_li
+        .from_name 手机号码
+        .weui-flex__item
+          input.ipt_text.j_phone
+      .weui-flex.from_li
+        .from_name 主营
+        .weui-flex__item
+          select.selt.j_hangye
+            option(value=0) 请选择主营行业
+              option(value=1) 废塑料
+              option(value=2) 废金属
+              option(value=3) 废纸
+              option(value=4) 废旧轮胎与废橡胶
+              option(value=5) 废纺织品与皮革
+              option(value=6) 废电子电器
+              option(value=7) 废玻璃
+              option(value=8) 废旧二手设备
+              option(value=9) 其他废品
+              option(value=10) 服务
+              option(value=11) 塑料原料
+      .from_li.btn_from_li
+        button.draw.j_btn 领取
+
+  .sign_cannot(style="display:none")
+    .sc_title 您已经领取过了~
+    .sc_img 
+      img(src="#{webtop}images/pig_money2.png")
+    .sc_btns
+      button.btn_pp.btn_pp_share.j_share 分享
+      button.btn_pp.btn_pp_back.j_close 取消
+
+  .share_img.j_close(style="display:none")
+      img(src="#{webtop}images/guide.png")
+
+block script
+  script.
+    layer.open({
+      type: 1,
+      title: false,
+      skin:'share_pop',
+      closeBtn: 0,
+      zIndex: 100,
+      shadeClose: true,
+      content: $(".sign_cannot")
+    });
+
+    //- 领取报名
+    $(".loot_btn_2").on("click",function(){
+      layer.open({
+        type: 1,
+        title: false,
+        skin:'share_pop',
+        closeBtn: 0,
+        zIndex: 100,
+        shadeClose: true,
+        content: $(".sign_up")
+      });
+    })
+    //- 关闭分享
+    $(".j_close").on("click",function(){
+      layer.closeAll()
+    })
+    
+    //- 点击分享
+    $(".j_share").on("click",function(){   //分享
+      layer.closeAll()
+      layer.open({
+        type: 1,
+        title: false,
+        skin:'share_pop',
+        offset: ['25px','5rem'],
+        closeBtn: 0,
+        zIndex: 100,
+        shade: [0.8, '#000'],
+        shadeClose: true,
+        content: $(".share_img")
+      });
+    })
+  script.
+    function doubleNum(num) {
+      var num = parseInt(num)
+      if (num <= 9) {
+        num = "0" + num;
+      }
+      return num
+    }
+    function TimeDown(id, endDateStr) {
+      //结束时间
+      var endDate = new Date(endDateStr);
+      //当前时间
+      var nowDate = new Date();
+      //相差的总秒数
+      var totalSeconds = parseInt((endDate - nowDate) / 1000);
+      //天数
+      var days = Math.floor(totalSeconds / (60 * 60 * 24));
+      //取模（余数）
+      var modulo = totalSeconds % (60 * 60 * 24);
+      //小时数
+      var hours = Math.floor(modulo / (60 * 60));
+      modulo = modulo % (60 * 60);
+      //分钟
+      var minutes = Math.floor(modulo / 60);
+      //秒
+      var seconds = modulo % 60;
+      //输出到页面       
+      document.getElementById(id).innerHTML = "<span>" + days + "</span>天<span>" + doubleNum(hours) + "</span>小时<span>" + doubleNum(minutes) + "</span>分<span>" + doubleNum(seconds) + "</span>秒";
+      //延迟一秒执行自己
+      setTimeout(function () {
+          TimeDown(id, endDateStr);
+      }, 1000)
+    }
+
+    TimeDown("show", "2019-1-27 8:00:00");
+
+
+    $(".j_btn").on("click",function(){
+      var people = $(".j_people").val()
+      var phone = $(".j_phone").val()
+      var hangye = $(".j_hangye option:selected").text();
+      if(people==''){
+        layer.msg('请输入联系人姓名');
+        return;
+      }
+      if(phone==''){
+        layer.msg('请输入手机号码');
+        return;
+      }
+      $.ajax({
+          type:"post",
+          url:"/zt/baomingsave.html?datatype=json",
+          data:{
+              title:"2019新年换新报名",
+              contents:"*公司名称："+ people +"<br>联系电话："+ phone + "<br>主营行业：" + hangye
+          },
+          dataType:"json",
+          success:function(data_dh){
+              if(data_dh.err=="false"){
+                  $("input[type=text],textarea").val("");
+                  $(".j_hangye").val(0);
+                  layer.msg('领取成功！');
+              }
+          },
+          error:function(data){
+              console.log(data)
+          }
+      })
+    })

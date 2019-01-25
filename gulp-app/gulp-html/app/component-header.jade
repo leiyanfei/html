@@ -1,0 +1,70 @@
+doctype html
+html
+  head
+    meta(http-equiv='Content-Type',content='text/html; charset=utf-8')
+    meta(name='viewport',content='initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no,target-densitydpi = medium-dpi')
+    meta(name='format-detection',content='telephone=no')
+    meta(name='apple-touch-fullscreen',content='YES')
+    meta(name='apple-mobile-web-app-capable',content='yes')
+    meta(name='apple-mobile-web-app-status-bar-style',content='black')
+    script(src="//img0.zz91.com/lib/jquery/jquery-1.8.0.min.js")
+    link(rel="shortcut icon",href="//img0.zz91.com/front/favicon.ico")
+    link(rel="stylesheet",type="text/css",href="//m.zz91.com/zt/commentryH5/css/base-min.css")
+    script(src="//static.m.zz91.com/layer/layer.js")
+    block css
+    block title
+        title 91再生网
+    script.
+        //- 窗口大小变化事件
+        window.onresize = function(){
+            getWinSize();
+        }
+        getWinSize();
+        //- 修改窗口字体
+        function getWinSize(){
+          //- 获取窗口大小
+          var winWidth = $(window).width();
+          var font_Size;
+          if(winWidth<=540){
+              font_Size = winWidth/10;
+          }else{
+              font_Size = 540/10;
+          }
+          document.getElementsByTagName('html')[0].style.fontSize = font_Size + "px";
+        }
+  body          
+    block content
+    
+    //- 百度优化
+    div(style="display:none")
+        script.
+            var _hmt = _hmt || [];
+            (function() {
+                var hm = document.createElement("script");
+                hm.src = "//hm.baidu.com/hm.js?c120670c814d08922e7048797e6472c1";
+                var s = document.getElementsByTagName("script")[0];
+                s.parentNode.insertBefore(hm, s);
+            })();
+        <!--baidu analysis-->
+        script.
+            var _hmt = _hmt || [];
+            
+            (function() {
+                var hm = document.createElement("script");
+                hm.src = "//hm.baidu.com/hm.js?f41f07cad5c54cf66717306958dd62ed";
+                var s = document.getElementsByTagName("script")[0];
+                s.parentNode.insertBefore(hm, s);
+            })();
+  script(src="/zt/log.html")
+  //- 微信分享
+  script(src="//res.wx.qq.com/open/js/jweixin-1.0.0.js")
+  script.
+    (function(d, t) {
+        var r = d.createElement(t),
+            s = d.getElementsByTagName(t)[0];
+        r.async = 1;
+        r.src = '//m.zz91.com/wechat/weixinshare.js?wurl=' + location.href + '&desc=#{shareTitle}';
+            s.parentNode.insertBefore(r, s);
+        })(document, "script");
+  
+  block script

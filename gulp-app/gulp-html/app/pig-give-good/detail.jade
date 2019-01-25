@@ -1,0 +1,60 @@
+extends ../component-header
+
+block css
+  link(rel="stylesheet",type="text/css",href="#{webtop}css/index.css")
+
+block title
+  title
+    金猪送福，万元红包从天而降-91再生
+
+block content
+  header.header_page
+    div.header-main.weui-flex
+      a.header-left.container(href="javascript:void(0)",onclick='javascript :history.back(-1)')
+        span.go_prev
+      div.weui-flex__item.container.header-title 金猪送福，红包来袭
+      div.header-right
+  img(src="#{webtop}images/share_pic.png", alt="",style="display:none")
+  .pig_my_big
+    .pig_pic_box
+
+  .packet_detail
+    .pd_title 恭喜抽中
+    .pd_type 微信红包
+    .pd_much. 
+      <span class="pd_much_num">8.88</span><span>元<span>
+    .pd_ts.
+      系统会自动把红包充值到您的微信钱包<br>
+      请注意查收
+
+  .weui-flex.detail_btns
+    .weui-flex__item.container.btn_li.j_share 分享
+    a.weui-flex__item.container.btn_li 返回
+
+  .page_ts 新年邀“鸿”运，5折福利到！
+
+  .share_img.j_close(style="display:none")
+      img(src="#{webtop}images/guide.png")
+
+block script
+  script.
+    //- 关闭分享
+    $(".j_close").on("click",function(){
+      layer.closeAll()
+    })
+    
+    //- 点击分享
+    $(".j_share").on("click",function(){   //分享
+      layer.closeAll()
+      layer.open({
+        type: 1,
+        title: false,
+        skin:'share_pop',
+        offset: ['25px','5rem'],
+        closeBtn: 0,
+        zIndex: 100,
+        shade: [0.8, '#000'],
+        shadeClose: true,
+        content: $(".share_img")
+      });
+    })
