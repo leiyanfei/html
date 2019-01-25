@@ -534,3 +534,12 @@ body{
     color: #999;
   }
 }
+
+.botimg{
+  padding:size(40) 0;
+  background: #a11d1d;
+  img{
+    width: 100%;
+    box-shadow: 0 size(1) size(15) #000;
+  }
+}

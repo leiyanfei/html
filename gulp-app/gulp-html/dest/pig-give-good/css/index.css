@@ -425,3 +425,11 @@ body {
     color: #fff; }
   .sign_cannot .btn_pp_back {
     color: #999; }
+
+.botimg {
+  padding: 0.53333rem 0;
+  background: #a11d1d; }
+  .botimg img {
+    width: 100%;
+    -webkit-box-shadow: 0 0.01333rem 0.2rem #000;
+            box-shadow: 0 0.01333rem 0.2rem #000; }
