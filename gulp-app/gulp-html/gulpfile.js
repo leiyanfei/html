@@ -5,6 +5,9 @@ var wiredep = require('wiredep').stream;
 var $ = require('gulp-load-plugins')({
   pattern: ['gulp-*', 'del']
 });
+var fs = require('fs');
+var path = require("path");
+
 var _ = require('lodash');
 var dest = './dest';
 
@@ -64,15 +67,35 @@ gulp.task('jade', function() {
   let jade_list = jadeList().concat(['!./app/**/component-*.jade'])
   return gulp.src(jade_list)
       .pipe($.data(function(file) {
-          return { 
-            'webtop': '//m.zz91.com/zt/2019givegood/',
-            'shareTitle':'万元现金红包大派送，快来和我一起抢红包'
-           }
+        console.log(JSON.parse(fs.readFileSync(path.dirname(file.path) + '/default.json')))
+        return JSON.parse(fs.readFileSync(path.dirname(file.path) + '/default.json'))
+          
+        // { 
+        //   'webtop': '//m.zz91.com/zt/2019givegood/',
+        //   'shareTitle':'万元现金红包大派送，快来和我一起抢红包'
+        //  }
         }))
       .pipe($.jade({pretty : true}))
       .on('error', errorHandler('jade'))
       .pipe(gulp.dest(dest))
       .pipe(browserSync.reload({stream: true}));
+});
+
+function jsonList(){
+  let json_list = []
+  if(appList.length>0){
+    appList.forEach((item)=>{
+      let jade = './app/**/'+ item+'/**/default.json';
+      json_list.push(jade)
+    })
+  }else{
+    json_list = ['./app/**/*.json']
+  }
+  return json_list;
+}
+
+gulp.task('jsonWatch', function() {
+  gulp.watch(jsonList(),gulp.series('jade'))
 });
 
 gulp.task('jadeWatch', function() {
@@ -162,6 +185,7 @@ gulp.task('serve',function() {
 gulp.task("build",gulp.series('clean','addFile','jade','scss','autopref'))
 
 gulp.task("default",gulp.series('build',gulp.parallel('scssWatch',
+                                                      'jsonWatch',
                                                       'jadeWatch',
                                                       'addFileWatch',
                                                       'autoprefWadth','serve')))
