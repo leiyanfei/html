@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no,target-densitydpi = medium-dpi">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-touch-fullscreen" content="YES">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <script src="//img0.zz91.com/lib/jquery/jquery-1.8.0.min.js"></script>
+    <link rel="shortcut icon" href="//img0.zz91.com/front/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="//m.zz91.com/zt/commentryH5/css/base-min.css">
+    <script src="//static.m.zz91.com/layer/layer.js"></script>
+    <link rel="stylesheet" type="text/css" href="./css/index.css">
+    <title>91再生网</title>
+    <script>
+      //- 窗口大小变化事件
+      window.onresize = function(){
+          getWinSize();
+      }
+      getWinSize();
+      //- 修改窗口字体
+      function getWinSize(){
+        //- 获取窗口大小
+        var winWidth = $(window).width();
+        var font_Size;
+        if(winWidth<=540){
+            font_Size = winWidth/10;
+        }else{
+            font_Size = 540/10;
+        }
+        document.getElementsByTagName('html')[0].style.fontSize = font_Size + "px";
+      }
+    </script>
+  </head>
+  <body>         
+    <div class="page_prize">
+      <div class="page-band-height"></div>
+      <div class="prize-main">
+        <div class="sign-up-modle">
+          <div class="sg_modle-title"><img src="./images/sign-img1.jpg" alt=""></div>
+          <div class="sign-must-can">
+            1. 参选企业从事再生资源行业，包括：再生塑料、塑料原料、设备服务商提供商等<br>
+            2.  参选企业为正式注册企业<br>
+            3.  企业社会信用体系良好，具有良好的社会形象
+          </div>
+        </div>
+        <div class="sign-up-modle">
+          <div class="sg_modle-title"><img src="./images/sign-img2.jpg" alt=""></div>
+          <div class="sign-from">
+            <div class="sign-li weui-flex">
+              <div class="sign-name"><span>*</span>申报企业</div>
+              <div class="sign-iptbox weui-flex__item">
+                <input type="text">
+              </div>
+            </div>
+            <div class="sign-li weui-flex">
+              <div class="sign-name"><span>*</span>企业地址</div>
+              <div class="sign-iptbox weui-flex__item">
+                <input type="text">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="sign-up-modle">
+          <div class="sg_modle-title"><img src="./images/sign-img3.jpg" alt=""></div>
+          <div class="sign-from">
+            <div class="sign-li weui-flex">
+              <div class="sign-name"><span>*</span>姓 名</div>
+              <div class="sign-iptbox weui-flex__item">
+                <input type="text">
+              </div>
+            </div>
+            <div class="sign-li weui-flex">
+              <div class="sign-name"><span>*</span>手 机</div>
+              <div class="sign-iptbox weui-flex__item">
+                <input type="text">
+              </div>
+            </div>
+            <div class="sign-li weui-flex">
+              <div class="sign-name"><span>*</span>职 务</div>
+              <div class="sign-iptbox weui-flex__item">
+                <input type="text">
+              </div>
+            </div>
+            <div class="sign-li weui-flex">
+              <div class="sign-name"><span>*</span>邮 箱</div>
+              <div class="sign-iptbox weui-flex__item">
+                <input type="text">
+              </div>
+            </div>
+            <div class="sign-li weui-flex">
+              <div class="sign-name"><span>*</span>企业简介</div>
+              <div class="sign-iptbox weui-flex__item">
+                <input type="text">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="sign-up-modle">
+          <div class="sg_modle-title"><img src="./images/sign-img4.jpg" alt=""></div>
+          <div class="sign-from">
+            <div class="sign-from-label"><label><input name="pz" type="checkbox" value="" />91再生·2018再生塑料“百家诚信”企业-品牌供应商 </label> </div>
+            <div class="sign-from-label">
+               
+              <label><input name="pz" type="checkbox" value="" />91再生·2018再生塑料“百家诚信”企业-品牌采购商 </label> 
+            </div>
+            <div class="sign-from-label">
+               
+              <label><input name="pz" type="checkbox" value="" />91再生·2018再生塑料“百家诚信”企业-品牌服务商 </label> 
+            </div>
+          </div>
+        </div>
+        <div class="sign-up-modle">
+          <div class="sg_modle-title"><img src="./images/sign-img5.jpg" alt=""></div>
+          <div class="sign-from">
+            <div class="text-detail">
+              <textarea name="" cols="30" rows="10"></textarea>
+            </div>
+          </div>
+        </div>
+        <div class="sign-up-modle">
+          <div class="add_img_box weui-flex">
+            <div class="add_i_left"><span>*</span>上传营业执照</div>
+            <div class="add_i_cnt"></div>
+            <div class="add_i_right weui-flex__item">
+              请上传清晰的<br>
+              营业执照照片
+              
+              
+            </div>
+          </div>
+        </div>
+        <div class="go-sign-in"><a class="sign-btn"> 确认提交</a></div>
+      </div>
+      <div class="bt_bquan">本活动最终解释权归91再生所有</div>
+    </div>
+    <div style="display:none">
+      <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?c120670c814d08922e7048797e6472c1";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+      </script><!--baidu analysis-->
+      <script>
+        var _hmt = _hmt || [];
+        
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?f41f07cad5c54cf66717306958dd62ed";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+      </script>
+    </div>
+  </body>
+  <script src="/zt/log.html"></script>
+  <script src="//res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+  <script>
+    (function(d, t) {
+        var r = d.createElement(t),
+            s = d.getElementsByTagName(t)[0];
+        r.async = 1;
+        r.src = '//m.zz91.com/wechat/weixinshare.js?wurl=' + location.href + '&desc=';
+            s.parentNode.insertBefore(r, s);
+        })(document, "script");
+    
+  </script>
+</html>

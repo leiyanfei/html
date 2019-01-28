@@ -11,7 +11,7 @@ var path = require("path");
 var _ = require('lodash');
 var dest = './dest';
 
-var appList = ['pig-give-good']
+var appList = ['2019plastic']
 
 function errorHandler(title) {
   return function (err) {
@@ -30,7 +30,7 @@ function fileList(){
   }else{
     file_list = ['./app/**/*']
   }
-  file_list.push('!./app/**/*.jade','!./app/**/*.scss');
+  file_list.push('!./app/**/*.jade','!./app/**/*.scss','!./app/**/default.json');
   return file_list;
 }
 
@@ -41,13 +41,7 @@ gulp.task('addFile', function() {
 
 
 gulp.task('addFileWatch', function() {
-  gulp.watch(fileList()).on('all',function(event,path){
-    if(event=='add'||event=='change'){
-      let path_ = './'+path.replace('\\', '/');
-      return gulp.src([path_])
-      .pipe(gulp.dest(dest));
-    }
-  });
+  gulp.watch(fileList(),gulp.series('addFile'))
 });
 
 function jadeList(){
@@ -67,14 +61,20 @@ gulp.task('jade', function() {
   let jade_list = jadeList().concat(['!./app/**/component-*.jade'])
   return gulp.src(jade_list)
       .pipe($.data(function(file) {
-        console.log(JSON.parse(fs.readFileSync(path.dirname(file.path) + '/default.json')))
-        return JSON.parse(fs.readFileSync(path.dirname(file.path) + '/default.json'))
-          
-        // { 
-        //   'webtop': '//m.zz91.com/zt/2019givegood/',
-        //   'shareTitle':'万元现金红包大派送，快来和我一起抢红包'
-        //  }
-        }))
+        //json数据目录
+        let filepath = path.dirname(file.path) + '/default.json';
+        try{
+          //json数据目录存在读取目录信息
+          fs.statSync(filepath)
+          return JSON.parse(fs.readFileSync(filepath))
+        }catch(err){
+          //json数据目录不存在自己配置数据
+          return { 
+            'webtop': './',//m.zz91.com/zt/2019givegood/
+            'shareTitle':'999'
+          }
+        }
+      }))
       .pipe($.jade({pretty : true}))
       .on('error', errorHandler('jade'))
       .pipe(gulp.dest(dest))
@@ -85,7 +85,7 @@ function jsonList(){
   let json_list = []
   if(appList.length>0){
     appList.forEach((item)=>{
-      let jade = './app/**/'+ item+'/**/default.json';
+      let jade = './app/**/'+ item+'/**/*.json';
       json_list.push(jade)
     })
   }else{

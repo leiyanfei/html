@@ -1,0 +1,99 @@
+extends ../component-header
+
+block css
+  link(rel="stylesheet",type="text/css", href="#{webtop}css/index.css")
+
+block content
+  .page_prize
+    .page-band-height
+    
+    .prize-main
+      .sign-up-modle
+        .sg_modle-title
+          img(src="#{webtop}images/sign-img1.jpg", alt="")
+        .sign-must-can.
+          1. 参选企业从事再生资源行业，包括：再生塑料、塑料原料、设备服务商提供商等<br>
+          2.  参选企业为正式注册企业<br>
+          3.  企业社会信用体系良好，具有良好的社会形象
+      .sign-up-modle
+        .sg_modle-title
+          img(src="#{webtop}images/sign-img2.jpg", alt="")
+        .sign-from
+          .sign-li.weui-flex
+            .sign-name. 
+              <span>*</span>申报企业
+            .sign-iptbox.weui-flex__item
+              input(type="text")
+          
+          .sign-li.weui-flex
+            .sign-name. 
+              <span>*</span>企业地址
+            .sign-iptbox.weui-flex__item
+              input(type="text")
+          
+      .sign-up-modle
+        .sg_modle-title
+          img(src="#{webtop}images/sign-img3.jpg", alt="")
+        .sign-from
+          .sign-li.weui-flex
+            .sign-name. 
+              <span>*</span>姓 名
+            .sign-iptbox.weui-flex__item
+              input(type="text")
+          
+          .sign-li.weui-flex
+            .sign-name. 
+              <span>*</span>手 机
+            .sign-iptbox.weui-flex__item
+              input(type="text")
+          
+          .sign-li.weui-flex
+            .sign-name. 
+              <span>*</span>职 务
+            .sign-iptbox.weui-flex__item
+              input(type="text")
+          
+          .sign-li.weui-flex
+            .sign-name. 
+              <span>*</span>邮 箱
+            .sign-iptbox.weui-flex__item
+              input(type="text")
+          
+          .sign-li.weui-flex
+            .sign-name. 
+              <span>*</span>企业简介
+            .sign-iptbox.weui-flex__item
+              input(type="text")
+
+      .sign-up-modle
+        .sg_modle-title
+          img(src="#{webtop}images/sign-img4.jpg", alt="")
+        .sign-from
+          .sign-from-label
+            <label><input name="pz" type="checkbox" value="" />91再生·2018再生塑料“百家诚信”企业-品牌供应商 </label> 
+          .sign-from-label 
+            <label><input name="pz" type="checkbox" value="" />91再生·2018再生塑料“百家诚信”企业-品牌采购商 </label> 
+          .sign-from-label 
+            <label><input name="pz" type="checkbox" value="" />91再生·2018再生塑料“百家诚信”企业-品牌服务商 </label> 
+
+      .sign-up-modle
+        .sg_modle-title
+          img(src="#{webtop}images/sign-img5.jpg", alt="")
+        .sign-from
+          .text-detail
+            textarea(name="", cols="30", rows="10")
+      
+      .sign-up-modle
+        .add_img_box.weui-flex
+          .add_i_left.
+            <span>*</span>上传营业执照
+          .add_i_cnt
+          .add_i_right.weui-flex__item.
+            请上传清晰的<br>
+            营业执照照片
+
+      
+      .go-sign-in
+        a.sign-btn  确认提交
+
+    .bt_bquan 本活动最终解释权归91再生所有
