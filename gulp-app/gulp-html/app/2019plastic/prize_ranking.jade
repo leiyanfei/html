@@ -1,0 +1,116 @@
+extends component-box
+
+block css
+  link(rel="stylesheet",type="text/css", href="#{webtop}css/index.css")
+
+block content
+  .page_prize
+    .page-band-height
+    .djsbox
+        距离投票结束仅剩
+        span.hour 72
+        | :
+        span.min 00
+        | :
+        span.second 00
+    
+    .prize-main
+      
+      div.pz_hr
+      .prize-modle
+        .prize-title
+          img(src="#{webtop}images/p_img_2.png", alt="")
+
+        a(name="ptype1")
+        .pz_firm_sub
+          .pz_firm_md
+            .pz_firm_title
+              img(src="#{webtop}images/p_name_big1.jpg", alt="")
+            .pz_firm_list.clear
+              - var firmlist = [1,1,1,1]
+              each i,index in firmlist
+                a.pz_firm_li(href="jieshao.html")
+                  .fm_top.weui-flex
+                    if (index==0)
+                      .ranking_num.ranking_num1
+                    else if (index==1)
+                      .ranking_num.ranking_num2
+
+                    else if (index==2)
+                      .ranking_num.ranking_num3
+
+                    .fm_number.weui-flex__item.container  编号：001
+                  .firm_pic 
+                    img(src="#{webtop}images/bm_firm.jpg", alt="")
+                  .firm_name.ellipsis-1  山东省济南市某某某某某某公司
+                  .firm_btnbox.weui-flex
+                    p.weui-flex__item 1008票
+                    .firm_btn.weui-flex__item 帮TA投票
+        a(name="ptype2")
+        .pz_firm_sub
+          .pz_firm_md
+            .pz_firm_title
+              img(src="#{webtop}images/p_name_big2.jpg", alt="")
+            .pz_firm_list.clear
+              - var firmlist = [1,1,1,1]
+              each i,index in firmlist
+                a.pz_firm_li(href="jieshao.html")
+                  .fm_top.weui-flex
+                    if (index==0)
+                      .ranking_num.ranking_num1
+                    else if (index==1)
+                      .ranking_num.ranking_num2
+
+                    else if (index==2)
+                      .ranking_num.ranking_num3
+                      
+                    .fm_number.weui-flex__item.container  编号：001
+                  .firm_pic 
+                    img(src="#{webtop}images/bm_firm.jpg", alt="")
+                  .firm_name.ellipsis-1  山东省济南市某某某某某某公司
+                  .firm_btnbox.weui-flex
+                    p.weui-flex__item 1008票
+                    .firm_btn.weui-flex__item 帮TA投票
+        a(name="ptype3")
+        .pz_firm_sub
+          .pz_firm_md
+            .pz_firm_title
+              img(src="#{webtop}images/p_name_big3.jpg", alt="")
+            .pz_firm_list.clear
+              - var firmlist = [1,1,1,1]
+              each i,index in firmlist
+                a.pz_firm_li(href="jieshao.html")
+                  .fm_top.weui-flex
+                    if (index==0)
+                      .ranking_num.ranking_num1
+                    else if (index==1)
+                      .ranking_num.ranking_num2
+
+                    else if (index==2)
+                      .ranking_num.ranking_num3
+
+                    .fm_number.weui-flex__item.container  编号：001
+                  .firm_pic 
+                    img(src="#{webtop}images/bm_firm.jpg", alt="")
+                  .firm_name.ellipsis-1  山东省济南市某某某某某某公司
+                  .firm_btnbox.weui-flex
+                    p.weui-flex__item 1008票
+                    .firm_btn.weui-flex__item 帮TA投票
+
+      
+
+    .bt_bquan 本活动最终解释权归91再生所有
+
+  .right_poit
+    a.rp_go.rp_go_1(href="#ptype1") 
+    a.rp_go.rp_go_2(href="#ptype2")
+    a.rp_go.rp_go_3(href="#ptype3")
+    a.rp_go.rp_go_4(href="prize_index.html")
+
+  - var navindex = 3
+  include component-navbt
+
+
+
+
+

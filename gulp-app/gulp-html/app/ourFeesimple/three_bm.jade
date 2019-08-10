@@ -1,0 +1,172 @@
+extends component-box
+
+block page_content
+    .band
+        img(src="#{webtop}images/band1.png")
+   
+    .bmform
+        .maintle
+            img(src="#{webtop}/images/fee1.png")
+        .bm_main 参会人1
+            
+        .bmli.zz-div-box
+            .sticon.zz-div-td1 *
+            .bmnr.zz-div-box
+                .bmname 企业名称
+                input.npage8_ipt_1.bmnr_input.zz-div-td1.column-cnt(placeholder="请输入企业名称",type="text")
+        .bmli.zz-div-box
+            .sticon.zz-div-td1 *
+            .bmnr.zz-div-box
+                .bmname 联系人
+                input.npage8_ipt_2.bmnr_input.zz-div-td1.column-cnt(placeholder="请输入联系人",type="text")
+        .bmli.zz-div-box
+            .sticon.zz-div-td1 *
+            .bmnr.zz-div-box
+                .bmname 手机号
+                input.npage8_ipt_3.bmnr_input.zz-div-td1.column-cnt(placeholder="请输入手机号",type="number")
+        .bmli.zz-div-box
+            .sticon.zz-div-td1 *
+            .bmnr.zz-div-box
+                .bmname 地区
+                input.npage8_ipt_6.bmnr_input.zz-div-td1.column-cnt(placeholder="请输入地址",type="text")
+        .bmli.bmtextbox.zz-div-box
+            .sticon.zz-div-td1 *
+            .bmnr
+                .bmname 主营业务
+                textarea.npage8_ipt_7.bmnr_text(placeholder="请输入主营业务",rows="5")
+        
+        .bm_main 参会人2
+            
+        .bmli.zz-div-box
+            .sticon.zz-div-td1 *
+            .bmnr.zz-div-box
+                .bmname 企业名称
+                input.npage8_ipt_1.bmnr_input.zz-div-td1.column-cnt(placeholder="请输入企业名称",type="text")
+        .bmli.zz-div-box
+            .sticon.zz-div-td1 *
+            .bmnr.zz-div-box
+                .bmname 联系人
+                input.npage8_ipt_2.bmnr_input.zz-div-td1.column-cnt(placeholder="请输入联系人",type="text")
+        .bmli.zz-div-box
+            .sticon.zz-div-td1 *
+            .bmnr.zz-div-box
+                .bmname 手机号
+                input.npage8_ipt_3.bmnr_input.zz-div-td1.column-cnt(placeholder="请输入手机号",type="number")
+        .bmli.zz-div-box
+            .sticon.zz-div-td1 *
+            .bmnr.zz-div-box
+                .bmname 地区
+                input.npage8_ipt_6.bmnr_input.zz-div-td1.column-cnt(placeholder="请输入地址",type="text")
+        .bmli.bmtextbox.zz-div-box
+            .sticon.zz-div-td1 *
+            .bmnr
+                .bmname 主营业务
+                textarea.npage8_ipt_7.bmnr_text(placeholder="请输入主营业务",rows="5")
+
+        .bm_main 参会人3
+            
+        .bmli.zz-div-box
+            .sticon.zz-div-td1 *
+            .bmnr.zz-div-box
+                .bmname 企业名称
+                input.npage8_ipt_1.bmnr_input.zz-div-td1.column-cnt(placeholder="请输入企业名称",type="text")
+        .bmli.zz-div-box
+            .sticon.zz-div-td1 *
+            .bmnr.zz-div-box
+                .bmname 联系人
+                input.npage8_ipt_2.bmnr_input.zz-div-td1.column-cnt(placeholder="请输入联系人",type="text")
+        .bmli.zz-div-box
+            .sticon.zz-div-td1 *
+            .bmnr.zz-div-box
+                .bmname 手机号
+                input.npage8_ipt_3.bmnr_input.zz-div-td1.column-cnt(placeholder="请输入手机号",type="number")
+        .bmli.zz-div-box
+            .sticon.zz-div-td1 *
+            .bmnr.zz-div-box
+                .bmname 地区
+                input.npage8_ipt_6.bmnr_input.zz-div-td1.column-cnt(placeholder="请输入地址",type="text")
+        .bmli.bmtextbox.zz-div-box
+            .sticon.zz-div-td1 *
+            .bmnr
+                .bmname 主营业务
+                textarea.npage8_ipt_7.bmnr_text(placeholder="请输入主营业务",rows="5")
+        
+    a.zfbtn() 提交
+
+    .fee_flow
+    .fee_rule
+      .fee_rule_img
+        img.imgbox(src="#{webtop}images/fee_rule1.png")
+
+    a.right_fixed(href="http://m.zz91.com/zt/1905ztH5/index.html")
+
+block script    
+    script.
+        $('.zfbtn').on("click",function(){
+            let first_firm = $('.npage8_ipt_1').eq(0).val();
+            let first_name = $('.npage8_ipt_2').eq(0).val();
+            let first_iphone = $('.npage8_ipt_3').eq(0).val();
+            let first_addr = $('.npage8_ipt_6').eq(0).val();
+            let first_detail = $('.npage8_ipt_7').eq(0).val();
+
+            if(first_firm==''||first_name==''||first_iphone==''||first_addr==''||first_detail==''){
+                layer.msg("请输入参会人1完整信息")
+                return;
+            }
+
+            let second_firm = $('.npage8_ipt_1').eq(1).val();
+            let second_name = $('.npage8_ipt_2').eq(1).val();
+            let second_iphone = $('.npage8_ipt_3').eq(1).val();
+            let second_addr = $('.npage8_ipt_6').eq(1).val();
+            let second_detail = $('.npage8_ipt_7').eq(1).val();
+
+            if(second_firm==''||second_name==''||second_iphone==''||second_addr==''||second_detail==''){
+                layer.msg("请输入参会人2完整信息")
+                return;
+            }
+
+            let third_firm = $('.npage8_ipt_1').eq(2).val();
+            let third_name = $('.npage8_ipt_2').eq(2).val();
+            let third_iphone = $('.npage8_ipt_3').eq(2).val();
+            let third_addr = $('.npage8_ipt_6').eq(2).val();
+            let third_detail = $('.npage8_ipt_7').eq(2).val();
+
+            if(third_firm==''||third_name==''||third_iphone==''||third_addr==''||third_detail==''){
+                layer.msg("请输入参会人3完整信息")
+                return;
+            }
+
+            var myreg=/^[1][3,4,5,7,8][0-9]{9}$/;
+            if(!myreg.test(first_iphone)) {
+                layer.msg("请输入参会人1正确的手机号码")
+                return;
+            }
+            if(!myreg.test(second_iphone)) {
+                layer.msg("请输入参会人2正确的手机号码")
+                return;
+            }
+            if(!myreg.test(third_iphone)) {
+                layer.msg("请输入参会人3正确的手机号码")
+                return;
+            }
+
+            $.ajax({
+                type: "post",
+                url: "https://m.zz91.com/zt/baomingsave.html?datatype=json",
+                data: {
+                    title: "91再生·第三届铜铝交易峰会-内部拼团参会活动",
+                    contents: `
+                    参会人1 *企业名称：${first_firm} *联系人： ${first_name} *联系电话：${first_iphone} *地址：${first_addr} *主营业务： ${first_detail}
+                    参会人2 *企业名称：${second_firm} *联系人： ${second_name} *联系电话：${second_iphone} *地址：${second_addr} *主营业务： ${second_detail}
+                    参会人3 *企业名称：${third_firm} *联系人： ${third_name} *联系电话：${third_iphone} *地址：${third_addr} *主营业务： ${third_detail}
+                            ` 
+                },
+                dataType: "json",
+                success: function(data) {
+                    if(data.err == "false") {
+                        layer.msg('报名成功！');
+                        $('input').val('')
+                    }
+                }
+            })
+        })

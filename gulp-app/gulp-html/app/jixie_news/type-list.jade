@@ -1,0 +1,27 @@
+extends component-header
+
+block title
+  title 机械设备资讯分类
+
+block hd_sq
+  a.iconfont.icon-search.hd_sq(href="search.html")
+    
+block header_name
+  机械设备资讯分类
+
+block content
+  .type-all-box
+    .weui-flex(style="height:100%")
+      .put_type_list
+        .put_type_big.j_sbtype.showtype 废塑料机械设备
+        .put_type_big.j_sbtype 废金属机械设备
+        .put_type_big.j_sbtype 橡胶机械设备
+        .put_type_big.j_sbtype 综合机械设备
+      .weui-flex__item.put_smlt_list
+        .pg-type-list
+          -var items = [1,1,1,1,1,1,1]
+          each item in items
+            .put_type_smname.right_ 全部塑料机械设备
+          //- .put_type_smname.right_ 全部塑料机械设备
+          //- .put_type_smname.right_ 全部塑料机械设备
+          //- .put_type_smname.right_ 全部塑料机械设备

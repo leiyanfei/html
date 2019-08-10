@@ -1,0 +1,52 @@
+extends ../component-header
+
+block title
+  title 机械设备频道重磅上线
+
+block css
+  link(rel="stylesheet",type="text/css", href="#{webtop}css/index.css")
+  link(rel="stylesheet",type="text/css",href="//img0.zz91.com/lib/swiper/swiper.min.css")
+  link(rel="stylesheet",type="text/css",href="//img0.zz91.com/lib/swiper/animate.min.css")
+  script(src="//img0.zz91.com/lib/swiper/swiper.min.js")
+  script(src="//img0.zz91.com/lib/swiper/swiper.animate.min.js")
+
+block content
+
+
+  .swiper-container
+    .swiper-wrapper
+      .swiper-slide 
+        img.slide-img(src="#{webtop}images/img1.png", alt="")
+        .slide-word. 
+          邀您入驻 <span class="wdcolor">多重豪礼</span>享不停<br>轻松撬动<span class="wdcolor">千万商机</span>
+      .swiper-slide 
+        img.slide-img(src="#{webtop}images/img2.png", alt="")
+        .slide-word. 
+          无纸化推广 新体验 <span class="wdcolor">降成本</span><br><span class="wdcolor">多端分享</span> 快速传递品牌形象
+      .swiper-slide 
+        img.slide-img(src="#{webtop}images/img3.png", alt="")
+        .slide-word. 
+          直观多维度展示 聚焦产品优势<br><span class="wdcolor">多渠道推广 轻松引流</span>
+      .swiper-slide 
+        img.slide-img(src="#{webtop}images/img4.png", alt="")
+        .slide-word. 
+          <span class="wdcolor">免费报价</span>给采购商<br>实时追踪 <span class="wdcolor">高效交易</span>
+      .swiper-slide 
+        img.slide-img(src="#{webtop}images/img5.png", alt="")
+        .slide-word. 
+          覆盖塑料、金属、橡胶、纸加工行业<br><span class="wdcolor">厂家直销 源头好货</span>
+      .swiper-slide 
+        img.slide-img(src="#{webtop}images/img6.png", alt="")
+        a.slide-btn 前往机械设备频道 
+          
+    .swiper-pagination
+  
+block script
+  script.
+    var swiper = new Swiper('.swiper-container', {
+      autoplay:true,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+    });

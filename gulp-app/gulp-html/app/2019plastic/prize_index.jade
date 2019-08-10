@@ -1,0 +1,181 @@
+extends component-box
+
+block css
+  link(rel="stylesheet",type="text/css", href="#{webtop}css/index.css")
+
+block content
+  .page_prize
+    .page-band-height
+    .djsbox
+        距离投票结束仅剩
+        span.hour 72
+        | :
+        span.min 00
+        | :
+        span.second 00
+    .prize_sm
+      .prize_sm_detail.
+        <p>近年来，国家加快推进改革开放脚步，经济社会不断进步，人民日益增长的需求对生态环境提出了更严格的要求；加之全球经济扩张，能源消耗体量巨大。双重要求下，再生行业废物资源化利用在生态保护中承担着越来越重要的角色，再生行业得到了蓬勃发展。当然，巨大利好中也存在着严格考验，过去的2018再生企业走的艰难，未来2019形势莫测，再生行业的发展离不开每一位再生人的竭诚努力。</p>
+        <p>91再生、再生汇联合宁波国际塑料橡胶工业展览会组委会推出2018中国再生塑料年度榜单评选，旨在对2018年里再生塑料行业发展的精准还原和总结。从上千家企业和个人中选出最具有代表性的企业作为本次年度榜单的入围企业，我们试图以礼赞“产业精英”的方式，一步步记录下中国再生塑料行业前进的步伐，并为那些再生塑料行业中的先进典型喝彩。</p>
+        <p>藉此机会，向所有推动中国再生资源发展的人致敬！</p>
+    .prize-main
+      .prize-modle
+        .prize-title
+          img(src="#{webtop}images/p_img1.png", alt="")
+        .prize-info
+          .prize-sug.weui-flex
+            .weui-flex__item.sug_box
+              .sub-jbei
+              .sub-title
+                img(src="#{webtop}images/p_name1.jpg", alt="")
+              .sub-em.
+                91再生·2018再生<br>塑料“百家诚信”企业
+              .sub-gd 品牌供应商
+              .sub-number （共10名）
+            div.sug_hr
+            .weui-flex__item.sug_box
+              .sub-jbei
+              .sub-title
+                img(src="#{webtop}images/p_name2.jpg", alt="")
+              .sub-em.
+                91再生·2018再生<br>塑料“百家诚信”企业
+              .sub-gd 品牌采购商
+              .sub-number （共10名）
+            div.sug_hr
+            .weui-flex__item.sug_box
+              .sub-jbei
+              .sub-title
+                img(src="#{webtop}images/p_name3.jpg", alt="")
+              .sub-em.
+                91再生·2018再生<br>塑料“百家诚信”企业
+              .sub-gd 品牌服务商
+              .sub-number （共10名）
+      div.pz_hr
+      .prize-modle
+        .prize-title
+          img(src="#{webtop}images/p_img2.png", alt="")
+        
+        .ranking_select
+          input.ranking_ipt(type="text",placeholder="输入公司名称或编号搜索")
+          button.ranking_btn 搜索
+
+        a(name="ptype1")
+        .pz_firm_sub
+          .pz_firm_md
+            .pz_firm_title
+              img(src="#{webtop}images/p_name_big1.jpg", alt="")
+            .pz_firm_list.clear
+              - var firmlist = [1,1,1,1]
+              each i in firmlist
+                a.pz_firm_li(href="jieshao.html")
+                  .fm_top.weui-flex
+                    .fm_number.weui-flex__item.vdmiddle  编号：001
+                    .fm_go.vdmiddle  查看详情 >
+                  .firm_pic 
+                    img(src="#{webtop}images/bm_firm.jpg", alt="")
+                  .firm_name.ellipsis-1  山东省济南市某某某某某某公司
+                  .firm_btnbox.weui-flex
+                    p.weui-flex__item 1008票
+                    .firm_btn.weui-flex__item 帮TA投票
+        a(name="ptype2")
+        .pz_firm_sub
+          .pz_firm_md
+            .pz_firm_title
+              img(src="#{webtop}images/p_name_big2.jpg", alt="")
+            .pz_firm_list.clear
+              - var firmlist = [1,1,1,1]
+              each i in firmlist
+                a.pz_firm_li(href="jieshao.html")
+                  .fm_top.weui-flex
+                    .fm_number.weui-flex__item.vdmiddle  编号：001
+                    .fm_go.vdmiddle  查看详情 >
+                  .firm_pic 
+                    img(src="#{webtop}images/bm_firm.jpg", alt="")
+                  .firm_name.ellipsis-1  山东省济南市某某某某某某公司
+                  .firm_btnbox.weui-flex
+                    p.weui-flex__item 1008票
+                    .firm_btn.weui-flex__item 帮TA投票
+        a(name="ptype3")
+        .pz_firm_sub
+          .pz_firm_md
+            .pz_firm_title
+              img(src="#{webtop}images/p_name_big3.jpg", alt="")
+            .pz_firm_list.clear
+              - var firmlist = [1,1,1,1]
+              each i in firmlist
+                a.pz_firm_li(href="jieshao.html")
+                  .fm_top.weui-flex
+                    .fm_number.weui-flex__item.vdmiddle  编号：001
+                    .fm_go.vdmiddle  查看详情 >
+                  .firm_pic 
+                    img(src="#{webtop}images/bm_firm.jpg", alt="")
+                  .firm_name.ellipsis-1  山东省济南市某某某某某某公司
+                  .firm_btnbox.weui-flex
+                    p.weui-flex__item 1008票
+                    .firm_btn.weui-flex__item 帮TA投票
+
+      .pz_step
+        .pz_step_modle
+          .sp_top.weui-flex
+            .sp_title.weui-flex__item 
+              img(src="#{webtop}images/p_sm_tt1.jpg", alt="")
+            .sp_time 2月1日-3月14日
+          .step_detail.
+            <p>经过91再生网平台数据与再生汇2018年线下会展情况筛选，2018再生影响力年度榜单入围企业名单已出炉，对上述入围企业如有情况和问题，可在公示期内反映，反映情况和问题必须实事求是。</p>
+        
+        .pz_step_modle
+          .sp_top.weui-flex
+            .sp_title.weui-flex__item 
+              img(src="#{webtop}images/p_sm_tt2.jpg", alt="")
+            .sp_time 3月15日-3月31日
+          .step_detail.
+            <p>公开投票环节启动，每个奖项将会有10家年度优秀企业（或个体户）通过为期15天的公开投票和专家评审，在众多参选企业中脱颖而出，获得2018再生影响力年度奖。</p>
+        
+        .pz_step_modle
+          .sp_top.weui-flex
+            .sp_title.weui-flex__item 
+              img(src="#{webtop}images/p_sm_tt3.jpg", alt="")
+            .sp_time 
+          .step_detail.
+            <p>获奖企业将在4月25日“2019第十届宁波国际塑料橡胶工业展览会暨91再生第四届再生塑料峰会”上揭晓、公布，并举办颁奖仪式。</p>
+        
+        .pz_step_modle
+          .sp_top.weui-flex
+            .sp_title.weui-flex__item 
+              img(src="#{webtop}images/p_sm_tt4.jpg", alt="")
+            .sp_time 
+          .step_detail.
+            <p>1.每个微信号投票前需先关注“再生汇”微信公众号；</p>
+            <p>2.每个奖项分开计票，每个微信账号每天最多可投5票，可选企业数量不限，票数计入评定结果；</p>
+            <p>3.在“再生汇”底部菜单栏位置开设了【榜单评选】栏目，方便大家为候选企业投票。</p>
+
+        .pz_step_modle
+          .sp_top.weui-flex
+            .sp_title.weui-flex__item 
+              img(src="#{webtop}images/p_sm_tt5.jpg", alt="")
+            .sp_time 
+          .step_detail.
+            <p>1.91再生第四届再生塑料峰会会刊彩色整版一个（价值3000元）</p>
+            <p>2.91再生“百强诚信”企业频道长期宣传展示</p>
+            <p>3.百万粉丝公众号企业推送一次（价值5000元）</p>
+            <p>4.91再生第四届再生塑料峰会会议现场授牌表彰</p>
+            <p>5.91再生“百强诚信”牌匾一块</p>
+        
+      .go-sign-in
+        a.sign-btn(href="prize_sign_up.html")  我也想上榜
+
+    .bt_bquan 本活动最终解释权归91再生所有
+
+  .right_poit
+    a.rp_go.rp_go1(href="#ptype1") 
+    a.rp_go.rp_go2(href="#ptype2")
+    a.rp_go.rp_go3(href="#ptype3")
+    a.rp_go.rp_go4(href="prize_ranking.html")
+
+  - var navindex = 3
+  include component-navbt
+
+
+
+
+

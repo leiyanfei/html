@@ -1,0 +1,319 @@
+.ellipsis-1 {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+header{
+    height: 88px;
+    display: flex;
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+    background: #fff;
+    z-index: 9;
+    .center{
+        flex: 1;
+        justify-content: center;
+        align-items: center;
+        font-size:38px;
+        display: flex;
+    }
+    .header-left,.header-right{
+        width: 88px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .backimg{
+          width: 16px;   
+        }
+    }
+}
+.header-height{
+    height: 88px;
+}
+.band{
+    height: 400px;
+    img{
+        width: 100%;
+    }
+}
+
+.imgbox{
+    width: 100%;
+    display: block
+}
+.fee_simple_ul{
+    padding:15px 0;
+    .fee_simple_item{
+        width:686px;
+        height:459px;
+        background:rgba(251,247,240,1);
+        box-shadow:0px 8px 21px 0px rgba(4,0,0,0.12);
+        border-radius:10px;
+        margin: 30px auto;
+        overflow: hidden;
+        position: relative;
+        .fee_stutas{
+            width: 307px;
+            margin-left: 47px;
+            margin-top: 44px;
+        }
+        .fee_price{
+            width: 323px;
+            margin-left: 47px;
+            margin-top: 63px
+        }
+        .old_price{
+            width: 329px;
+            margin-left: 47px;
+            margin-top: 34px
+        }
+        .gobtn_box{
+            width: 325px;
+            margin: 71px auto 0;
+        }
+        .gobtn{
+            display: block;
+            &.gobtn_active:active{
+                opacity: 0.8;
+            }
+        }
+        .fee_number{
+            position: absolute;
+            width: 225px;
+            right: -17px;
+            top: 65px;
+        }
+    }
+}
+.fee_rule{
+    padding: 70px 0;
+    background: #edeae8;
+    .fee_rule_img{
+        width: 686px;
+        margin: 0 auto
+    }
+}
+.fee_flow{
+    padding: 66px 0;
+    .fee_flow_img{
+        width: 674px;
+        margin: 0 auto
+    }
+}
+
+.fee_suggest{
+    margin: 34px auto;
+    width:686px;
+    padding-top: 89px;
+    padding-left: 41px;
+    padding-bottom: 51px;
+    background:rgba(251,247,240,1);
+    border-radius:10px;
+    position: relative;
+    .fee_number{
+        position: absolute;
+        width: 225px;
+        right: -17px;
+        top: 35px;
+    }
+    .fee_price{
+        width: 312px;
+    }
+    .fee_last_time{
+        height: 25px;
+        width: 397px;
+        background-image: url(../images/fee_time.png);
+        background-size: 100%;
+        margin-top: 20px;
+        .last_time{
+            position: relative;
+            height: 100%;
+            width: 100%;
+            .day {
+                position: absolute;
+                width: 60px;
+                text-align: center;
+                left: 70px;
+                color: #dd6c38;
+                font-size: 28px;
+                line-height: 28px;
+                top: 0
+            }
+            .hour {
+                @extend .day;
+                left: 145px;
+            }
+            .minute {
+                @extend .day;
+                left: 245px;
+            }
+            .second {
+                @extend .day;
+                left: 320px;
+            }
+        }
+    }
+    .fee_droit1{
+        width: 578px;
+        margin-top: 44px
+    }
+    .fee_droit2{
+        width: 603px;
+        margin-top: 44px
+    }
+}
+.foot_buy{
+    position: fixed;
+    height: 120px;
+    display: flex;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    .old_price{
+        width:300px;
+        color:#CF722F;
+        font-size: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        background:rgba(253,206,152,1);
+        &:active{
+            opacity: 0.8;
+        }
+    }
+    .fee_price{
+        flex: 1;
+        background:rgba(207,114,47,1);
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 30px;
+        text-align: center;
+        &:active{
+            opacity: 0.8;
+        }
+    }
+    .price{
+        font-size: 42px;
+    }
+    .stutas{
+        font-size: 36px;
+    }
+}
+.foot_buy_height{
+    height: 120px;
+}
+
+.gofee{
+    width:686px;
+    margin: 0 auto;
+    padding: 57px 0 41px 0;
+    background:rgba(251,247,240,1);
+    border-radius:10px;
+    .gofee-title{
+        text-align: center;
+        font-size:30px;
+        font-family:HYYakuHei-FEW;
+        font-weight:normal;
+        color:rgba(207,114,47,1);
+    }
+    .gofee-give{
+        text-align: center;
+        font-size:24px;
+        font-family:HYYakuHei-EEW;
+        font-weight:normal;
+        color:rgba(207,114,47,1);
+        margin-top: 8px;
+        line-height:32px;
+    }
+    .gofee-share{
+        margin: 40px 42px 0;
+        display: flex;
+        justify-content: space-between;
+        .gofee-btn1{
+            width: 280px;
+            height: 64px;
+            background-image: url(../images/sharebtn1.png);
+            background-size: 100%;
+            &:active{
+                opacity: 0.8;
+            }
+        }
+        .gofee-btn2{
+            @extend .gofee-btn1;
+            background-image: url(../images/sharebtn2.png);
+        }
+    }
+    .gofee-btn{
+        width: 325px;
+        height: 64px;
+        margin: 0 auto;
+        background-image: url(../images/gofee-btn.png);
+        background-size: 100%;
+        margin-top: 40px;
+        &:active{
+            opacity: 0.8;
+        }
+    }
+    .gofee-ul-list{
+        display: flex;
+        margin: 40px 16px 0;
+        .gofee-item{
+            flex: 1;
+            .item-img{
+                width: 100px;
+                height: 100px;
+                border-radius: 50%;
+                overflow: hidden;
+                margin: 0 auto;
+                img{
+                    width: 100%;
+                }
+            }
+            .item-name{
+                font-size:28px;
+                font-weight:normal;
+                color:rgba(207,114,47,1);
+                line-height:48px;
+                text-align: center;
+            }
+        }
+    }
+    .gofee-time{
+        margin-left: 47px;
+        margin-top: 50px;
+        height: 58px;
+        background-image: url('../images/gofee-time.png');
+        background-repeat: no-repeat;
+        background-size: 361px 58px; 
+        font-size: 28px;
+        line-height: 28px;
+        color: #dd6c38;
+        .start-time{
+            margin-left: 120px;
+        }
+        .end-time{
+            @extend .start-time;
+            margin-top: 8px
+        }
+    }
+}
+
+.right_fixed{
+    position: fixed;
+    width: 100px;
+    height: 100px;
+    right: 32px;
+    bottom: 200px;
+    background-image: url('../images/fiexdimg.png');
+    background-size: 100%;
+    display: block;
+    z-index: 10;
+    &:active{
+        opacity: 0.8;
+    }
+}

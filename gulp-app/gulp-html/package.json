@@ -16,6 +16,7 @@
     "gulp-inject": "^5.0.2",
     "gulp-jade": "^1.1.0",
     "gulp-load-plugins": "^1.5.0",
+    "gulp-px2rem-plugin": "^0.4.0",
     "gulp-sass": "^4.0.2",
     "gulp-util": "^3.0.8"
   },

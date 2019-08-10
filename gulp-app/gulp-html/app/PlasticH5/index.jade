@@ -1,0 +1,182 @@
+doctype html
+html
+  head
+    meta(http-equiv='Content-Type',content='text/html; charset=utf-8')
+    meta(name='viewport',content='initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no,target-densitydpi = medium-dpi')
+    meta(name='format-detection',content='telephone=no')
+    meta(name='apple-touch-fullscreen',content='YES')
+    meta(name='apple-mobile-web-app-capable',content='yes')
+    meta(name='apple-mobile-web-app-status-bar-style',content='black')
+    script(src="//img0.zz91.com/lib/jquery/jquery-1.8.0.min.js")
+    link(rel="shortcut icon",href="//img0.zz91.com/front/favicon.ico")
+    link(rel="stylesheet",type="text/css",href="//m.zz91.com/zt/commentryH5/css/base-min.css")
+    link(rel="stylesheet",type="text/css",href="//img0.zz91.com/lib/swiper/swiper.min.css")
+    link(rel="stylesheet",type="text/css",href="//img0.zz91.com/lib/swiper/animate.min.css")
+    script(src="//img0.zz91.com/lib/swiper/swiper.min.js")
+    script(src="//img0.zz91.com/lib/swiper/swiper.animate.min.js")
+    script(src="//static.m.zz91.com/layer/layer.js")
+    link(rel="stylesheet",type="text/css",href="#{webtop}/css/index.css")
+    script(src="#{webtop}/js/viewport.js")
+    title 91再生·再生影响力2018年度榜单入围邀请函
+  body
+    img(src="#{webtop}/images/fxlogo1.png",style="display:none")
+    .music-box.music-play.rotate
+      audio(id="music-audio",class="audio",preload="",autoplay="autoplay",loop="",style="display: none;")
+        source(src="#{webtop}/images/Masbfca2.mp3")
+      .music
+    .j_imgload
+    .swiper-container.mian-page
+      .swiper-wrapper
+        include ./component-page1.jade
+        include ./component-page2.jade
+        include ./component-page3.jade
+        include ./component-page4.jade
+        include ./component-page5.jade
+        include ./component-page6.jade
+    div(style="display:none")
+        script.
+            var _hmt = _hmt || [];
+            (function() {
+                var hm = document.createElement("script");
+                hm.src = "//hm.baidu.com/hm.js?c120670c814d08922e7048797e6472c1";
+                var s = document.getElementsByTagName("script")[0];
+                s.parentNode.insertBefore(hm, s);
+            })();
+        <!--baidu analysis-->
+        script.
+            var _hmt = _hmt || [];
+            
+            (function() {
+                var hm = document.createElement("script");
+                hm.src = "//hm.baidu.com/hm.js?f41f07cad5c54cf66717306958dd62ed";
+                var s = document.getElementsByTagName("script")[0];
+                s.parentNode.insertBefore(hm, s);
+            })();
+  script.
+
+    $(".j_share").on("click",function(){   //分享
+      layer.open({
+        type: 1,
+        title: false,
+        skin:'share_pop',
+        offset: ['25px','5rem'],
+        closeBtn: 0,
+        zIndex: 100,
+        shade: [0.8, '#000'],
+        shadeClose: true,
+        content: $(".share_img")
+      });
+    })
+    $(".close_share").on("click",function(){
+      layer.closeAll()
+    })
+
+
+    if($(".music-box").hasClass('rotate')){  //音乐
+        document.getElementById('music-audio').pause();
+    }
+    
+    $(".music-box").on("click",function(){
+        if($(this).hasClass('rotate')){
+             document.getElementById('music-audio').pause();
+        }else{
+            document.getElementById('music-audio').play();
+        }
+        $(this).toggleClass("rotate");
+    })
+    document.addEventListener('DOMContentLoaded', function() {
+        function audioAutoPlay() {
+            var audio = document.getElementById('music-audio');
+            audio.play();
+            document.addEventListener("WeixinJSBridgeReady", function() {
+                audio.play();
+            }, false);
+        }
+        audioAutoPlay();
+    });
+
+    $(function() {
+      var img = $("img");
+      var num = 0; //定义初始值从0%
+      img.each(function(i) {
+          var oImg = new Image();
+            oImg.onload = function() {
+                oImg.onload = null;
+                num++;
+                $(".j_imgload").text(parseInt(num / $("img").length * 100) + "%"); //控制0%--100%的变化
+                if (num >= $("img").length) {
+                  $(".j_open").show();
+                  swiperstrat()
+                  $(".j_imgload").text('100%').hide();
+                }
+            }
+            oImg.src = img[i].src;
+        });
+    });
+    
+
+    function swiperstrat(){
+      
+      var mySwiper = new Swiper ('.mian-page', 
+        {   
+          initialSlide:0,
+          noSwiping : true,
+          direction : 'vertical',
+          pagination: '.swiper-pagination',
+            //virtualTranslate : true,
+          hashNavigation: true,
+          mousewheelControl : true,
+          //- onInit: function(swiper){
+          //- swiperAnimateCache(swiper);
+          //- swiperAnimate(swiper);
+          //- },
+        watchSlidesProgress: true,
+        on:{
+          init: function(){
+            swiperAnimateCache(this);
+            swiperAnimate(this);
+          },
+          slideChangeTransitionStart: function(){
+            swiperAnimate(this);
+          },
+          transitionEnd: function(){
+            swiperAnimate(this);
+          },
+          progress: function(){
+            var swiper = this;
+            
+            for (var i = 0; i < swiper.slides.length; i++){
+              var slide = swiper.slides[i];
+              var progress = slide.progress;
+              var translate = progress*swiper.height/4;  
+              scale = 1 - Math.min(Math.abs(progress * 0.5), 1);
+              var opacity = 1 - Math.min(Math.abs(progress/2),0.5);
+              slide.style.opacity = opacity;
+              es = slide.style;
+              es.webkitTransform = es.MsTransform = es.msTransform = es.MozTransform = es.OTransform = es.transform = 'translate3d(0,'+translate+'px,-'+translate+'px) scaleY(' + scale + ')';
+            }
+          },
+          setTransition: function(speed) {
+            var swiper = this;
+            for (var i = 0; i < swiper.slides.length; i++){
+              es = swiper.slides[i].style;
+              es.webkitTransitionDuration = es.MsTransitionDuration = es.msTransitionDuration = es.MozTransitionDuration = es.OTransitionDuration = es.transitionDuration = speed + 'ms';
+            }
+          }
+        }  
+      })
+
+      $(".j_open").click("click",function(){
+          mySwiper.slideNext();
+      })
+    }
+
+  script(src="//res.wx.qq.com/open/js/jweixin-1.0.0.js")
+  script.
+    (function(d, t) {
+        var r = d.createElement(t),
+            s = d.getElementsByTagName(t)[0];
+        r.async = 1;
+        r.src = '//m.zz91.com/wechat/weixinshare.js?wurl=' + location.href + '&desc=4月25日，宁波国际会展中心，91再生第四届再生塑料峰会诚挚期待您的到来！';
+            s.parentNode.insertBefore(r, s);
+        })(document, "script");

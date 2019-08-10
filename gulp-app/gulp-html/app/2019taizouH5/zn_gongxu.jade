@@ -1,0 +1,138 @@
+extends component-box
+
+block css
+  link(rel="stylesheet",type="text/css", href="#{webtop}css/index.css")
+  link(rel="stylesheet",type="text/css", href="//at.alicdn.com/t/font_706810_4im35j13prp.css")
+  
+block content
+  .page_zs
+    header.page-header
+      .header-main.zz-flexbox
+        a.header-left.container(href="javascript:void(0)" onclick="javascript :history.back(-1)")
+          .block_icon
+        .header-content.zz-flexbox-item.container  供需展厅
+        .header-right.container
+          a.bm_btn(href="baoming.html") 报名
+    block zs_content
+        .view
+            .gx_content
+                .status_tab
+                    .status_item
+                        .status_btn.activity 全部
+                    .status_item
+                        .status_btn 供应
+                    .status_item
+                        .status_btn 求购
+                .gxinfo-list
+                script(type="text/html",id="dblist")
+                    .need_arr
+                        .issue_time <% d.gmt_created %>
+                        .need_item
+                            .need_tr
+                                .need_td.need_name <% d.company %>
+                            .need_tr
+                                .need_td.need_name 联系人
+                                .need_td.need_detaile <% d.contact %>
+                            .need_tr
+                                .need_td.need_name 手机号
+                                .need_td.need_detaile.phone <% d.mobile %> 
+                            .need_tr
+                                .need_td.need_name 地址
+                                .need_td.need_detaile <% d.address %>
+                            .need_tr
+                                .need_td.need_name 供求详情
+                                .need_td.need_detaile 
+                                    .mrake <% d.buy_sell_info %>
+            .gtmore 点击查看更多
+
+                    
+
+    - var navindex = 2
+    include component-navbt
+
+block script
+    script(src="//img0.zz91.com/subject/metal2017/js/laytpl.js")
+    script.   
+        laytpl.config({
+            open: '<%',
+            close: '%>'
+        });
+        var page = 1;
+        var type = -1;
+        var canAjax = true;
+        var ajaxInfo = function() {
+            if(!canAjax) {
+                layer.msg('没有更多加载！');
+                return false;
+            }
+            $.ajax({
+                type: "post",
+                url: "//m.zz91.com/zt/2017/zhzhow/fuwu_api.html",
+                data: {
+                    page: page,
+                    info_type: type,
+                    name: "第19届中国塑料交易会暨91再生·第10届再生塑料展览会"
+                },
+                dataType: "json",
+                success: function(data) {
+                    if(data.length == 0) {
+                        if(page == 1){
+                            $(".gxinfo-list").html('');
+                        }
+                        canAjax = false;
+                        layer.msg('没有更多加载！');
+                        return false;
+                    }
+                    
+                    var infoHtml = ""
+                    $.each(data, function(i, item) {
+                        var getTpl = $("#dblist").html();
+                        laytpl(getTpl).render(item, function(html) {
+                            infoHtml = infoHtml + html;
+                        })
+                        $.ajax({
+                            type: "post",
+                            url: "//m.zz91.com/zt/getviptype.html",
+                            dataType: "json",
+                            success: function(data) {
+                                if(data.viewFlag != 1){
+                                    //- $(".phone").remove();
+                                    $(".phone").html("仅限91再生高会查看");
+                                    if(data.viewFlag == undefined){
+                                        $(".phone").html("仅限91再生高会查看，立即登录").css({"color":"blue","text-decoration":"underline"});
+                                        $(".phone").on("click", function() {
+                                            window.location='http://m.zz91.com/login/?done=/zt/2019taizhouH5/zn_gongxu.html'
+                                        })
+                                    }
+                                }
+                            }
+                        })
+                    });
+                    if(page == 1) {
+                        $(".gxinfo-list").html(infoHtml);
+                    } else {
+                        $(".gxinfo-list").append(infoHtml);
+                    }
+                },
+                error: function(data) {
+                    console.log(data)
+                }
+            })
+        }
+        ajaxInfo();
+        
+        $(".gtmore").on("click", function() {
+            page += 1;
+            ajaxInfo();
+        })
+        
+        $(".status_btn").on("click", function() {
+            $("body,html").animate({scrollTop:0},500)
+            canAjax = true;
+            page = 1;
+            $(".activity").removeClass("activity");
+            $(this).addClass("activity");
+            type = $(".activity").parent().index() - 1;
+            ajaxInfo();
+        })
+    

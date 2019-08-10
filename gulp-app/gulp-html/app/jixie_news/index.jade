@@ -1,0 +1,136 @@
+
+extends component-header
+
+block title
+  title 机械设备资讯
+
+block header_name
+  机械设备资讯
+
+block content
+  .index-nav-box
+    .nav-main
+      a.search-hf(href="search.html")
+        i.iconfont.icon-search
+        请输入您要搜索的内容
+      .nav-list
+        a.nav-li(href="info-list.html")
+          i.iconfont.icon-circlefill.icon-nav1
+          br
+          span
+            废塑料设备
+        a.nav-li(href="info-list.html")
+          i.iconfont.icon-jinshu.icon-nav2
+          br
+          span
+            废金属设备
+        a.nav-li(href="info-list.html")
+          i.iconfont.icon-xianyuan.icon-nav3
+          br
+          span
+            橡胶设备
+        a.nav-li(href="info-list.html")
+          i.iconfont.icon-manage_fill.icon-nav4
+          br
+          span
+            综合设备
+          //第二块
+  .index-jixie-type
+    .type-main.clearfloat
+      - var language = [{name:'注塑机',imgsrc:'images/typeimg1.png'}, {name:'塑料造粒机',imgsrc:'images/typeimg2.png'},{name:'铜米机',imgsrc:'images/typeimg3.png'},{name:'废纸打包机',imgsrc:'images/typeimg4.png'}]
+      each item in language
+        a.type-li.weui-flex
+          div.weui-flex__item.vdmiddle
+            .type-main-wd
+              div.title=item.name
+              div.buytp 资讯
+          .jx-img-box
+            img(src="#{item.imgsrc}")
+          //链表
+  .index-jx-news
+    .news-nav.weui-flex.flex_md(top="50")
+      .nav-list.weui-flex__item
+        .swiper-container.nav-swiper
+          .swiper-wrapper
+              .swiper-slide.active_nav 推荐
+              - var navlist = ['造粒机','注塑机','吹膜机','铜米机','密炼机','切粒机']
+              each item in navlist
+                .swiper-slide=item
+      .nav-more.vdmiddle
+        a.more_hf.right_(href="type-list.html") 更多 
+    .news-list
+      .news-li.weui-flex
+        .news-imgbox
+          a(href="pt-view.html")
+            img(src="images/cpimg.png")
+        .news-info.weui-flex__item
+          .wf-md
+             a(href="pt-view.html")
+                .title 说说选购注塑机你
+                .defalute 我国被联合国认定为世界工业体。
+            .othinfo.clearfloat
+              .cp-jx.fl 
+                a(href="search-info-false.html") 注塑机
+              .into-time.fr 2018-11-07
+      
+      .news-li.news-li2.weui-flex
+        .news-info.weui-flex__item
+          .wf-md
+             a(href="pt-view.html")
+                .title 说说选购注塑机你
+                .defalute 我国被联合国认定为世界工业体。
+            .othinfo.clearfloat
+              .cp-jx.fl 
+                a(href="search-info-true.html") 注塑机
+              .into-time.fr 2018-11-07
+      - var navlist = [1,1,1,1]
+      each item in navlist
+        .news-li.weui-flex
+          .news-imgbox
+            a(href="pt-view.html")
+              img(src="images/cpimg.png")
+          .news-info.weui-flex__item
+            .wf-md
+              a(href="pt-view.html")
+                .title 说说选购注塑机你
+                .defalute 我国被联合国认定为世界工业体。
+            .othinfo.clearfloat
+              .cp-jx.fl 
+                a(href="search-info-false.html") 注塑机
+              .into-time.fr 2018-11-07
+      
+        .news-li.news-li2.weui-flex
+          .news-info.weui-flex__item
+            .wf-md
+              a(href="pt-view.html")
+                .title 说说选购注塑机你
+                .defalute 我国被联合国认定为世界工业体。
+            .othinfo.clearfloat
+              .cp-jx.fl 
+                a(href="search-info-true.html") 注塑机
+              .into-time.fr 2018-11-07
+  .getmoreinfo
+    加载中  
+    i.iconfont.icon-jiazai
+
+  a.gotop(href="javascript:void(0)")
+    i.iconfont.icon-huidaodingbu
+block script
+  script(type='text/javascript').
+    var swiper = new Swiper('.swiper-container', { 
+    	slidesPerView: 4.5,
+    	spaceBetween: 0,
+    	freeMode: true,
+    	pagination: {
+    		clickable: true,
+    	},
+    });
+
+    $('.nav-swiper .swiper-slide').click(function(){
+      var index = $(this).index();
+      $(".active_nav").removeClass("active_nav");
+      $(this).addClass("active_nav");
+      swiper.slideTo(index, 200, false);//切换到第一个slide，速度为1秒
+    })
+
+

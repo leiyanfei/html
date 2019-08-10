@@ -1,0 +1,37 @@
+extends component-box
+
+block page_content
+  .band
+    img(src="#{webtop}images/band3.png")
+  .fee_suggest
+    .fee_number
+        img.imgbox(src="#{webtop}images/fee_number1.png")
+    .fee_price
+      img.imgbox(src="#{webtop}images/fee_price_info2.png")
+    .fee_last_time
+      .last_time
+        .day 15
+        .hour 23
+        .minute 29
+        .second 50
+    .fee_droit1
+      img.imgbox(src="#{webtop}images/droit2.png")
+
+           
+
+  include component-ruleflow
+
+  .foot_buy
+    a.old_price
+      .old_price_main
+        div
+          <span class="util">¥</span><span class="price">2800</span>
+          <br>
+          <span class="stutas">单人价</span>         
+    a.fee_price
+      .fee_price_main
+        div.
+          <span class="util">¥</span><span class="price">1800</span>
+          <br><span class="stutas">拼团价</span>
+  .foot_buy_height
+    

@@ -1,0 +1,993 @@
+@function size($num) {
+    @return $num/75+rem;
+};
+$defalutColor:#c56c51;
+
+body{
+    font-size: size(28);
+    line-height: 1;
+    max-width: 540px;
+    margin: 0 auto;
+    background: url(../images/background-img.png);
+    background-size: size(24) size(20);
+}
+.pagebox{
+    &::after{
+        height: 30px;
+        width: 100%;
+        content: '';
+        display: block
+    }
+}
+.zz-flexbox {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex; 
+}
+
+    
+.zz-flexbox-item {
+    -ms-flex: 1;
+    -webkit-box-flex: 1;
+    flex: 1; }
+
+    .ellipsis-1 {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    }
+    .ellipsis-2 {
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    white-space: normal !important;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    }
+
+.container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box; }
+.vdmiddle {
+    display: flex;
+    display: -webkit-box;
+    display: -moz-box; 
+    -webkit-box-align:center;
+    -moz-box-align:center; 
+}
+.vdbottom {
+    display: flex;
+    display: -webkit-box;
+    display: -moz-box; 
+    -webkit-box-align:end;
+    -moz-box-align:end; 
+}
+
+//悬浮导航
+.left_nav{
+    position: fixed;
+    right: size(5);
+    bottom: size(140);
+    z-index: 10;
+    .left_nab_li{
+      display: block;
+      width: size(141);
+      height: size(48);
+      background: url(../images/fixed_nav.png);
+      background-size: 100%;
+      margin-bottom: size(12);
+      text-align: center;
+      color: #fff;
+      font-size: 22px;
+      line-height: 48px;
+      &:active{
+        opacity: 0.8;
+      }
+      
+    }
+  }
+
+// 底部nav
+.bt_nav{
+    height: size(93);
+
+    .bt_nav_main{
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: size(93);
+      z-index: 100;
+      background: #fff;
+      .nav_li{
+        @extend .container;
+        text-align: center;
+        color: #9d9d9d;
+        font-size: size(24);
+        text-decoration: none;
+        .nav_icon1{
+          display: block;
+          margin: 0 auto;
+          width: size(34);
+          height: size(44);
+
+          background-image: url(../images/shouye-2.png);
+          background-position: center center;
+          background-repeat: no-repeat;
+          background-size:size(32) size(28);
+        }
+        .nav_icon2{
+          @extend .nav_icon1;
+          background-image: url(../images/huabanfuben.png);
+          background-size:size(32) size(32);
+        }
+        .nav_icon3{
+          @extend .nav_icon1;
+          background-image: url(../images/zhinanzhen.png);
+          background-size:size(31) size(32);
+        }
+        .nav_icon4{
+          @extend .nav_icon1;
+          background-image: url(../images/navbt4.png);
+          background-size:size(28) size(31);
+        }
+      }
+      .thisnav{
+        @extend .nav_li;
+        color: #e2796c;
+        .nav_icon1{
+          background-image: url(../images/shouye.png);
+        }
+        .nav_icon2{
+          background-image: url(../images/huabanfuben-2.png);
+        }
+        .nav_icon3{
+          background-image: url(../images/zhinanzhen-2.png);
+        }
+        .nav_icon4{
+          background-image: url(../images/navbt_.png);
+        }
+      }
+    }
+  }
+
+// 首页
+.index-header{
+    height: 907px;
+    background-image: url(../images/index-header.jpg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    position: relative;
+    .end_time{
+        position: absolute;
+        left: 68px;
+        top: 550px;
+        background-color: rgba($color: #fff, $alpha: 0.8);
+        padding:20px 50px;
+        display: flex;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgb(216, 211, 211);
+        align-items: center;
+        .title{
+            font-size: 38px;
+            line-height: 42px;
+        }
+        .content{
+            margin-left: 25px;
+            font-size: 166px;
+            color: #1c316d;
+        }
+        .util{
+            font-size: 40px;
+            align-self:flex-end;
+            margin-bottom: 18px;
+        }
+    }
+    
+}
+.index_modle{
+    margin: 0 30px;
+    .detail-title{
+        padding: 15px 0;
+        margin-top: 30px;
+        .title-icon{
+            display: inline-block;
+            width: 43px;
+            height: 43px;
+            background: url(../images/title-icon2.png) no-repeat;
+            background-size: 100% 100%;
+            vertical-align: middle;
+        }
+        .title-img{
+            height: 30px;
+            vertical-align: middle;
+            margin-left: 10px;
+        }
+    }
+    .index_modle_main{
+        background-color: #fff;
+        border-top: 14px solid #da998e;
+        // 历史背景
+        .zh-history{
+            font-size: 24px;
+            line-height: 50px;
+            padding: 45px 35px;
+        }
+        // 组织架构
+        .group{
+            margin: 0 35px;
+            padding-bottom:45px;
+            .group-title{
+                height: 97px;
+                // width: 97px;
+                background-image: url(../images/title-icon.png);
+                background-repeat: no-repeat;
+                background-size:97px 97px;
+                background-position: center center;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 30px;
+            }
+            .group-arr{
+                display: flex;
+                flex-wrap:wrap;
+                span{
+                    width: 303px;
+                    font-size: 20px;
+                    text-align: center;
+                    height: 28px;
+                    border:1px solid #555555;
+                    border-radius: 14px;
+                    line-height: 28px;
+                    margin-bottom: 15px;
+                    &:nth-child(even){
+                        width:282px;
+                        margin-left:26px;
+                    }
+                    &.max-item{
+                        width: 100%;
+                    }
+                }
+            }
+        }
+        
+        // 已参会名单
+        .come-firm{
+            height: 700px;
+            padding: 55px 0;
+            .swiper-container{
+                height: 100%;
+                .swiper-slide{
+                    a{
+                        color:#e54e3b;
+                    }
+                }
+            }
+            .firm-arr{
+                text-align: center;
+                color:#e54e3b;
+                font-size: 26px;
+                line-height: 54px;
+            }
+        }
+        //展会招商
+        .zs_box{
+            overflow: hidden;
+            padding: 66px 0;
+            .zs_header{
+                
+                display: flex;
+                justify-content: space-between;
+                .zs_title{
+                    // width: 229px;
+                    height: 70px;
+                    padding: 0 37px;
+                    font-size: 38px;
+                    color: #fff;
+                    background: $defalutColor;
+                    line-height: 70px;
+                    border-top-right-radius: 35px;
+                    border-bottom-right-radius: 35px;
+                    &.zs_title2{
+                        height: 120px;
+                        line-height: 50px;
+                        padding: 10px 37px;
+                        border-top-right-radius: 50px;
+                        border-bottom-right-radius: 50px;
+                    }
+                }
+                .zs_price{
+                    font-size: 81px;
+                    color: $defalutColor;
+                    margin-right: 40px;
+                    &.zs_price2{
+                        font-size: 70px;
+                        display: flex;
+                        align-items: center;
+                        .price_num{
+                            font-size: 40px;
+                        }
+                    }
+                    .price_num{
+                        font-size: 47px;
+                        color: #333;
+                        vertical-align: middle;
+                    }
+                }
+            }
+            .zs_main{
+                margin: 40px;
+                .main_title{
+                    font-size: 28px;
+                    color:$defalutColor 
+                }
+                .zs_arr{
+                    margin-top: 20px;
+                    li{
+                        font-size: 26px;
+                        line-height: 44px;
+                        padding-left: 57px;
+                        position: relative;
+                        &::after{
+                            content:'';
+                            height: 6px;
+                            width: 6px;
+                            background: #333;
+                            display: block;
+                            position: absolute;
+                            left: 10px;
+                            top: 17px;
+                            border-radius: 50%;
+                        }
+                    }
+                }
+            }
+            .zs_pic{
+                text-align: center;
+                img{
+                    width: 612px;
+                }
+            }
+        }
+        
+        //往届回顾
+        .histy_show{
+            padding: size(80) 0 size(100);
+            .histy_show_main{ 
+                .zz-fuwu-tpbox{
+                  height: size(285);
+                  width: 100%;
+                }
+              }
+              .zz-tpbox-mian{
+                width: size(562);
+                height: size(285);
+                img{
+                  width: 100%;
+                }
+              }
+    
+        }
+          
+        //现场直击
+        .zhiji{
+            width: 100%;
+        }
+
+        //联系我们
+        .lianxi{
+            display: flex;
+            padding: 60px 0;
+            .lianxi_pic{
+                width: 325px;
+                text-align: center;
+                img{
+                    width: 253px;
+                }
+            }
+            .lianxi_item{
+                font-size: 24px;
+                padding: 20px 0;
+                position: relative;
+                &::after{
+                    position: absolute;
+                    content: '';
+                    width: 7px;
+                    height: 2px;
+                    background: #a7a7a7;
+                    bottom: 0;
+                    left: 0;
+                }
+                &:last-child::after{
+                    content: none
+                }
+                .lx_name{
+                    color: $defalutColor
+                }
+                .lx_detail{
+                    margin-top: 10px
+                }
+            }
+        }
+    }
+}
+
+.swiper-button-next{
+    background-image: url(../images/right.png);
+    width: 71px;
+    height: 72px;
+    background-size: 100%
+}
+.swiper-button-prev{
+    background-image: url(../images/left.png);
+    width: 71px;
+    height: 72px;
+    background-size: 100%
+}
+//模块页面
+
+.page-header{
+    height: size(98);
+    .header-main{
+      height: size(98);
+      position: fixed;
+      background: #fff;
+      width: 100%;
+      left: 0;
+      top: 0;
+      z-index: 10;
+    }
+    .header-left,.header-right{
+      width: size(98);
+      position: relative;
+    }
+    .header-content{
+      font-size: size(34)
+    }
+    .block_icon{
+      height: size(20);
+      width: size(20);
+      border-bottom: 2px solid #333;
+      border-left: 2px solid #333;
+      transform: rotate(45deg)
+    }
+    .bm_btn{
+      height: size(44);
+      width: size(120);
+      display: block;
+      text-align: center;
+      line-height: size(44);
+      background: #e9ad41;
+      color: #fff;
+      border-radius: size(10);
+      right: size(28);
+      position: absolute;
+    }
+  }
+
+  .zs_nav{
+    margin: 0 size(50);
+    padding-top: size(40);
+    .zs_nav_li{
+      margin-bottom: size(30);
+
+      height: size(100);
+
+      background: rgba($color: #fff, $alpha: 1);
+      border-radius: size(20);
+      &:active{
+        background: #e2796c;
+        .zs_nav_name{
+            color: #fff;
+        }
+        .zs_right_go{
+        
+            .right_icon{
+            
+                border-top: 2px solid #fff;
+                border-right: 2px solid #fff;
+            }
+        }
+            
+        .zs_icon_box{
+            .znav1{background-image: url(../images/znav1.png);}
+            .znav2{background-image: url(../images/znav2.png);}
+            .znav3{background-image: url(../images/znav3.png);}
+            .znav4{background-image: url(../images/znav4.png);}
+            .znav5{background-image: url(../images/znav5.png);}
+            .znav6{background-image: url(../images/znav6.png);}
+            .znav7{background-image: url(../images/znav7.png);}
+            .znav8{background-image: url(../images/znav8.png);}
+            .znav9{background-image: url(../images/znav9.png);}
+        }
+      }
+      .zs_icon_box{
+        width: size(113);
+
+        color: #fff;
+        font-size: size(34);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .zs_icon{
+            display: block;
+            background-repeat: no-repeat;
+            background-size: 100%;
+        }
+        .znav1{
+            background-image: url(../images/znav1_.png);
+            width: 32px;
+            height: 32px;
+        }
+        .znav2{
+            background-image: url(../images/znav2_.png);
+            width: 35px;
+            height: 35px;
+        }
+        .znav3{
+            background-image: url(../images/znav3_.png);
+            width: 31px;
+            height: 32px;
+        }
+        .znav4{
+            background-image: url(../images/znav4_.png);
+            width: 27px;
+            height: 32px;
+        }
+        .znav5{
+            background-image: url(../images/znav5_.png);
+            width: 37px;
+            height: 36px;
+        }
+        .znav6{
+            background-image: url(../images/znav6_.png);
+            width: 28px;
+            height: 31px;
+        }
+        .znav7{
+            background-image: url(../images/znav7_.png);
+            width: 30px;
+            height: 31px;
+        }
+        .znav8{
+            background-image: url(../images/znav8_.png);
+            width: 30px;
+            height: 22px;
+        }
+        .znav9{
+            background-image: url(../images/znav9_.png);
+            width: 28px;
+            height: 28px;
+        }
+      }
+      .zs_nav_name{
+        color: #333;
+        font-size: size(38)
+      }
+      .zs_right_go{
+        position: relative;
+        width: size(70);
+        .right_icon{
+          position: absolute;
+          left: 0;
+          top: 50%;
+
+          width: size(18);
+          height: size(18);
+          margin-top: size(-9);
+
+          border-top: 2px solid #333;
+          border-right: 2px solid #333;
+          transform: rotate(45deg)
+          
+        }
+      }
+    }
+  }
+.page_zs{
+    &::after{
+        content: '';
+        height: 50px;
+        width: 100%;
+        display: block
+    }
+}
+.view{
+    background: #fff;
+    margin: 50px 30px 0;
+    border-radius: 15px;
+    .zs_box{
+        overflow: hidden;
+        padding: 66px 0;
+        .zs_header{
+            
+            display: flex;
+            justify-content: space-between;
+            .zs_title{
+                // width: 229px;
+                min-height: 70px;
+                padding: 0 37px;
+                text-align: center;
+                font-size: 34px;
+                color: #fff;
+                background: $defalutColor;
+                line-height: 70px;
+                border-top-right-radius: 35px;
+                border-bottom-right-radius: 35px;
+                &.zs_title2{
+                    width: 350px;
+                    line-height:45px;
+                    height: 100px;
+                    text-align: left;
+                    display: flex;
+                    align-items: center;
+                    padding-left:50px;
+                    border-top-right-radius: 50px;
+                    border-bottom-right-radius: 50px;
+                }
+            }
+            .zs_price{
+                font-size: 60px;
+                // color: $defalutColor;
+                margin-right: 40px;
+                .price_num{
+                    font-size: 28px;
+                    color: #333;
+                    vertical-align: middle;
+                }
+                .cnt-num{
+                    font-size: 28px;
+                    color: #333;
+                    vertical-align: middle;
+                }
+            }
+        }
+        .zs_main{
+            margin: 40px;
+            .main_title{
+                font-size: 28px;
+                color:$defalutColor 
+            }
+            .zs_arr{
+                margin-top: 20px;
+                li{
+                    font-size: 26px;
+                    line-height: 44px;
+                    padding-left: 57px;
+                    position: relative;
+                    &::after{
+                        content:'';
+                        height: 6px;
+                        width: 6px;
+                        background: #333;
+                        display: block;
+                        position: absolute;
+                        left: 10px;
+                        top: 17px;
+                        border-radius: 50%;
+                    }
+                }
+            }
+        }
+        .zs_pic{
+            text-align: center;
+            img{
+                width: 612px;
+            }
+        }
+    }
+
+    .zn_content{
+        .modle_title{
+            height: 186px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 38px;
+        }
+        //分布图
+        .fbpic_box{
+            margin: 0 30px;
+            img{
+                width: 100%;
+            }
+        }
+        //展商列表
+        .zn_table_box{
+            margin: 0 30px;
+            padding-bottom: 50px;
+            .zn_table{
+                display: table;
+                border-collapse: collapse;
+                width: 100%;
+            }
+            .zs_tr{
+                display: table-row
+            }
+            .zs_td{
+                display: table-cell;
+                border: 1px solid #e0e0e0;
+                padding: 20px 10px;
+                vertical-align: middle;
+                &.th{
+                    height: 80px;
+                    text-align: center;
+                }
+                &.td_namme{
+                    width: 198px;
+                    text-align: center;              
+                }
+                &.td_detail{
+                    line-height: 45px;
+                    word-break:break-all;
+                }
+            }
+        }
+    }
+}
+
+//供需展厅
+.gtmore{
+    text-align: center;
+    padding: 20px 0 40px;
+}
+.gx_content{
+    padding: 75px 0;
+    .status_tab{
+        display: flex;
+        justify-content: space-around;
+        .status_btn{
+            width: 160px;
+            height: 60px;
+            display: block;
+            background-color: #d8d8d8;
+            border-radius: 30px;
+            text-align: center;
+            line-height: 60px;
+            &:active{
+                opacity: 0.8;
+            }
+            &.activity{
+                color: #fff;
+                background-color: #f27267
+            }
+        }
+    }
+    
+    
+    
+    .need_arr{
+        margin: 50px 40px 0;
+        .issue_time{
+            text-align: center;
+            // margin-top: 50px;
+        }   
+        .need_item{
+            border-right:1px solid #d5d5d5;
+            border-bottom:1px solid #d5d5d5;
+            margin-top: 20px;
+            font-size: 22px;
+            .need_tr{
+                display: flex;
+                .need_td{
+                    border-left:1px solid #d5d5d5;
+                    border-top:1px solid #d5d5d5;
+                    padding: 20px 30px 20px 30px;
+                    &.need_name{
+                        width:60px; 
+                        flex: 1;
+                    }
+                    &.need_detaile{
+                        width: 430px;
+                    }
+                    .mrake{
+                        line-height: 40px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+//报名
+
+  .bmform{
+    background: #fff;
+    .bmtitle{
+      text-align: center;
+      padding: size(55) 0 size(85);
+      position: relative;
+      &::after{
+        width: size(32);
+        height: size(12);
+        background-image: url(../images/img5.png);
+        background-size: size(32) size(12);
+        background-position: left bottom;
+        background-repeat: no-repeat;
+        position: absolute;
+        content: '';
+        left: 50%;
+        margin-left: size(-16);
+        bottom: size(50)
+      }
+      .ttimg{
+        width: size(207);
+      }
+    }
+    .bmli{
+        padding: 0 size(70) 0 size(47);
+        .sticon{
+            font-size: size(32);
+            color: #ba1414;
+            line-height: size(100);
+        }
+        .bmnr{
+            width: size(610);
+            line-height: size(100);
+            border-bottom: size(2) solid #b2b2b2;
+            a{
+                font-size: size(24);
+                text-align: right;
+            }
+            .bmname{
+                width: size(133);
+                font-size: size(32);
+                color: #000;
+            }
+            .bmnr_input{
+                font-size: size(30);
+                text-align: right;
+                border: 0;
+            }
+            .bm_checkbox{
+                font-size: size(28);
+                color: #000000;     
+                padding-right: size(50);    
+                .bmnr_check{
+                    width: size(30);
+                    height: size(30);
+                    position: relative;
+                    background: #ffffff;
+                    border: solid size(3) #000;
+                    display: table;
+                    -webkit-appearance: none;
+                    transition: background-color ease 0.1s;
+                    border-radius: 0;
+                    margin-right: size(12);
+                }
+                .gqiu-checkbox{
+                    margin-left: 20px;
+                }
+                .bmnr_check:checked:before,.bmnr_check:checked:after{
+                    position: absolute;
+                    left: size(3);
+                    top: size(3);
+                    width: size(20);
+                    height: size(20);
+                    background: #ba1414;
+                    display: table;
+                    content: "";
+                }
+            }
+            .bm_checkts{
+                img{
+                    height: size(26);
+                    margin-top: size(35);
+                    margin-left: size(20);
+                }
+            }
+            .bm_pricemain{
+                font-size: size(30);
+                .bm_pricenum{
+                    padding-top: size(16);
+                    padding-left: size(30);
+                    input{
+                        display: inline-block;
+                        float: left;
+                        height: size(40);
+                        line-height: size(40);
+                        border-color: #000;
+                        border-width: size(1);
+                        width: size(40);
+                        background: transparent;
+                    }
+                    .text_box{
+                        width: size(50);
+                        text-align: center;
+                        border-left: 0;
+                        border-radius: 0;
+                        border-right: 0;
+                    }
+                    .min{
+                        border-radius: size(5) 0 0 size(5);
+                    }
+                    .add{
+                        border-radius: 0 size(5) size(5) 0;
+                        
+                    }
+                }
+            }
+        }
+    }
+    .bmtextbox{
+        .bmnr{
+            border: 0;
+        }
+        .bmnr_text{
+            width: size(610);
+            font-size: size(30);
+            padding: size(23) 0 0 size(23);
+        }
+    }
+    .bm_pricebox{
+        padding-top: size(15);
+        .bmnr{
+            border: 0;
+            width: 100%;
+            line-height: size(70);
+        }
+        .bmnr_check{
+           
+        }   
+    }
+  }
+  .zfbtn_box{
+    background: #fff;
+    padding: size(75) 0 size(50);
+    margin-bottom: size(96);
+    .zfbtn{
+      font-size: size(36);
+      color: #fff;
+      text-align: center;
+      width: size(228);
+      height: size(228);
+      border-radius: 50%;
+      background: $defalutColor;
+      display: block;
+      line-height: size(228);
+      margin:0 auto ;
+      &:active{
+        opacity: 0.8;
+      }
+    }
+  }
+
+//支付
+.zhifu{
+    background: #fff;
+    font-size: size(30);
+    color: #000000;
+    padding: size(50) size(70) 0;
+    // margin: 0 auto;
+    line-height: size(75);
+    padding-bottom: size(1);
+    .zhifu_tle{
+        font-size: size(32);
+    }
+    .zhifu_con{
+        border-top: size(2) solid #000;        
+        border-bottom: size(2) solid #000;
+        padding: size(15) 0 size(15) size(30);
+        .zhifu_name{
+            width: size(173);
+        }
+    }
+    .zfbtn{
+        margin-top: size(30);
+    }
+  }

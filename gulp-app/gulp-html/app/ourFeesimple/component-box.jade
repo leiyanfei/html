@@ -1,0 +1,17 @@
+extends ../component-header
+
+block css
+  link(rel="stylesheet",type="text/css", href="#{webtop}css/index.css")
+  script(src="http://img0.zz91.com/lib/jquery/jquery.cookie.js")
+
+block title
+  title 91再生·第三届铜铝交易峰会-内部拼团参会活动
+
+block content
+  header
+    a.header-left(href="javascript:void(0)" onclick="javascript :history.back(-1)")
+      img.backimg(src="#{webtop}images/enter.png", alt="") 
+    .center 内部拼团参会活动
+    .header-right
+  .header-height
+  block page_content

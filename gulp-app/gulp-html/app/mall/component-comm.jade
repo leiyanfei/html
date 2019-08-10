@@ -1,0 +1,21 @@
+extends ../component-header
+
+block css
+    link(rel="stylesheet",type="text/css", href="#{webtop}css/index.css")
+
+block title
+  title 积分商城
+
+block content
+    header
+        .header-mian.weui-flex
+            a.header-left.container(href="javascript:void(0)" onclick="javascript :history.back(-1)")
+            .header-center.weui-flex__item.container 
+                block pagetitle
+                    我的积分
+            .header-right
+                block header-right
+                
+        .header-height
+
+    block appcontent

@@ -1,0 +1,306 @@
+extends component-box
+
+block css
+    link(rel="stylesheet",type="text/css",href="//m.zz91.com/zt/17feidzH5/css/swiper.min.css")
+    script(src="//m.zz91.com/zt/17feidzH5/js/swiper.min.js")
+    link(rel="stylesheet",type="text/css", href="#{webtop}css/index.css")
+  
+
+block content
+    .pagebox
+        .index-header
+            .end_time(style="display:none")
+                .title 倒<br>计<br>时
+                .content 00
+                .util 天
+        
+        //- 展会背景
+        .index_modle
+            h2.detail-title
+                i.title-icon
+                img.title-img(src="./images/title1.png", alt="")
+            .index_modle_main
+                .zh-history.
+                    中国塑料交易会历经18年的发展，以塑料原料、制品、机械、机床模具为主的产业链展示格局日渐成熟，专业型、产地型、国际化等优势特征，使得塑交会逐步成长为全国性品牌展会。<br>
+                    本次展会充分展现了台州智造“塑未来”的吸引力，3万平方米的展览面积，1500个展位，500家参展企业，吸引专业观众3.5万人，境外采购商来自30多个国家和地区近千人。<br>
+                    自2010年起，91再生与台州国际会展中心就“再生塑料展厅”展开合作，至今已连续十年，这也是全国为数不多的以展会形式并坚持连续举办的再生塑料专区之一。<br>
+                    今年再生塑料展厅面积1500平方米，可容纳90个标准展位。废塑料再生塑料展厅专场，将进一步帮助废塑料、再生料客户现场匹配供需，进商贸合作，正逐步形成规模。2019年91再生将全新打造1000平方米再生塑料加工机械设备专区，为再生塑料加工设备企业搭建更专业的现场展示平台。
+
+        //- 组织架构
+        .index_modle
+            h2.detail-title
+                i.title-icon
+                img.title-img(src="./images/title2.png", alt="")
+            .index_modle_main
+                .group
+                    .group-tr
+                        h3.group-title 主办单位
+                        .group-arr
+                            span 中国石油化工股份有限公司
+                            span 中国塑料机械工业协会
+                            span 中国石油天然气集团公司
+                            span 台州市人民政府主办
+                            span 浙江省商务厅
+                            span 路桥区人民政府
+                            span 中国中小企业国际合作协会
+                            span 台州市经济和信息化委员会
+                            span 中国塑料加工工业协会
+                            span 台州市商务局
+                    .group-tr
+                        h3.group-title 协办单位
+                        .group-arr
+                            span 全国城市工业品贸易中心联合会
+                            span 中国日用品商城股份有限公司
+                            span 浙江省塑料行业协会
+                            span 台州市国际会展中心有限公司
+                            span 台州市塑料行业协会
+                            span 91再生
+                    .group-tr
+                        h3.group-title 支持单位
+                        .group-arr
+                            span.max-item 中华人民共和国商务部
+        
+        //- 已参会名单
+        .index_modle
+            h2.detail-title
+                i.title-icon
+                img.title-img(src="./images/title3.png", alt="")
+            .index_modle_main
+                .come-firm
+                    .swiper-container.comefirmswiper
+                        ul.firm-arr.swiper-wrapper
+                            
+        script(type="text/html",id="dblist")
+            li.swiper-slide 
+                <a href="<% d.website %>"><% d.company_name %></a>                    
+
+        //- 展会招商
+        .index_modle#lnav1
+            h2.detail-title
+                i.title-icon
+                img.title-img(src="./images/title4.png", alt="")
+            .index_modle_main
+                .swiper-container.swiper_zs_box
+                    .swiper-wrapper
+                        .swiper-slide
+                            .zs_box
+                                .zs_header
+                                    h3.zs_title 标准展位
+                                    .zs_price 6800<span class="price_num">元</span>
+                                .zs_main
+                                    h4.main_title 服务内容
+                                    ul.zs_arr
+                                        li 9平方米标准展位（包括展位背景制作、交流桌椅一套、两份标准工作餐）
+                                        li 本届会刊广告一个
+                                        li 参展名额两个
+                                        li 交流晚宴名额两个
+                                        li 91再生公众号推送一次
+                                .zs_pic
+                                    img(src="./images/zsimg1.png", alt="")   
+                        .swiper-slide
+                            .zs_box
+                                .zs_header
+                                    h3.zs_title 品牌广告
+                                    .zs_price 10000<span class="price_num">元</span>
+                                .zs_main
+                                    h4.main_title 服务内容
+                                    ul.zs_arr
+                                        li 大幅度桁架喷绘广告
+                                        li 2个参会名额
+                                        li LED图片广告轮播
+                                        //- li 会刊整版广告一个
+                                .zs_pic
+                                    img(src="./images/zsimg2_.png", alt="") 
+                        .swiper-slide
+                            .zs_box
+                                .zs_header
+                                    h3.zs_title LED视频轮播
+                                    .zs_price 15000<span class="price_num">元</span>
+                                .zs_main
+                                    h4.main_title 服务内容
+                                    ul.zs_arr
+                                        li 会场门口LED屏幕视频轮播（视频自备）
+                                        li 2个参会名额
+                                        //- li 会刊彩色整版广告一个
+                                        li 91再生公众号推送一次
+                                .zs_pic
+                                    img(src="./images/zsimg3_.png", alt="")  
+                        .swiper-slide
+                            .zs_box
+                                .zs_header
+                                    h3.zs_title 易拉宝
+                                    .zs_price 2000<span class="price_num">元</span>
+                                .zs_main
+                                    h4.main_title 服务内容
+                                    ul.zs_arr
+                                        li 易拉宝尺寸82*180<br>(由91再生设计团队设计）
+                                        li 会议期间易拉宝展示区展出
+                                        li LED图片广告轮播
+                                .zs_pic
+                                    img(src="./images/zsimg4_.png", alt="")  
+                        .swiper-slide
+                            .zs_box
+                                .zs_header
+                                    h3.zs_title.zs_title2  废塑料加工机械<br>设备专区
+                                    .zs_price.zs_price2 500<span class="price_num">元/平方米</span>
+                                .zs_main
+                                    h4.main_title 服务内容
+                                    ul.zs_arr
+                                        li 光地500元/平方米，36平方米起订
+                                        li 可安装机械设备，可正常运行<br>（水电安装费用另计）
+                                        li 二楼再生原料展区观众指引
+                                .zs_pic
+                                    img(src="./images/zsimg5_.png", alt="")  
+                    .swiper-button-next
+                    .swiper-button-prev
+
+        //- 往届回顾
+        .index_modle
+            h2.detail-title
+                i.title-icon
+                img.title-img(src="./images/title5.png", alt="")
+            .index_modle_main
+                .histy_show
+                    .histy_show_main
+                        .swiper-container.zz-fuwu-tpbox
+                            .swiper-wrapper.zz-tpbox-mian
+                                - var imglist = ['1.jpg','2.jpg','3.jpg','4.jpg','5.jpg','6.jpg','7.jpg','8.jpg','9.jpg','10.jpg','11.jpg','12.jpg','13.jpg','14.jpg','16.jpg','17.jpg','18.jpg','19.jpg','20.jpg','21.jpg','22.jpg','23.jpg','24.jpg','25.jpg','26.jpg','27.jpg','28.jpg','29.jpg','30.jpg']
+                                each item in imglist
+                                    .swiper-slide
+                                        img(src="./images/#{item}",alt="")
+
+        //- 现场直击
+        .index_modle(style="display:none")
+            h2.detail-title
+                i.title-icon
+                img.title-img(src="./images/title6.png", alt="")
+            .index_modle_main
+                a(href="#")         
+                    img.zhiji(src="./images/zhiji.png", alt="")
+
+        //- 联系我们
+        .index_modle#lnav3
+            h2.detail-title
+                i.title-icon
+                img.title-img(src="./images/title7.png", alt="")
+            .index_modle_main
+                .lianxi
+                    .lianxi_pic
+                        img(src="./images/erwei.png", alt="")
+                    .lianxi_word
+                        .lianxi_item
+                            .lx_name 联系人
+                            .lx_detail 黄 琴
+                        .lianxi_item
+                            .lx_name 电　话
+                            .lx_detail 
+                                a(href="tel:15158812529") 151 5881 2529
+                        .lianxi_item
+                            .lx_name 微信号
+                            .lx_detail 151 5881 2529
+                        .lianxi_item
+                            .lx_name 邮　箱
+                            .lx_detail huangq@asto-inc.com
+
+        //- 右侧悬浮导航
+        .left_nav
+            //- a.left_nab_li.lnav1(href="#")
+            a.left_nab_li.lnav1 展会招商
+            a.left_nab_li.lnav2(href="baoming.html") 参展申请
+            a.left_nab_li.lnav3 联系我们
+            a.left_nab_li.lnav4 回到顶部
+
+    - var navindex = 0
+    include component-navbt
+
+block script
+    script(src="//img0.zz91.com/subject/metal2017/js/laytpl.js")
+    script.
+        //往届回顾
+        var swiper = new Swiper('.zz-fuwu-tpbox', {
+            pagination: '.swiper-pagination',
+            effect: 'coverflow',
+            grabCursor: true,
+            centeredSlides: true,
+            initialSlide: 1,
+            slidesPerView: 'auto',
+            autoplay: 3000,
+            coverflow: {
+                rotate: 50,
+                stretch: 0,
+                depth: 100,
+                modifier: 1,
+                slideShadows: true
+            }
+        });
+
+        //展会招商
+        var swiper = new Swiper('.swiper_zs_box', {
+            autoHeight: true, //enable auto height
+            nextButton: '.swiper-button-next',
+            prevButton: '.swiper-button-prev'
+        });
+
+        //倒计时
+        let dayTime = new Date().getTime();             //今天的时间戳
+        let startDay = '2019-10-11';                    //开始时间
+        let startTime = new Date(startDay).getTime();   //开始时间的时间戳
+        
+        let differTiem = startTime - dayTime;           //相差的时间戳
+        if(differTiem>0){
+            let differDay = (parseInt(differTiem/(24*3600*1000))+1);
+            if(differDay>=0){
+                differDay = (''+differDay).length<2?'0'+differDay:differDay;
+                $(".content").text(differDay)
+                $(".end_time").show()
+            }
+        }
+
+        //右边导航点击
+        function goScroll(documentItem,goDocument){
+            document.querySelector(documentItem).addEventListener("click",function(){
+                let winScrollTop = document.querySelector(goDocument).offsetTop;
+                $("body,html").animate({ scrollTop: winScrollTop-30});
+            })
+        }
+        goScroll('.lnav1','#lnav1') //展会招商
+        goScroll('.lnav3','#lnav3') //联系我们
+        goScroll('.lnav4','body')   //回到顶部
+
+        
+
+        laytpl.config({
+            open: '<%',
+            close: '%>'
+        });
+
+        $.ajax({
+            type: "post",
+            url: "//m.zz91.com/zt/exhibitors/company/list.html",
+            data: {},
+            dataType: "json",
+            success: function(data) {
+                let list = data.filter((item)=>{
+                    return item.exhibit_time == 2019
+                })
+                var infoHtml = ""
+                $.each(list, function(i, item) {
+                    var getTpl = $("#dblist").html();
+                    laytpl(getTpl).render(item, function(html) {
+                        infoHtml = infoHtml + html;
+                    })
+                })
+                $(".firm-arr").html(infoHtml);
+
+                var swiper = new Swiper('.comefirmswiper', {
+                    slidesPerView: 10,
+                    paginationClickable: true,
+                    direction: 'vertical',
+                    freeMode: false,
+                    loop: true,
+                    autoplay : 2000,
+                    autoplayDisableOnInteraction:false
+                });
+            }
+        })
+        

@@ -1,0 +1,51 @@
+extends component-box
+
+block page_content
+  .band
+    img(src="#{webtop}images/band2.png")
+  .fee_suggest
+    .fee_number
+        img.imgbox(src="#{webtop}images/fee_number2.png")
+    .fee_price
+      img.imgbox(src="#{webtop}images/fee_price_info1.png")
+    .fee_last_time
+      .last_time
+        .day 15
+        .hour 23
+        .minute 29
+        .second 50
+
+    .fee_droit1
+      img.imgbox(src="#{webtop}images/droit1.png")
+
+  .gofee
+    .gofee-title 拼团失败
+    .gofee-give. 
+      已支付金额将在3个工作日内原路退回<br>（如有疑问，请致电15868484082）
+                        
+
+    .gofee-ul-list
+      .gofee-item
+        .item-img
+          img(src="#{webtop}images/2.png", alt="")
+        .item-name.ellipsis-1 王先生
+      .gofee-item
+        .item-img
+          img(src="#{webtop}images/2.png", alt="")
+        .item-name.ellipsis-1 王先生
+      .gofee-item
+        .item-img
+          img(src="#{webtop}images/2.png", alt="")
+        .item-name.ellipsis-1 王先生
+      .gofee-item
+        .item-img
+          img(src="#{webtop}images/2.png", alt="")
+        .item-name.ellipsis-1 王先生
+      .gofee-item
+        .item-img
+          img(src="#{webtop}images/2.png", alt="")
+        .item-name.ellipsis-1 王先生
+    .gofee-time
+      img(src="#{webtop}images/gofee-time.png", alt="")
+
+  include component-ruleflow

@@ -1,0 +1,37 @@
+extends component-box
+
+block css
+  link(rel="stylesheet",type="text/css", href="#{webtop}css/index.css")
+  link(rel="stylesheet",type="text/css", href="//at.alicdn.com/t/font_706810_4im35j13prp.css")
+  
+block content
+  .page_zs
+    header.page-header
+      .header-main.zz-flexbox
+        a.header-left.container(href="javascript:void(0)" onclick="javascript :history.back(-1)")
+          .block_icon
+        .header-content.zz-flexbox-item.container 标准展位
+        .header-right.container
+          a.bm_btn(href="baoming.html") 报名
+    block zs_content
+        .view
+            .zs_box
+                .zs_header
+                    h3.zs_title 标准展位
+                    .zs_price 6800<span class="price_num">元/位</span> <span class="cnt-num">20个名额</span>
+                .zs_main
+                    h4.main_title 服务内容
+                    ul.zs_arr
+                        li 9平方米标准展位（包括展位背景制作、交流桌椅一套、两份标准工作餐）
+                        li 本届会刊广告一个
+                        li 参展名额两个
+                        li 交流晚宴名额两个
+                        li 91再生公众号推送一次
+                .zs_pic
+                    img(src="./images/zsimg1.png", alt="") 
+        
+        
+
+  
+    - var navindex = 1
+    include component-navbt

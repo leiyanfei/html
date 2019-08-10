@@ -1,0 +1,195 @@
+extends ../component-header
+
+block title
+    title 91再生618年中大促，邀请你一起嗨
+
+block css
+    link(rel="stylesheet",type="text/css", href="#{webtop}css/index.css")
+    link(rel="stylesheet", href="//at.alicdn.com/t/font_820820_qfn05hygd7s.css")
+
+
+block content
+    .right_btns
+        .rbtns.rbtns1.j_share
+        .rbtns.rbtns2.j_weixin
+        a.rbtns.rbtns3(href="tel:15700107966")
+    .pagebox
+        .fixed-header
+            a.header-left.go-block(href="javascript:history.back(-1)")
+            a.iconfont.header-left.icon-ziyuan(href="//m.zz91.com/")
+            .header-center
+            .header-title  618年中大促钜惠不停
+            .header-right
+                a.go-play.iconfont.icon-biaodankongjianlianxiren(href="//m.zz91.com/login/?done=/myrc/index.html?")
+            
+        .fixed-band(style="display:none") 距活动结束仅剩：0天
+        .content_box
+            .content_main
+                .frombox
+                    .from-title *活动详情请加微信或电话咨询客服*
+                    .from-item
+                        .item-name *公司名
+                        input.fmipt.firmname(type="text",placeholder='请输入您的公司名')
+                    .from-item
+                        .item-name *联系人
+                        input.fmipt.container(type="text",placeholder='请输入您的姓名')
+                    .from-item
+                        .item-name *手机号码
+                        input.fmipt.phone(type="text",placeholder='请输入您的手机号码')
+                    .from-item
+                        .item-name *主营行业
+                        select.slt.firmjob(name="")
+                            <option value="">请选择主营行业</option>
+                            <option value="废塑料">废塑料</option>
+                            <option value="废塑料">废金属</option>
+                            <option value="废塑料">废纸</option>
+                            <option value="废塑料">废旧轮胎与废橡胶</option>
+
+                            <option value="废纺织品与皮革">废纺织品与皮革</option>
+                            <option value="废电子电器">废电子电器</option>
+                            <option value="废玻璃">废玻璃</option>
+                            <option value="废旧二手设备">废旧二手设备</option>
+                            <option value="其他废品">其他废品</option>
+                            <option value="服务">服务</option>
+                            <option value="塑料原料">塑料原料</option>
+                    
+                    .submit 立即报名  
+                
+                    .sbts *本活动最终解释全归91再生所有
+
+                .share_img.close_share(style="display:none;width:4.4rem")
+                    img(style='width:100%',src="https://m.zz91.com/zt/bainian2019/images/guide.png",alt="sharets")
+            
+
+                .weixin_box(style='display:none;width:6rem')
+                    .wx_title(style='text-align: center;padding-top: 0.2rem;font-size: 0.56rem') 微信咨询
+                    .wx_content
+                        img(style='width:100%',src="https://m.zz91.com/zt/bainian2019/images/erwei.jpg",alt='erwei')
+                    .wx_ts(style='text-align: center;padding-bottom: 0.4rem;font-size: 0.56rem') 长按识别二维码
+  
+  
+block script
+    script(src='https://unpkg.com/axios@0.18.0/dist/axios.min.js')
+    script.
+        $(".submit").on("click",function(){
+            let firmname = $('.firmname').val()
+            let container = $('.container').val()
+            let phone = $('.phone').val()
+            let firmjob = $('.firmjob').val()
+            if(firmname===''){
+                layer.msg('请输入公司名称!');
+                return;
+            }
+            if(container===''){
+                layer.msg('请输入联系人!');
+                return;
+            }
+            if(phone===''){
+                layer.msg('请输入联系电话!');
+                return;
+            }
+            if(firmjob===''){
+                layer.msg('请选择主营行业!');
+                return;
+            }
+            //- axios.post({
+            //-     method: 'post',
+            //-     url: '/zt/baomingsave.html?datatype=json',
+            //-     data: data
+            //- })
+            //- .then( (response)=> {
+            //-     if(response.status===200){
+            //-         $('input').val('')
+            //-         $('select').val('')
+            //-         layer.msg('提交成功!');
+            //-     }
+            //- })
+            //- .catch(function (error) {
+            //-     console.log(error);
+            //- });
+
+
+            
+            $.ajax({
+                type: "post",
+                url: "//m.zz91.com/zt/baomingsave.html?datatype=json",
+                data: {
+                    title: "618年中大促钜惠报名",
+                    contents: "*企业名称：" + firmname +
+                            "<br>*联系人：" + container +
+                            "<br>联系电话：" + phone +
+                            "<br>*主营行业：" + firmjob 
+                },
+                dataType: "json",
+                success: function(data_dh) {
+                    if(data_dh.err == "false") {
+                        $('input').val('')
+                        $('select').val('')
+                        layer.msg('提交成功!');
+                    }
+                },
+                error: function(data) {
+                    console.log(data)
+                }
+                    
+        })
+        })
+
+    script.
+        $(".j_share").on("click",function(){
+            layer.open({
+                type: 1,
+                title: false,
+                skin:'share_pop',
+                offset: ['25px','5rem'],
+                closeBtn: 0,
+                zIndex: 100,
+                shadeClose: true,
+                content: $(".share_img")
+            });
+        })
+        $(".close_share").on("click",function(){
+            layer.closeAll()
+        })
+    
+    
+    
+        $(".j_weixin").on("click",function(){
+            layer.open({
+                type: 1,
+                title: false,
+                closeBtn: 0,
+                zIndex: 100,
+                shadeClose: true,
+                content: $(".weixin_box")
+            });
+        })
+    script.
+        //倒计时
+        const fourthOfJuly = new Date("6 18, 2019 24:00:00").getTime();
+        const today = new Date().getTime();
+        const diff = fourthOfJuly - today;
+        let days = Math.floor(diff / (1000 * 60 * 60 * 24));
+
+        if(1<=days&&days<=5){
+            $('.fixed-band').show().html(`距活动结束仅剩：<span>${days+1}</span>天`)
+        }else if(0<=days && days<1){
+            lastTimeGo()
+        }
+        
+        function lastTimeGo(){
+            setInterval(()=>{
+                const today = new Date().getTime();
+                const diff = fourthOfJuly - today;
+                let days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                let hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                let minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                let seconds = Math.floor((diff % (1000 * 60)) / 1000);
+                $('.fixed-band').show().html(`最后一天：仅剩:<span>${dbnum(hours)}</span>小时<span>${dbnum(minutes)}</span>分钟<span>${dbnum(seconds)}</span>秒`)
+            },1000)
+        }
+        function dbnum(num){
+            let numstring = num.toString()
+            numstring = numstring.length<2?"0"+numstring:numstring;
+            return numstring;
+        }

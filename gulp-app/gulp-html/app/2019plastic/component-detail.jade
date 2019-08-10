@@ -1,0 +1,17 @@
+.zs-detail-ct
+  .dtl-top.weui-flex
+    .weui-flex__item.pgname.vdbottom #{detailinfo.detailname}
+    
+    .price_mey.vdbottom.
+      <span>#{detailinfo.price_mey}</span>#{detailinfo.price_unt}
+    .lastnum.vdbottom. 
+      <span>#{detailinfo.lastpp}个名额</span>
+
+  .dtl-wrd
+    each item,i in detailinfo.flow
+      .wrd-li
+        span.dfmnum=(i+1+'.') 
+        span #{item}
+  .dtl-imglist
+    each item in detailinfo.imglist
+      img(src="#{webtop}images/#{item}")

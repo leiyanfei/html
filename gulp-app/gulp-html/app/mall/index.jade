@@ -1,0 +1,49 @@
+extends component-comm
+
+block header-right
+    .header-right-main.container 
+        span.nav-item-link
+            em
+            em
+            em
+
+block appcontent
+    .mell-band.container
+        .band-main
+            .nmell-code-ame 天大浪先生
+            .mell-show.container
+                //- 有积分
+                .ms-main
+                    .mell-num 5800
+                    .mell-wd 积分
+                //- 无积分
+                .ms-main(style="display:none")
+                    .mell-no 暂无积分
+
+    .mell_nav.weui-flex
+        a.weui-flex__item.container(href="mell_rule.html")
+            span. 
+                <i class="pnav-icon pnav-icon1"></i><span class="pzname">兑换规则</span>
+        a.weui-flex__item.container(href="mell_history.html")
+            span. 
+                <i class="pnav-icon pnav-icon2"></i><span class="pzname">积分记录</span>
+        a.weui-flex__item.container(href="mell_address.html")
+            span. 
+                <i class="pnav-icon pnav-icon3"></i><span class="pzname">收货地址</span>
+
+    .prize_nav
+        .pz-title 积分好礼
+        .prize-nlist.weui-flex
+            a.weui-flex__item.container(href="mell_list.html")
+                div
+                    i.pg-icon.pg-icon1
+                    .pg-nav 生活用品
+            a.weui-flex__item.container
+                div
+                    i.pg-icon.pg-icon2
+                    .pg-nav 办公用品
+            a.weui-flex__item.container
+                div
+                    i.pg-icon.pg-icon3
+                    .pg-nav 汽车用品
+

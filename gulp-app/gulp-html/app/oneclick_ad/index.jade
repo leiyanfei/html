@@ -1,0 +1,186 @@
+extends ../component-header
+
+block css
+  link(rel="stylesheet",type="text/css", href="#{webtop}css/index.css")
+
+block title
+  title 再生通福利已送达，赶快来领！
+
+block content
+
+    .toplast_time(style="display:none;position:fixed;left:0;width:100%;z-index:10;background-color:#fff").
+        距离活动结束仅剩:<span class="end_day">0</span>天</div>
+
+                    
+                    
+    .end_one(style="display:none")
+        .end_one_day.
+            最后<br>一天
+        .end_one_time
+            div.
+                仅剩:<span>00</span>小时<span>00</span>分<span>00</span>秒
+    .fiexdht(style="display:none")
+    
+    .mainbox_top
+        .active_time.
+            3.16-3.30购买再生通两年赠送一个月<br>一键直达广告（价值5000元）
+        .active_service
+            div.active_service_main.
+                想要短时间内<span>提高曝光量</span>？<br>想要大幅度<span>精准引流，高效转化</span>获客？<br>一键直达广告帮您解决！
+    
+    
+                      
+
+    .mainbox_modle
+        .md_title 什么是一键直达？
+        .active_sug 
+            一键直达是基于91再生平台200万优质客户资源，
+            | 在（APP、手机站、小程序）等移动端首页黄金地段持续1个月展示您的产品关键词，
+            | 用户点击关键词即可一键直达您的手机微站，助您快速引流拓客，实现流量高效转化。
+    
+    .mainbox_modle
+        .md_title 一键直达·广告特色
+        .active_item
+            .itme_li 
+                .item_detail
+                    .item_radius. 
+                        锁定移动端<br>黄金位置
+                    .item_tadius_detaile.
+                        日均访问量50w+ <br>持续30天*24小时 <br>不间断展示
+
+            .itme_li 
+                .item_detail
+                    .item_radius. 
+                        多端覆盖<br>曝光率倍增
+                    .item_tadius_detaile.
+                        APP、手机站<br>小程序首页多端展示<br>为品牌赢得更多曝光
+            
+            .itme_li 
+                .item_detail
+                    .item_radius. 
+                        精准客户群<br>定向触达
+                    .item_tadius_detaile.
+                        关键字匹配<br>直击目标客户群<br>快速,精准,高效
+
+            .itme_li 
+                .item_detail
+                    .item_radius. 
+                        关键词<br>独家畅享
+                    .item_tadius_detaile.
+                        1个行业1个关键词,1个<br>关键词只链接1家企业商铺<br>1词1位,先定先得
+        
+    .mainbox_modle
+        .md_title 一键直达·展示位置
+        .active_webseat
+            .webseat_sm
+                ._title.
+                    位于<span>APP、手机站、小程序</span>首页核心区域
+                img.seatimg(src="#{webtop}images/seatimg1.png")
+            .webseat_big
+                ._title
+                    <span>点击关键词即可一键直达您的手机微站</span>
+                img.seatimg(src="#{webtop}images/seatimg2.png")
+
+    .mainbox_modle
+        .md_title 一键直达·广告投放规则
+        .service_list
+            .service_li
+                .service_name 展示排序：
+                .service_detail 一次展示<span>20</span>个关键词，按<span>付款时间</span>先后分批展示。
+            .service_li
+                .service_name 展示期限：
+                .service_detail <span>连续30天*24小时展示</span>
+            .service_li
+                .service_name 展示时间：
+                .service_detail 一键直达广告将统一从2019年4月开始上线展示
+
+    a.baoming(href="http://m.zz91.com/zt/201903subject/index.html#/signup") 立即报名
+    .baoming_ht
+
+    .fiexd_right
+        .fiexd_right_li.j_share
+            img(src="#{webtop}images/right_f1.png")
+        .fiexd_right_li.j_weixin
+            img(src="#{webtop}images/right_f2.png")
+        a.fiexd_right_li(href="tel:15700107966")
+            img(src="#{webtop}images/right_f3.png")
+
+    .share_img.close_share(style="display:none;width:4.4rem")
+        img(src="https://m.zz91.com/zt/bainian2019/images/guide.png",alt="sharets",style="width:100%")
+    
+    .weixin_box(style="display: none;width:6rem")
+        .wx_title(style="text-align:center;padding-top: 0.2rem;font-size: 0.56rem") 微信咨询
+        .wx_content 
+            img(style="width:100%",src="https://m.zz91.com/zt/bainian2019/images/erwei.jpg")
+        .wx_ts(style="text-align:center;padding-bottom: 0.4rem") 长按识别二维码
+ 
+
+block script
+    script.
+        $(".j_share").on("click",function(){
+            layer.open({
+                type: 1,
+                title: false,
+                skin:'share_pop',
+                offset: ['25px','5rem'],
+                closeBtn: 0,
+                zIndex: 100,
+                shadeClose: true,
+                content: $(".share_img")
+            });
+        })
+        $(".close_share").on("click",function(){
+            layer.closeAll()
+        })
+        
+        
+        
+        $(".j_weixin").on("click",function(){
+            layer.open({
+                type: 1,
+                title: false,
+                closeBtn: 0,
+                zIndex: 100,
+                shadeClose: true,
+                content: $(".weixin_box")
+            });
+        })
+
+        const fourthOfJuly = new Date("3 30, 2019 24:00:00").getTime();
+
+        function dbnum(num){
+            let numstring = num.toString()
+            numstring = numstring.length<2?"0"+numstring:numstring;
+            return numstring;
+        }
+        function lastTimeGo(){
+            setInterval(()=>{
+                const today = new Date().getTime();
+                const diff = fourthOfJuly - today;
+                let days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                let hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                let minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                let seconds = Math.floor((diff % (1000 * 60)) / 1000);
+                $(".end_one_time").html('<div>仅剩:<span>'+dbnum(hours)+'</span>小时<span>'+dbnum(minutes)+'</span>分<span>'+dbnum(seconds)+'</span>秒</div>')
+            },1000)
+        }
+
+
+        $(function(){
+            const today = new Date().getTime();
+            const diff = fourthOfJuly - today;
+            let days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            console.log(days)
+            if(1<=days&&days<=3){
+                days +=1
+                $(".toplast_time").show();
+                $(".fiexdht").show();
+                $('.end_day').text(days)
+                    
+            }
+            if(0<=days && days<1){
+                $(".end_one").show();
+                $(".fiexdht").show();
+                lastTimeGo()
+            }
+        })

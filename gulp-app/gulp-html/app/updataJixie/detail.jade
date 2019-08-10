@@ -1,0 +1,45 @@
+extends ../component-header
+
+block title
+  title 机械修改
+
+block css
+  link(rel="stylesheet",type="text/css", href="#{webtop}css/addmd.css")
+  link(rel="stylesheet",type="text/css", href="//at.alicdn.com/t/font_943548_zgxeihzq3xi.css")
+
+block content
+    .tabBar
+        .tabItem.hereItem 帮我找货
+        .tabItem 帮我卖货
+
+    .slideBox
+        .pageSilde 
+            .buybox
+                .buybox_modle
+                    .bbmd_title 方式一:
+                    .bbmd_ts 点击“帮我找货”，平台将免费帮你找货，一键轻松找机
+                    a.bbmd_btn(href="tel:15158812529") 帮我找货
+                .buybox_modle
+                    .bbmd_title 方式二:
+                    .bbmd_ts 长按识别二维码添加好友免费帮你找货
+                    .bbmd_erwei_box
+                        img(src="#{webtop}images/u1132.png")
+        .pageSilde(style="display:none")
+            .buybox
+                .buybox_modle
+                    .bbmd_title 方式一:
+                    .bbmd_ts 点击“帮我卖货”，平台将免费帮你卖货，一键轻松卖货
+                    a.bbmd_btn(href="tel:0571-56611111") 帮我卖货
+                .buybox_modle
+                    .bbmd_title 方式二:
+                    .bbmd_ts 长按识别二维码添加好友免费帮你卖货
+                    .bbmd_erwei_box
+                        img(src="#{webtop}images/u1347.jpg")
+
+block script
+    script.
+        $(".tabBar .tabItem").on("click",function(){
+            let index = $(this).index();
+            $(".tabBar .tabItem").removeClass('hereItem').eq(index).addClass('hereItem')
+            $(".pageSilde").hide().eq(index).show()
+        })

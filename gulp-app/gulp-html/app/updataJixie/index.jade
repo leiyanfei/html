@@ -1,0 +1,165 @@
+extends ../component-header
+
+block title
+  title 机械修改
+
+block css
+  link(rel="stylesheet",type="text/css", href="#{webtop}css/addmd.css")
+  link(rel="stylesheet",type="text/css", href="https://b.zz91.com/jixie/css/video.css")
+  
+  link(rel="stylesheet",type="text/css", href="//at.alicdn.com/t/font_943548_zgxeihzq3xi.css")
+  link(rel="stylesheet",type="text/css",href="//img0.zz91.com/lib/swiper/swiper.min.css")
+  link(rel="stylesheet",type="text/css",href="//img0.zz91.com/lib/swiper/animate.min.css")
+  script(src="//img0.zz91.com/lib/swiper/swiper.min.js")
+  script(src="//img0.zz91.com/lib/swiper/swiper.animate.min.js")
+  script(src="https://b.zz91.com/jixie/js/pingzi_video.js")
+
+block content
+
+
+  .video_ad_box
+    .video_ad_main
+      .swiper-container
+        .swiper-wrapper
+          .swiper-slide.addbox-pic
+            .modle-ts 视频看货
+            .modle-imgbox.m-video(data-src="//img1.zz91.com/91device/mov/2019/05/13/1557698842811.mp4")
+              .modle_icon.iconfont.icon-live_fill
+              img.modle-img(src='//img1.zz91.com/gg/1554048000000/f98404ba-b7a2-4291-8aff-5144c23f4ba1.jpg')
+            .modle-title 大小，颜色，光泽等信息直观展示，大小，颜色，光泽等信息直观展示，
+          .swiper-slide.addbox-pic
+            .modle-ts 视频看货
+            .modle-imgbox.m-video(data-src="//img1.zz91.com/91device/mov/2019/05/13/1557698842811.mp4")
+              .modle_icon.iconfont.icon-live_fill
+              img.modle-img(src='//img1.zz91.com/gg/1554048000000/f98404ba-b7a2-4291-8aff-5144c23f4ba1.jpg')
+            .modle-title 大小，颜色，光泽等信息直观展示，大小，颜色，光泽等信息直观展示，
+          .swiper-slide.addbox-pic
+            .modle-ts 视频看货
+            .modle-imgbox.m-video(data-src="//img1.zz91.com/91device/mov/2019/05/13/1557698842811.mp4")
+              .modle_icon.iconfont.icon-live_fill
+              img.modle-img(src='//img1.zz91.com/gg/1554048000000/f98404ba-b7a2-4291-8aff-5144c23f4ba1.jpg')
+            .modle-title 大小，颜色，光泽等信息直观展示，大小，颜色，光泽等信息直观展示，
+        .swiper-pagination
+
+
+
+  .buy_shebei.bottom_pop(style="display:none")
+    .bt_pop_mian
+      .bt_pop_item
+        .bt_pop_iconbox
+          .iconfont.icon-zhaohuo1.icon_color1
+        .bt_pop_name 找设备
+
+      .bt_pop_item
+        .bt_pop_iconbox
+          .iconfont.icon-OA-chakanshipin.icon_color2
+        .bt_pop_name 视频看货
+
+      .bt_pop_item
+        .bt_pop_iconbox
+          .iconfont.icon-zhaohuo.icon_color3
+        .bt_pop_name 帮我找货
+
+    .bt_pop_close
+      .iconfont.icon-x.close_pop
+      
+  .out_issue.bottom_pop(style="display:none")
+    .bt_pop_mian
+      .bt_pop_item
+        .bt_pop_iconbox
+          .iconfont.icon-fabu1.icon_color3
+        .bt_pop_name 发产品
+
+      .bt_pop_item
+        .bt_pop_iconbox
+          .iconfont.icon-icon-shoot.icon_color2
+        .bt_pop_name 发视频
+
+      .bt_pop_item
+        .bt_pop_iconbox
+          .iconfont.icon-fabu2.icon_color1
+        .bt_pop_name 发采购
+
+    .bt_pop_close
+      .iconfont.icon-x.close_pop
+
+  .outbuy_shebei.bottom_pop(style="display:none")
+    .bt_pop_mian
+      .bt_pop_item
+        .bt_pop_iconbox
+          .iconfont.icon-huigou008.icon_color3
+        .bt_pop_name 采购中心
+
+      .bt_pop_item
+        .bt_pop_iconbox
+          .iconfont.icon-xiaoshou.icon_color1
+        .bt_pop_name 帮我卖货
+    
+    .bt_pop_close
+      .iconfont.icon-x.close_pop
+
+  .bottom_nav
+    .bt_nav_item.here_nve
+      .iconfont_box
+        .iconfont.icon-homepage_fill
+      .nav_item_name  首页
+
+    .bt_nav_item.j_open_buy
+      .iconfont_box
+        .iconfont.icon-supply
+      .nav_item_name  买设备
+
+    .bt_nav_item.j_open_out
+      .iconfont_box
+        .iconfont.iconfont_output.icon-addition_fill
+      .nav_item_name  发布
+
+    .bt_nav_item.j_open_outbuy
+      .iconfont_box
+        .iconfont.icon-transaction_fill
+      .nav_item_name  卖设备
+
+    .bt_nav_item
+      .iconfont_box
+        .iconfont.icon-people
+      .nav_item_name  我的
+  .bottom_nav_height
+  
+block script
+  
+  
+  script.
+    var swiper = new Swiper('.swiper-container', {
+      autoplay:true,
+      pagination: {
+        el: '.swiper-pagination',
+        dynamicBullets: true,
+      },
+    });
+
+    $(".j_open_buy").on("click",()=>{
+      openPop($('.buy_shebei'))
+    })
+    $(".j_open_out").on("click",()=>{
+      openPop($('.out_issue'))
+    })
+    $(".j_open_outbuy").on("click",()=>{
+      openPop($('.outbuy_shebei'))
+    })
+    function openPop(documentItme){   //打开弹窗
+      layer.open({
+        shade: [0.5, '#393D49'],
+        area: ['100%', 'auto'],
+        offset: 'b',
+        closeBtn:0,
+        type: 1,
+        anim: 2,
+        shadeClose:true,
+        title: false, //不显示标题
+        content:documentItme, //捕获的元素，注意：最好该指定的元素要存放在body最外层，否则可能被其它的相对元素所影响
+      });
+    }
+
+    $(".close_pop").on("click",()=>{  //关闭弹窗
+      layer.closeAll()
+    })

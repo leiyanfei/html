@@ -1,0 +1,165 @@
+extends component-header
+
+block title
+  title 注塑机无法开模解决...
+  
+block header_name
+  注塑机无法开模解决...
+
+block hd_sq
+  a.iconfont.icon-search.hd_sq(href="search.html")
+
+mixin title(name)
+  .view-md-title #{name}
+
+block content
+  .pt_bg
+    .page-map.aui-ellipsis-1.bmbd.
+      首页 > 废塑料机械设备 > 挤出机 > <span>单螺旋注塑...</span>
+    .pt-view.bmbd
+      .pt-title 注塑机无法开模解决方案
+      .pt-fb-data 百度资讯 · 1520热度 · 2018-11-28 17:17:20
+      .pt-ddu.
+        导读：在注塑机维修中，经常会碰到无法开模的故障。现以常见的海天三板注塑机为例作一分析探讨。无法开模主要分：有压力无动作、有压力有动作、没压力没动作三种故障现象
+      .pt-detalut.
+        注塑机无法开模解决方案
+        <br/>
+        在注塑机维修中，经常会碰到无法开模的故障。现以常见的海天三板注塑机为例作一分析探讨。无法开模主要分：有压力无动作、有压力有动作、没压力没动作三种故
+        障现象。
+        <br/>
+        1.有压力无动作：首先看看输出板开模阀显示灯亮不亮，亮、说明电脑输出正常，电脑到开模阀的线路有问题，最简单办法就是一个人用小电笔顶开模阀，另一个人 
+        开模动作，如果顶后能顺利开模，就是确认路线问题，重新拉一根线就解决（电路问题）。
+        <br/> 
+        2.有压力有开模动作，但无法开模，说明输出板正常，输出板到阀的电路也正常。这里有四种情况，第一种：锁模油缸活塞的紧固螺丝。
+      .author-fm 【编辑：91再生】
+      .pt-tuijian
+        - var list =['拉丝机','拉丝机','拉丝机','拉丝机']
+        each item in list
+          a=item
+      .pt-zhuanzai 转载请保留出处及本文地址：http://news.zz91.com/hydt/241548.html
+      .pt-shenming.
+        免责声明：凡注明来源91再生的所有作品，均为91再生合法拥有版权或有权使用的作品，欢迎转载并注明出处。非本网站作品均来自互联网，仅代表作者本人的观点，91再生转载目的在于传递信息，并不代表本网赞同其观点或证实其内容的真实性，不承担此类作品侵权行为的直接责任及连带责任。其他媒体、网站或个人从本网转载时，必须保留本网注明的作品来源，并自负版权等法律责任。
+    a(name="top")
+    .view-md.bmbd
+      +title("相关阅读")
+      .read-like
+        - var list =[1,1,1,1,1,1]
+        each item in list
+          .read-li.weui-flex
+            .weui-flex__item
+              a(href="#") 说说选购注塑机你不知道的那些事
+            .issue-time 11-07
+    
+    .view-md.bmbd
+      +title("写下你的评论")
+      .dis-from
+        .from-tr.weui-flex
+          .from-name.vdmiddle.weui-flex__item 昵称:
+          .from-entry
+            input.dis-ipt(placeholder="请输入您的昵称(必填)")
+        .from-tr.weui-flex
+          .from-name.vdmiddle.weui-flex__item 网址:
+          .from-entry
+            input.dis-ipt(placeholder="请输入网址(选填)")
+        .from-tr
+          textarea.from-tea(placeholder="请写下您的评论！")
+      .dis-btm-btn
+        .weui-flex
+          .weui-flex__item.dis-tx.
+            所有评论仅代表网友意见，
+            <br>
+            与本站立场无关。
+          .from-btn 发布评论
+
+    .view-md.bmbd
+      +title("全部评论")
+      .dis-list
+        .dis-essay.bmbd
+          .d_essay_info.weui-flex
+            .d_essay_imgbox
+              img(src="images/tx.png")
+            .weui-flex__item.vdmiddle
+              div
+                .d_essay_name 
+                  span.ds-name 王先生
+                .d_essay_time 2018-05-11 11:02:28
+            .d-essay_btn.j_reply 回复
+          .d_essay_def 知道的那些事知道的那些事知道的那些事
+
+        .dis-essay.bmbd
+          .d_essay_info.weui-flex
+            .d_essay_imgbox
+              img(src="images/tx.png")
+            .weui-flex__item.vdmiddle
+              div
+                .d_essay_name 
+                  span.ds-name 王先生
+                .d_essay_time 2018-05-11 11:02:28
+            .d-essay_btn.j_reply 回复
+          .d_essay_def 知道的那些事知道的那些事知道的那些事
+
+          .dis-people
+            .dis-sj
+            .weui-flex
+              .d_essay_imgbox
+                img(src="images/tx.png")
+              .weui-flex__item.vdmiddle
+                div
+                  .d_essay_name 
+                    span.ds-name 王先生
+                    span.ds-tts.j_reply 回复
+                    span.ds-name 王先生
+                  .d_essay_time 2018-05-11 11:02:28
+              .d-essay_btn.j_reply 回复
+            .d_essay_def 知道的那些事知道的那些事知道的那些事
+    .reply_fixed(style="display:none")
+      .weui-flex
+        .weui-flex__item
+          input.reply_ipt(placeholder="回复XXX...")
+        .vdmiddle
+          .reply_btn 回复
+  
+  .view-bottom-box
+    .view-bottom
+      .weui-flex
+        .weui-flex__item
+          .btmain.container
+            i.iconfont.icon-collection
+              span 15
+            i.iconfont.icon-collection_fill
+              span 15
+        .weui-flex__item
+          a(href="#top")
+            .btmain.container
+              i.iconfont.icon-message
+                span 6
+        .weui-flex__item
+          .btmain.container
+            i.iconfont.icon-praise
+            i.iconfont.icon-praise_fill
+        .weui-flex__item
+          .btmain.container
+            i.iconfont.icon-share
+
+  a.gotop(href="javascript:void(0)")
+    i.iconfont.icon-huidaodingbu
+      
+block script
+  script.
+    $(".j_reply").on('click',function(){
+      layer.open({
+        type: 1,
+        title: false,
+        closeBtn: 0,
+        zIndex: 100,
+        shadeClose: true,
+        area: ['100%', 'auto'],
+        content: $(".reply_fixed"),
+        offset: 'b',
+        anim: 2,
+        scrollbar :false
+      });
+    })
+
+
+

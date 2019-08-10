@@ -1,0 +1,54 @@
+extends component-comm
+
+block pagetitle
+    积分好礼
+
+block appcontent
+    .nav-fixed.weui-flex
+        .nav-fixed-li.weui-flex__item.container.thisnav 生活用品
+        .nav-fixed-li.weui-flex__item.container 办公用品
+        .nav-fixed-li.weui-flex__item.container 汽车用品 
+    .navfixed-het
+
+    .mell-list-box
+        - var melllist=[1,1,1,1,1,1]
+        each item in melllist
+            .mell-li.weui-flex
+                .mell-picbox.container
+                    img(src="#{webtop}images/mellpic.png")
+                .weui-flex__item.vdmiddle
+                    div
+                        .mell-name 毛巾
+                        .mell-price 
+                            <i></i> 
+                            | 10000
+                .mell-btnbox.vdmiddle
+                    span.mbtn 兑换
+    //- 有积分
+    .filex-md.filex-md1(style="display:none")
+        .md-content.container 是否兑换该礼品？
+        .md-btnlist.weui-flex
+            .weui-flex__item.container.btnitme 确定兑换
+            .weui-flex__item.container.btnitme.close 暂时不换
+
+    //- 无积分
+    .filex-md.filex-md2(style="display:none")
+        .md-content.container 您的积分不足
+        .md-btnlist.weui-flex
+            .weui-flex__item.container.btnitme.close 取消
+
+block script
+    script.
+        layer.open({
+            type: 1,
+            title: false,
+            closeBtn: 0,
+            zIndex: 100,
+            shadeClose: true,
+            content: $(".filex-md1") //filex-md2无积分
+        });
+
+        //关闭弹窗
+        $(".close").on("click",function(){
+            layer.closeAll()
+        })

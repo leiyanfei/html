@@ -1,0 +1,14 @@
+section.swiper-slide.page1(data-hash="slide1")
+  .slide-main
+    .imgmd_box(style="display:none")
+      -var imglist = []
+      each item in imglist
+        img(src="#{webtop}images/#{item}")
+    
+    .slide-main_box
+      img.page_bg(src='#{webtop}/images/01_toppic.png')
+      .page-up.ptabsolet
+      
+      img.page1-md1.ani(src="#{webtop}images/01_pic.png",swiper-animate-effect="zoomIn",swiper-animate-duration="0.5s",swiper-animate-delay=".5s")
+      img.page1-md2.ani(src="#{webtop}images/01_time.png",swiper-animate-effect="zoomIn",swiper-animate-duration="0.5s",swiper-animate-delay=".5s")
+      div.page1-md3.ani(swiper-animate-effect="zoomIn",swiper-animate-duration="0.5s",swiper-animate-delay=".5s") 本活动最终解释权归91再生所有

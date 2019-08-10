@@ -1,0 +1,83 @@
+extends component-header
+
+block title
+  title 次级类目首页
+  
+block header_name
+  次级类目首页
+
+block hd_sq
+  a.iconfont.icon-search.hd_sq(href="search.html")
+
+block content
+  .mdnav.bmbd.flex_md(top="50")
+      .all_jx_type.bmbd(style="display:none")
+        - var navlist = ['造粒机','拉丝机','吹膜机','铜米机','吹膜机','铜米机']
+        each item in navlist
+          a(href="#")=item
+      .weui-flex
+        .weui-flex__item
+          .swiper-container.lt_nav-swiper.j_nav
+            .swiper-wrapper
+                .swiper-slide.active_nav 全部
+                each item in navlist
+                  .swiper-slide=item
+        .show_more
+          i.icon-return.iconfont
+  .list-ts
+    .weui-flex
+      .ts-title 注塑机
+      .weui-flex__item 
+        .info-num 1810 篇文章
+  .pt-list-box
+    .weui-flex.info-style.bmbd
+      .weui-flex__item.this_style 最新
+      .weui-flex__item 热门
+    .news-list
+      .news-li.weui-flex
+        .news-imgbox
+          a(href="pt-view.html")
+            img(src="images/cpimg.png")
+        .news-info.weui-flex__item
+          .wf-md
+            a(href="pt-view.html")
+              .title 说说选购注塑机你
+              .defalute 我国被联合国认定为世界工业体。
+          .othinfo.clearfloat
+            .cp-jx.fl 
+              a(href="search-info-false.html") 注塑机
+            .into-time.fr 2018-11-07
+      .style-md
+        .style-list
+          - var navlist = [1,1,1,1,1,1,1,1,1,1,1,1]
+          each item in navlist
+            a.style_a 二手注塑机
+        a.style-more 更多
+      .news-li.news-li2.weui-flex
+        .news-info.weui-flex__item
+          .wf-md
+            a(href="pt-view.html")
+              .title 说说选购注塑机你
+              .defalute 我国被联合国认定为世界工业体。
+          .othinfo.clearfloat
+            .cp-jx.fl 
+              a(href="search-info-false.html") 注塑机
+            .into-time.fr 2018-11-07
+
+block script
+  script.
+    var swiper_nav = new Swiper('.j_nav', { 
+      slidesPerView: 4.5,
+      spaceBetween: 0,
+      freeMode: true,
+      pagination: {
+        clickable: true,
+      },
+    })
+    
+    $('.j_nav .swiper-slide').click(function(){
+      var index = $(this).index();
+      $(".active_nav").removeClass("active_nav");
+      $(this).addClass("active_nav");
+      swiper_nav.slideTo(index, 200, false);//切换到第一个slide，速度为1秒
+    })

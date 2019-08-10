@@ -1,0 +1,35 @@
+extends component-box
+
+block css
+  link(rel="stylesheet",type="text/css", href="#{webtop}css/index.css")
+  link(rel="stylesheet",type="text/css", href="//at.alicdn.com/t/font_706810_4im35j13prp.css")
+  
+block content
+  .page_zs
+    header.page-header
+      .header-main.zz-flexbox
+        a.header-left.container(href="javascript:void(0)" onclick="javascript :history.back(-1)")
+          .block_icon
+        .header-content.zz-flexbox-item.container 废塑料加工机械设备专区
+        .header-right.container
+          a.bm_btn(href="baoming.html") 报名
+    block zs_content
+        .view
+            .zs_box
+                .zs_header
+                    h3.zs_title.zs_title2 废塑料加工机械<br>设备专区
+                    .zs_price 500<span class="price_num">元/平方米</span>
+                .zs_main
+                    h4.main_title 服务内容
+                    ul.zs_arr
+                      li  光地500元/平方米，36平方米起订
+                      li  可安装机械设备，可正常运行<br>（水电安装费用另计）
+                      li  二楼再生原料展区观众指引
+                .zs_pic
+                    img(src="./images/zsimg5_.png", alt="") 
+        
+        
+
+  
+    - var navindex = 1
+    include component-navbt

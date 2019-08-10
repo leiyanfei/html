@@ -1,0 +1,36 @@
+extends component-box
+
+block css
+  link(rel="stylesheet",type="text/css", href="#{webtop}css/index.css")
+  link(rel="stylesheet",type="text/css", href="//at.alicdn.com/t/font_706810_4im35j13prp.css")
+  
+block content
+  .page_zs
+    header.page-header
+      .header-main.zz-flexbox
+        a.header-left.container(href="javascript:void(0)" onclick="javascript :history.back(-1)")
+          .block_icon
+        .header-content.zz-flexbox-item.container LED视频轮播
+        .header-right.container
+          a.bm_btn(href="baoming.html") 报名
+    block zs_content
+        .view
+            .zs_box
+                .zs_header
+                    h3.zs_title LED视频轮播
+                    .zs_price 15000<span class="price_num">元/位</span> <span class="cnt-num">5个名额</span>
+                .zs_main
+                    h4.main_title 视频播放推广
+                    ul.zs_arr
+                        li 会场门口LED屏幕视频轮播（视频自备）
+                        li 2个参会名额
+                        //- li 会刊彩色整版广告一个
+                        li 91再生公众号推送一次
+                .zs_pic
+                    img(src="./images/zsimg3_.png", alt="") 
+        
+        
+
+  
+    - var navindex = 1
+    include component-navbt

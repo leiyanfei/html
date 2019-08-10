@@ -1,0 +1,18 @@
+extends component-comm
+
+block pagetitle
+    积分规则
+
+block appcontent
+    .rule-box
+        .rule-list
+            mixin personInfo(title, detail)
+                .rule-li
+                    .rule-title=title
+                    .rule-detail=detail
+            +personInfo('积分有什么用？', '积分可用于兑换91再生-再生商城里的实物礼品。积分不可转让给任何第三方、不可赠与他人。')
+            +personInfo('如何获得积分？', '购买91再生服务产品，即可获得积分，详情请咨询客服。')
+            +personInfo('积分有效期是多久？', '积分有效期为24个月，到期后未使用的积分将会失效。')
+            +personInfo('实物兑换说明', '兑换前请先确认兑换礼品，避免兑换出错。兑换成功后，客服将在24小时内联系您核对收货地址，实物将在1-3个工作日内邮寄给您。')
+        .banquan-phone.
+            咨询热线：<a href="tel:0571-56611688">0571-56611688</a>

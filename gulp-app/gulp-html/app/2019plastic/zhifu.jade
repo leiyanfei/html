@@ -1,0 +1,74 @@
+extends component-box
+
+block css
+  link(rel="stylesheet",type="text/css",href="//m.zz91.com/zt/1808ztH5/css/comm.css")
+  link(rel="stylesheet",type="text/css", href="#{webtop}css/index.css")
+
+block content
+  .bmbox
+    img.bmband(src="#{webtop}images/bmband.jpg", alt="")
+    .zhifu
+        .zhifu_tle 购买项目：
+        .zhifu_con.viewbox
+            script#dblist(type="text/html")
+                .zhifu_conli.zz-div-box
+                  .zhifu_name <%d.vname%>
+                  .zhifu_num.zz-div-td1 ×<%d.vnum%>
+                  .zhifu_price.zz-div-td1.row-right ¥ <%d.vprice%><%d.vunit%>
+        .zhifu_sum.zz-div-box
+            span 合计
+            span.zz-div-td1.row-right.priceall ¥ 0元
+        .zfbtn_box
+          a.zfbtn() 支付  
+
+     - var navindex = 2
+    include component-navbt  
+        
+block script
+    script(src="//img0.zz91.com/subject/metal2017/js/laytpl.js")
+    script(src="//img0.zz91.com/lib/jquery/jquery.cookie.js")
+    script.   
+        laytpl.config({
+          open: '<%',
+          close: '%>'
+        }); 
+        var contentjson=$.cookie('contentjson');
+        contentjson=eval("(" + contentjson + ")");
+        var priceall=0;
+        layer.ready(function(){
+            layer.msg('报名成功！');
+        });
+
+        if (contentjson){
+            layer.closeAll();
+            var infoHtml = ""
+            //alert(JSON.stringify(contentjson))
+                $.each(contentjson,function(i,item){
+                    var getTpl = $("#dblist").html();
+                    laytpl(getTpl).render(item, function(html){
+                        infoHtml = infoHtml + html;
+                    })
+                    priceall+=parseInt(item.vprice)*item.vnum;
+                });
+                $(".viewbox").html(infoHtml);
+                $(".priceall").html("￥ "+priceall.toString() +"元");
+        }
+        $(".navbottom-name").each(function(){
+          if($(this).html().indexOf("报名")!=-1){
+            $(this).parents(".navbottom-md").addClass("navthis");
+          }
+        })  
+        
+        $(".zfbtn").on("click", function() {
+            if (priceall>0){
+                window.location='http://m.zz91.com/qianbao/chongzhi_asto.html?money='+priceall.toString()+'&mobile='+$.cookie('ztmobile').toString()+'&contact='+$.cookie('ztcontact').toString()
+            }else{
+                layer.msg("没有项目可以支付")
+            }
+        });
+    
+        $(".navbottom-name").each(function(){
+          if($(this).html().indexOf("报名")!=-1){
+            $(this).parents(".navbottom-md").addClass("navthis");
+          }
+        })  

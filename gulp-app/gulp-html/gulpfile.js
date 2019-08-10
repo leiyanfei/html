@@ -2,6 +2,8 @@ var gulp = require('gulp');
 var browserSync = require('browser-sync').create();
 var gutil = require('gulp-util');
 var wiredep = require('wiredep').stream;
+var px2rem = require('gulp-px2rem-plugin');
+
 var $ = require('gulp-load-plugins')({
   pattern: ['gulp-*', 'del']
 });
@@ -11,7 +13,7 @@ var path = require("path");
 var _ = require('lodash');
 var dest = './dest';
 
-var appList = ['2019plastic']
+var appList = ['2019taizouH5']
 
 function errorHandler(title) {
   return function (err) {
@@ -123,11 +125,6 @@ gulp.task('scss', function() {
         .pipe(browserSync.reload({stream: true}));
 });
 
-gulp.task('scssWatch', function() {
-  gulp.watch(scssList(),gulp.series('scss'))
-    
-});
-
 gulp.task('autopref',function() {
   return gulp.src(dest+'/**/*.css')
         .pipe($.autoprefixer({
@@ -139,21 +136,21 @@ gulp.task('autopref',function() {
         .pipe(gulp.dest(dest));
 });
 
-gulp.task('autoprefWadth',function() {
-  gulp.watch('./dest/**/*.css').on('all',function(event,path){
-    if(event=='add'||event=='change'){
-      let path_ = './'+path.replace('\\', '/');
-      return gulp.src(path_)
-        .pipe($.autoprefixer({
-            browsers: ['last 5 versions', 'Android >= 4.0'],
-            cascade: true, //是否美化属性值 默认：true 像这样：
-            remove:true //是否去掉不必要的前缀 默认：true 
-        }))
-        .on('error', errorHandler('autopref'))
-        .pipe(gulp.dest(dest));
-    }
-  })
-})
+gulp.task('scssWatch', function() {
+  gulp.watch(scssList(),gulp.series('scss','autopref','px2remPlugin'))
+});
+
+
+gulp.task('px2remPlugin', function() {
+	return gulp.src(dest+'/'+ appList[0] +'/css/*.css')
+    // .pipe(px2rem())
+		.pipe(px2rem({'width_design':750,'valid_num':6,'pieces':10,'ignore_px':[1],'ignore_selector':['body']}))
+    .pipe(gulp.dest(dest+'/'+ appList[0] +'/css/'));
+  });
+
+// gulp.task('autoprefWadth',function() {
+//   gulp.watch('./dest/**/*.css',gulp.series('autopref'))
+// })
 
 function cleanList(){
   let clean_list = []
@@ -182,11 +179,11 @@ gulp.task('serve',function() {
   }
 );
 
-gulp.task("build",gulp.series('clean','addFile','jade','scss','autopref'))
+gulp.task("build",gulp.series('clean','addFile','jade','scss','autopref','px2remPlugin'))
 
 gulp.task("default",gulp.series('build',gulp.parallel('scssWatch',
                                                       'jsonWatch',
                                                       'jadeWatch',
                                                       'addFileWatch',
-                                                      'autoprefWadth','serve')))
+                                                      'serve')))
 

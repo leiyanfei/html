@@ -1,0 +1,29 @@
+extends component-comm
+
+block pagetitle
+    积分记录
+
+block appcontent
+    .history-list
+        mixin add(title, detail,money)
+            .history-li.weui-flex
+                .history-info.weui-flex__item
+                    .hty-name=title
+                    .hty-time=detail
+                .history-money.add +#{money}
+        
+        mixin minus(title, detail,money)
+            .history-li.weui-flex
+                .history-info.weui-flex__item
+                    .hty-name=title
+                    .hty-time=detail
+                .history-money.minus -#{money}
+
+        +add('购买钻石品牌通一年','2019-01-14','3000')
+        +minus('兑换雨伞','2019-01-14','200')
+        +add('购买钻石品牌通一年','2019-01-14','3000')
+        +minus('兑换雨伞','2019-01-14','200')
+        +add('购买钻石品牌通一年','2019-01-14','3000')
+        +minus('兑换雨伞','2019-01-14','200')
+
+

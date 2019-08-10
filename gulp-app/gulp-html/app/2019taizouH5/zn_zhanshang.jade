@@ -1,0 +1,65 @@
+extends component-box
+
+block css
+  link(rel="stylesheet",type="text/css", href="#{webtop}css/index.css")
+  link(rel="stylesheet",type="text/css", href="//at.alicdn.com/t/font_706810_4im35j13prp.css")
+  
+block content
+  .page_zs
+    header.page-header
+      .header-main.zz-flexbox
+        a.header-left.container(href="javascript:void(0)" onclick="javascript :history.back(-1)")
+          .block_icon
+        .header-content.zz-flexbox-item.container 展商服务
+        .header-right.container
+          a.bm_btn(href="baoming.html") 报名
+    block zs_content
+        .view
+            .zn_content
+                h1.modle_title 展商列表
+                .zn_table_box
+                    .zn_table
+                        .zs_tr
+                            .zs_td.td_namme.th 展位号
+                            .zs_td.td_detail.th 展商名录
+                        
+                        script(type="text/html",id="dblist")
+                            .zs_tr
+                                .zs_td.td_namme <% d.exhibit_num %>
+                                .zs_td.td_detail 
+                                    <a href="<% d.website %>"><% d.company_name %></a>
+                        
+        
+
+  
+    - var navindex = 2
+    include component-navbt
+
+
+block script
+    script(src="//img0.zz91.com/subject/metal2017/js/laytpl.js")
+    script.
+        laytpl.config({
+            open: '<%',
+            close: '%>'
+        });
+        $.ajax({
+            type: "post",
+            url: "//m.zz91.com/zt/exhibitors/",
+            data: {},
+            dataType: "json",
+            success: function(data) {
+                let list = data.filter((item)=>{
+                    return item.exhibit_time == 2019
+                })
+                var infoHtml = ""
+                $.each(list, function(i, item) {
+                    var getTpl = $("#dblist").html();
+                    laytpl(getTpl).render(item, function(html) {
+                        infoHtml = infoHtml + html;
+                    })
+                })
+                $(".zn_table").append(infoHtml);
+
+            }
+        })

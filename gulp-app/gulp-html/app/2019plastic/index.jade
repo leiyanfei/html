@@ -1,9 +1,13 @@
-extends ../component-header
+extends component-box
 
 block css
+  link(rel="stylesheet",type="text/css",href="//m.zz91.com/zt/17feidzH5/css/swiper.min.css")
+  script(src="//m.zz91.com/zt/17feidzH5/js/swiper.min.js")
   link(rel="stylesheet",type="text/css", href="#{webtop}css/index.css")
+  
 
 block content
+  a(name="top")
   .page_box_index
     .plastic_ts
 
@@ -50,7 +54,8 @@ block content
               <span>精准</span>供需
             .star-detail.
               91再生作为第三方平台提前匹配供需信息，审核供销资质，打造再生塑料行业精准商贸交流
-            
+
+    a(name="scope")       
     .plastic-modle
       .modle-title
         img.pic-tile(src="#{webtop}images/img8.png", alt="")
@@ -79,7 +84,7 @@ block content
             .scope-em.weui-flex__item 
               .scope-em-main 塑料塑料回收技术设备
 
-    .plastic-modle
+    .plastic-modle(style="display:none")
       .modle-title
         img.pic-tile(src="#{webtop}images/img9.png", alt="")
       
@@ -94,6 +99,7 @@ block content
       
       .modle-main
 
+    a(name="rout")
     .plastic-modle
       .modle-title
         img.pic-tile(src="#{webtop}images/img11.png", alt="")
@@ -102,45 +108,91 @@ block content
         .plastic-rout
           .rout-time  4月25日
           .rout-list
-            .rout-li.weui-flex
-              .rout-list-left.
-                上午场<br>
-                09:00-11:30<br>
-                政策、发展趋势、<br>
-                回收体系
-              .weui-flex__item
-                ul.rout-detail-list
-                  li. 
-                    2018再生塑料概况及2019发展趋势
-                  li. 
-                    中国再生资源回收现状及体系建设
-                  li. 
-                    再生行业税收优惠以及政策扶持研究
-                  li. 
-                    进口政策下的再生塑料企业可持续发展探讨
+            .rout-li
+              .weui-flex
+                .rout-list-left.
+                  9:00-9:15<br>
+                .weui-flex__item
+                  ul.rout-detail-list
+                    li. 
+                      致开场辞-91再生总经理刘宁
+              .weui-flex
+                .rout-list-left.
+                  9:15-10:15<br>
+                .weui-flex__item
+                  ul.rout-detail-list
+                    li. 
+                      2018-2019中国再生塑料行业发展报告和全球投资分析-中国物资再生协会再生塑料分会秘书长王永刚
+              .weui-flex
+                .rout-list-left.
+                  10:15-11:00<br>
+                .weui-flex__item
+                  ul.rout-detail-list
+                    li. 
+                      环保风暴持续升级，如何实现绿色发展-中国环境科学研究院研究员郭玉文
+              .weui-flex
+                .rout-list-left.
+                  11:00-11:30<br>
+                .weui-flex__item
+                  ul.rout-detail-list
+                    li. 
+                      91再生·再生影响力2018年度榜单颁奖仪式
+              .weui-flex
+                .rout-list-left.
+                  11:30-12:00<br>
+                .weui-flex__item
+                  ul.rout-detail-list
+                    li. 
+                      互联网赋能再生塑料行业-91再生营销副总经理黄琴
+
             
             .rout-li.weui-flex
               .rout-list-left.
-                下午场<br>
-                13:30—17:00<br>
-                环保、海外投资、<br>
-                改性塑料、设备
+                12:00-14:00<br>
               .weui-flex__item
                 ul.rout-detail-list
                   li. 
-                    环保风暴持续升级，如何实现再生塑料行业的绿色发展
-                  li. 
-                    新形势下的高标准设备技术革新
-                  li. 
-                    再生塑料“百家诚信”年度榜单揭晓
-                  li. 
-                    再生塑料的海外投资环境分析
-                  li.
-                    中国改性塑料企业的崛起<br>圆桌论坛
+                    参展时间
+            
+            .rout-li
+              .weui-flex
+                .rout-list-left.
+                  14:00-14:30<br>
+                .weui-flex__item
+                  ul.rout-detail-list
+                    li. 
+                      新形势下的高标准设备技术革新-优秀设备企业
+              .weui-flex
+                .rout-list-left.
+                  14:30-15:00<br>
+                .weui-flex__item
+                  ul.rout-detail-list
+                    li. 
+                      再生塑料行业税收政策研究-91再生供应链金融总监韩世林
+              .weui-flex
+                .rout-list-left.
+                  15:00-15:30<br>
+                .weui-flex__item
+                  ul.rout-detail-list
+                    li. 
+                      中国改性塑料企业的崛起-优秀改性塑料企业
+              .weui-flex
+                .rout-list-left.
+                  15:30-16:00<br>
+                .weui-flex__item
+                  ul.rout-detail-list
+                    li. 
+                      再生塑料行业互联网用户2019白皮书发布-91再生品牌总监赵晓茜
+               .weui-flex
+                .rout-list-left.
+                  16:00-17:00<br>
+                .weui-flex__item
+                  ul.rout-detail-list
+                    li. 
+                      圆桌论坛：再生塑料企业可持续发展探讨
 
             .rout-li.weui-flex
               .rout-list-left.
-                晚宴<br>
                 18:00-20:00
               .weui-flex__item
                 ul.rout-detail-list
@@ -153,9 +205,15 @@ block content
       
       .modle-main
         .histy_show
-          .histy_show
-            .histy_show_main
+          .histy_show_main
+            .swiper-container.zz-fuwu-tpbox
+              .swiper-wrapper.zz-tpbox-mian
+                - var imglist = ['image0.jpg','image1.jpg','image2.jpg','image3.jpg','image4.jpg','image5.jpg','image6.jpg','image7.jpg','image8.jpg','image9.jpg','image10.jpg','image11.jpg','image12.jpg','image13.jpg','image14.jpg','image16.jpg','image17.jpg','image18.jpg','image19.jpg']
+                each item in imglist
+                  .swiper-slide
+                    img(src="#{webtop}images/#{item}",alt="")
 
+    a(name="lianxi")
     .plastic-modle
       .modle-title
         img.pic-tile(src="#{webtop}images/img13.png", alt="")
@@ -166,33 +224,36 @@ block content
             img(src="#{webtop}images/hq_erwei.png", alt="")
           .weui-flex__item.contact_detail.
             联系人  /  黄 琴<br>
-            电　话  /  151 5881 2529<br>
+            电　话  /  <a href="tel:15158812529">151 5881 2529</a><br>
             微信号  /  151 5881 2529<br>
             邮　箱  /  huangq@asto-inc.com
 
               
   .left_nav
-    a.left_nab_li.lnav1(href="#")
-    a.left_nab_li.lnav2(href="#")
-    a.left_nab_li.lnav3(href="#")
-    a.left_nab_li.lnav4(href="#")
-    a.left_nab_li.lnav5(href="#")
+    //- a.left_nab_li.lnav1(href="#")
+    a.left_nab_li.lnav5(href="#scope")
+    a.left_nab_li.lnav2(href="#rout")
+    a.left_nab_li.lnav3(href="#lianxi")
+    a.left_nab_li.lnav4(href="#top")
 
-  .bt_nav
-    .bt_nav_main.weui-flex
-      a.weui-flex__item.nav_li(href="").thisnav
-        .nav_li_c
-          i.nav_icon1
-          div 首页
-      a.weui-flex__item.nav_li(href="")
-        .nav_li_c
-          i.nav_icon2
-          div 招商
-      a.weui-flex__item.nav_li(href="")
-        .nav_li_c
-          i.nav_icon3
-          div 报名
-      a.weui-flex__item.nav_li(href="")
-        .nav_li_c
-          i.nav_icon4
-          div 奖项
+  - var navindex = 0
+  include component-navbt
+
+block script
+  script.
+    var swiper = new Swiper('.swiper-container', {
+      pagination: '.swiper-pagination',
+      effect: 'coverflow',
+      grabCursor: true,
+      centeredSlides: true,
+      initialSlide: 1,
+      slidesPerView: 'auto',
+      autoplay: 3000,
+      coverflow: {
+        rotate: 50,
+        stretch: 0,
+        depth: 100,
+        modifier: 1,
+        slideShadows: true
+      }
+    });

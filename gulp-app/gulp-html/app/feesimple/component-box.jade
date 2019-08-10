@@ -1,0 +1,16 @@
+extends ../component-header
+
+block css
+  link(rel="stylesheet",type="text/css", href="#{webtop}css/index.css")
+
+block title
+  title 91再生·第三届铜铝交易峰会-拼团参会活动
+
+block content
+  header
+    a.header-left(href="javascript:void(0)" onclick="javascript :history.back(-1)")
+      img.backimg(src="#{webtop}images/enter.png", alt="") 
+    .center 参会报名拼团活动
+    .header-right
+  .header-height
+  block page_content

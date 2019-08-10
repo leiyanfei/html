@@ -1,0 +1,83 @@
+.aui-ellipsis-1 {
+	padding-right: 15px;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+.aui-ellipsis-2 {
+	display: -webkit-box;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	word-wrap: break-word;
+	white-space: normal !important;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+.vdmiddle {
+    display: flex;
+    display: -webkit-box;
+    display: -moz-box; 
+    -webkit-box-align:center;
+    -moz-box-align:center; 
+}
+
+
+.down_{
+	position: relative;
+}
+.down_::before{
+  content: '';
+  width: size(18);
+  height: size(18);
+  border-top:size(2) solid rgba(0,51,51,1);
+  border-right: size(2) solid rgba(51,51,51,1);
+  transform: rotate(135deg);
+  position: absolute;
+  top: 50%;
+  margin-top: size(-13);
+  right: size(10)
+}
+.clearfloat:after{
+    display:block;
+    clear:both;
+    content:"";
+    visibility:hidden;
+    height:0
+}
+.clearfloat{
+    zoom:1
+}
+.fl{
+    float: left;
+}
+.fr{
+    float: right;
+}
+.hr{
+    height: size(20);
+    background: #ededed
+}
+.bmbd{
+  border-bottom: 1px solid rgba(237, 237, 237, 1)
+}
+
+.weui-flex {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.weui-flex__item {
+  -ms-flex: 1;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  flex: 1;
+}

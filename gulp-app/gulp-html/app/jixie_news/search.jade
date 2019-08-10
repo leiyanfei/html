@@ -1,0 +1,26 @@
+extends component-header
+
+block title
+  title 资讯搜索
+  
+block header_name
+  资讯搜索
+
+block content
+  .sqbox
+    .sq_entry.weui-flex
+      .weui-flex__item.sq_main
+        .weui-flex.sq_main_ct
+          .sqicon.vdmiddle
+            .iconfont.icon-search
+          .weui-flex_item.vdmiddle
+            input.sq_ipt(placeholder="请输入搜索关键词")
+      .sq_btn
+        搜索
+    .sq_hot
+      .sq_hot_title 热门搜索
+      .sq_hot_list
+        - var list =[1,1,1,1,1,1,1,1,1,1,1,1]
+        each item in list
+          a(href="#").sq_hot_li 注塑机
+          a(href="#").sq_hot_li 塑料管材生产线

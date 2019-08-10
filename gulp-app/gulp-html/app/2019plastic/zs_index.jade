@@ -1,0 +1,31 @@
+extends component-box
+
+block css
+  link(rel="stylesheet",type="text/css", href="#{webtop}css/index.css")
+  link(rel="stylesheet",type="text/css", href="//at.alicdn.com/t/font_706810_4im35j13prp.css")
+  
+block content
+  .page_zs
+    header.page-header
+      .header-main.weui-flex
+        a.header-left.container(href="javascript:void(0)" onclick="javascript :history.back(-1)")
+          .block_icon
+        .header-content.weui-flex__item.container 关于会展
+        .header-right.container
+          a.bm_btn(href="baoming.html") 报名
+    block zs_content
+      .zs_nav
+        //- ,{imagename:"znav2.png",navname:'首席夜话',gohref:"zs_detail_02.html"}
+        - var navlist = [{imagename:"znav1.png",navname:'报名费',gohref:"zs_detail_01.html"},{imagename:"znav3.png",navname:'标准展位',gohref:"zs_detail_03.html"},{imagename:"znav4.png",navname:'品牌广告',gohref:"zs_detail_04.html"},{imagename:"znav5.png",navname:'演讲',gohref:"zs_detail_05.html"},{imagename:"znav6.png",navname:'易拉宝',gohref:"zs_detail_06.html"},{imagename:"znav7.png",navname:'信息墙品牌广告',gohref:"zs_detail_07.html"},{imagename:"znav8.png",navname:'晚宴赞助',gohref:"zs_detail_08.html"},{imagename:"znav9.png",navname:'酒水赞助',gohref:"zs_detail_09.html"},{imagename:"znav10.png",navname:'资料入袋',gohref:"zs_detail_10.html"},{imagename:"znav11.png",navname:'手提袋赞助',gohref:"zs_detail_11.html"},{imagename:"znav12.png",navname:'参会证赞助',gohref:"zs_detail_12.html"},{imagename:"znav13.png",navname:'会刊',gohref:"zs_detail_13.html"},{imagename:"znav14.png",navname:'供求信息表',gohref:"zs_detail_14.html"}]
+        each item in navlist
+          a(href="#{item.gohref}").zs_nav_li.weui-flex
+            .zs_icon_box.container
+              img(src="#{webtop}images/#{item.imagename}")
+            .weui-flex__item.zs_nav_name.vdmiddle #{item.navname}
+            .zs_right_go
+              .right_icon
+        
+
+  
+    - var navindex = 1
+    include component-navbt

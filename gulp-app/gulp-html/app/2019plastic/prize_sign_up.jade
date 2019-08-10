@@ -1,0 +1,211 @@
+extends component-box
+
+block css
+  link(rel="stylesheet",type="text/css", href="#{webtop}css/index.css")
+
+block content
+  .page_prize
+    .page-band-height
+    
+    .prize-main
+      .sign-up-modle
+        .sg_modle-title
+          img(src="#{webtop}images/sign-img1.jpg", alt="")
+        .sign-must-can.
+          1. 参选企业从事再生资源行业，包括：再生塑料、塑料原料、设备服务商提供商等<br>
+          2.  参选企业为正式注册企业<br>
+          3.  企业社会信用体系良好，具有良好的社会形象
+      .sign-up-modle
+        .sg_modle-title
+          img(src="#{webtop}images/sign-img2.jpg", alt="")
+        .sign-from
+          .sign-li.weui-flex
+            .sign-name. 
+              <span>*</span>申报企业
+            .sign-iptbox.weui-flex__item
+              input.firm_name(type="text")
+          
+          .sign-li.weui-flex
+            .sign-name. 
+              <span>*</span>企业地址
+            .sign-iptbox.weui-flex__item
+              input.firm__address(type="text")
+          
+      .sign-up-modle
+        .sg_modle-title
+          img(src="#{webtop}images/sign-img3.jpg", alt="")
+        .sign-from
+          .sign-li.weui-flex
+            .sign-name. 
+              <span>*</span>姓 名
+            .sign-iptbox.weui-flex__item
+              input.contact(type="text")
+          
+          .sign-li.weui-flex
+            .sign-name. 
+              <span>*</span>手 机
+            .sign-iptbox.weui-flex__item
+              input.phone(type="text")
+          
+          .sign-li.weui-flex
+            .sign-name. 
+              <span>*</span>职 务
+            .sign-iptbox.weui-flex__item
+              input.job(type="text")
+          
+          .sign-li.weui-flex
+            .sign-name. 
+              <span>*</span>邮 箱
+            .sign-iptbox.weui-flex__item
+              input.email(type="text")
+          
+          .sign-li.weui-flex
+            .sign-name. 
+              <span>*</span>企业简介
+            .sign-iptbox.weui-flex__item
+              input.firm_detail(type="text")
+
+      .sign-up-modle
+        .sg_modle-title
+          img(src="#{webtop}images/sign-img4.jpg", alt="")
+        .sign-from
+          .sign-from-label
+            <label><input name="pz" type="checkbox" value="品牌供应商" />91再生·2018再生塑料“百家诚信”企业-<span>品牌供应商</span> </label> 
+          .sign-from-label 
+            <label><input name="pz" type="checkbox" value="品牌采购商" />91再生·2018再生塑料“百家诚信”企业-<span>品牌采购商</span> </label> 
+          .sign-from-label 
+            <label><input name="pz" type="checkbox" value="品牌服务商" />91再生·2018再生塑料“百家诚信”企业-<span>品牌服务商</span> </label> 
+      
+      form#image-upload-form.form-companyzs(action="savecreditfile.html",method="post")
+        input#upload-file-companyzs(type="file",name="upload-file",style="opacity:0;display: none;",accept="image/*")
+      <input type="hidden" name="imgurl" id="imgurl" value="" title="*营业执照"/>
+      .sign-up-modle
+        .sg_modle-title
+          img(src="#{webtop}images/sign-img5.jpg", alt="")
+        .sign-from
+          .text-detail
+            textarea.prize_deatil(name="", cols="30", rows="10")
+      
+      .sign-up-modle
+        .add_img_box.weui-flex
+          .add_i_left.
+            <span>*</span>上传营业执照
+          .add_i_cnt.companyzs
+          .add_i_right.weui-flex__item.
+            请上传清晰的<br>
+            营业执照照片
+
+      
+      .go-sign-in
+        a.sign-btn.j_sign_btn  确认提交
+
+    .bt_bquan 本活动最终解释权归91再生所有
+
+  - var navindex = 3
+  include component-navbt
+
+block script
+  script.
+    $('.companyzs').on("click", function() {
+      $('#upload-file-companyzs').click();
+    })
+    $("#upload-file-companyzs").on("change", function(event) {
+      var files = event.target.files;
+      if(files && files.length > 0) {
+        var data = new FormData();
+        var fileName = $('#upload-file-companyzs')[0].files[0];
+        data.append('file', fileName);
+        layer.load(2);
+        $.ajax({
+          url: "https://m.zz91.com/zt/img_upload.html?source=subject&t="+(new Date()).getTime().toString(),
+          type: "post",
+          data: data,
+          traditional: true,
+          contentType: false, //必须
+          processData: false, //必须
+          success: function(res) {
+            if ($.parseJSON(res).err == 'false'){
+              layer.closeAll("loading");
+              var imginfo = "";
+              var picList = $.parseJSON(res).piclist[0].path;
+              var picUrl = $.parseJSON(res).piclist[0].databasepath;
+              var picId = $.parseJSON(res).piclist[0].id;
+              var mediatype = $.parseJSON(res).piclist[0].mediatype
+              $("#imgurl").val("https://img1.zz91.com/"+picUrl);
+              imginfo += '<div class="img-kuang" style="position:relative;background:#fff">' + '<img class="imgcompanyzs" width="100%" src="' + picList + '" type="' + mediatype + '" path="' + picList + '" pid="' + picId + '" pic_name="' +picUrl+ '">' + '<i class="delt-img aui-iconfont aui-icon-move" ></i>' + '</div>';
+              $('.companyzs').html(imginfo);
+            }else if ($.parseJSON(res).err == 'false'){
+              layer.closeAll("loading");
+              layer.msg('请选择一张图片！');
+              return false;
+            }else if ($.parseJSON(res).err == 'login'){
+              layer.closeAll("loading");
+              //location.href="/myrc/"
+            };
+          },
+          error: function(err) {
+          //alert(JSON.stringify(err))
+          }
+        });
+      }
+    });
+    $(".j_sign_btn").on("click",function(){
+      var firm_name = $(".firm_name").val();
+      if(firm_name=='') return layer.msg('请输入企业名称', {icon: 2})
+
+      var firm__address = $(".firm__address").val();
+      if(firm__address=='') return layer.msg('请输入企业地址', {icon: 2})
+
+      var contact = $(".contact").val();
+      if(contact=='') return layer.msg('请输入姓名', {icon: 2})
+
+      var phone = $(".phone").val();
+      if(phone=='') return layer.msg('请输入手机', {icon: 2})
+
+      var job = $(".job").val();
+      if(job=='') return layer.msg('请输入职位', {icon: 2})
+
+      var email = $(".email").val();
+      if(email=='') return layer.msg('请输入邮箱', {icon: 2})
+
+      var firm_detail = $(".firm_detail").val();
+      if(firm_detail=='') return layer.msg('请输入企业简介', {icon: 2})
+
+      var prize = '';
+      $('input[name="pz"]:checked').each(function(){ 
+        prize += $(this).val()+'|'; 
+      }); 
+      if(firm_name=='') return layer.msg('请选择申报奖项', {icon: 2})
+
+      var prize_deatil = $(".prize_deatil").val();
+
+      var firm_pic = $("#imgurl").val();
+      if(firm_name=='') return layer.msg('请添加营业执照', {icon: 2})
+      $.ajax({
+        type:'post',
+        url:'https://m.zz91.com/zt/baomingsave.html?datatype=json',
+        data:{
+          title:"再生影响力年度榜单-申请企业奖项",
+          contents:"<br>*企业名称"+ firm_name 
+                  +"<br>*企业地址："+ firm__address
+                  +"<br>*姓名："+ contact
+                  +"<br>*手机："+ phone
+                  +"<br>*邮箱："+ email
+                  +"<br>*职务："+ job
+                  +"<br>*企业简介："+ firm_detail
+                  +"<br>*申报奖项："+ prize
+                  +"<br>*申报理由："+ prize_deatil
+                  +"<br>*营业执照：<a href='"+ firm_pic +"' target='_blank'><img width='100' src='"+ firm_pic +"'></a>"
+        },
+        dataType:"json",
+        success:function(data_dh){
+          if(data_dh.err=="false"){
+            layer.msg('提交成功', {icon: 1})
+          }
+        },
+        error:function(data){
+            console.log(data)
+        }
+        
+      })
+    })

@@ -1,0 +1,36 @@
+extends component-box
+
+block css
+  link(rel="stylesheet",type="text/css", href="#{webtop}css/index.css")
+  link(rel="stylesheet",type="text/css", href="//at.alicdn.com/t/font_706810_4im35j13prp.css")
+  
+block content
+  .page_zs
+    header.page-header
+      .header-main.zz-flexbox
+        a.header-left.container(href="javascript:void(0)" onclick="javascript :history.back(-1)")
+          .block_icon
+        .header-content.zz-flexbox-item.container 品牌广告
+        .header-right.container
+          a.bm_btn(href="baoming.html") 报名
+    block zs_content
+        .view
+            .zs_box
+                .zs_header
+                    h3.zs_title 品牌广告
+                    .zs_price 10000<span class="price_num">元/位</span> <span class="cnt-num">售罄</span>
+                .zs_main
+                    h4.main_title 服务内容
+                    ul.zs_arr
+                        li 大幅度桁架喷绘广告
+                        li 2个参会名额
+                        li LED图片广告轮播
+                        //- li 会刊整版广告一个
+                .zs_pic
+                    img(src="./images/zsimg2_.png", alt="") 
+        
+        
+
+  
+    - var navindex = 1
+    include component-navbt

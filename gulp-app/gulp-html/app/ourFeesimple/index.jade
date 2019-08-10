@@ -1,0 +1,30 @@
+extends component-box
+
+block page_content
+    .band
+        img(src="#{webtop}images/band1.png")
+    .fee_simple_ul
+        .fee_simple_item
+            .fee_stutas
+                img.imgbox(src="#{webtop}images/fee1.png")
+            .fee_price
+                img.imgbox(src="#{webtop}images/fee_price1.png")
+            .fee_number
+                img.imgbox(src="#{webtop}images/fee_number2.png")
+            .gobtn_box
+                a.gobtn.gobtn_active(href="three_bm.html")
+                    img.imgbox(src="#{webtop}images/gobtn1.png")
+
+        .fee_simple_item
+            .fee_stutas
+                img.imgbox(src="#{webtop}images/fee2.png")
+            .fee_price
+                img.imgbox(src="#{webtop}images/fee_price2.png")
+            
+            .gobtn_box
+                a.gobtn.gobtn_active(href="one_bm.html")
+                    img.imgbox(src="#{webtop}images/gobtn2.png")
+    
+    include component-ruleflow
+
+    a.right_fixed(href="http://m.zz91.com/zt/1905ztH5/index.html")

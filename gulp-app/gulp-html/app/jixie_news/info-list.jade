@@ -1,0 +1,123 @@
+extends component-header
+
+block title
+  title 废塑料机械设备资讯
+  
+block header_name
+  设备视频详情
+
+block hd_sq
+  a.iconfont.icon-search.hd_sq(href="search.html")
+
+block content
+  .zx-band
+    .swiper-container.j_band
+      .swiper-wrapper
+        - var imglist = ['images/zximg1.png','images/zximg2.png','images/zximg2.png','images/zximg2.png']
+        each item in imglist
+          .swiper-slide
+            .band-main
+              .lt-md
+                .ltimg-box
+                  img(src="#{item}")
+                .lt-title 造粒机
+              .iflt-md
+                .info-li
+                  a(href="#") 说说选购注塑机你不知
+                .info-li
+                  a(href="#") 说说选购注塑机你不知
+  .zx-list
+    .mdtitle.bmbd 最新资讯推荐
+    .mdnav.bmbd.flex_md(top="50")
+      .all_jx_type.bmbd
+        - var navlist = ['造粒机','拉丝机','吹膜机','铜米机','吹膜机','铜米机','55']
+        each item in navlist
+          a(href="second-index.html")=item
+      .weui-flex
+        .weui-flex__item
+          .swiper-container.lt_nav-swiper.j_nav
+            .swiper-wrapper
+              .swiper-slide.active_nav 全部
+              each item in navlist
+                .swiper-slide=item
+        .show_more
+          i.icon-return.iconfont
+    .news-list
+      .news-li.weui-flex
+        .news-imgbox
+          a(href="pt-view.html")
+            img(src="images/cpimg.png")
+        .news-info.weui-flex__item
+          .wf-md
+            a(href="pt-view.html")
+              .title 说说选购注塑机你
+              .defalute 我国被联合国认定为世界工业体。
+          .othinfo.clearfloat
+            .cp-jx.fl 
+              a(href="search-info-true.html") 注塑机
+            .into-time.fr 2018-11-07
+      
+      .news-li.news-li2.weui-flex
+        .news-info.weui-flex__item
+          .wf-md
+            a(href="pt-view.html")
+              .title 说说选购注塑机你
+              .defalute 我国被联合国认定为世界工业体。
+          .othinfo.clearfloat
+            .cp-jx.fl 
+              a(href="search-info-true.html") 注塑机
+            .into-time.fr 2018-11-07
+      - var navlist = [1,1,1,1]
+        each item in navlist
+          .news-li.weui-flex
+            .news-imgbox
+              a(href="pt-view.html")
+                img(src="images/cpimg.png")
+            .news-info.weui-flex__item
+              .wf-md
+                a(href="pt-view.html")
+                  .title 说说选购注塑机你
+                  .defalute 我国被联合国认定为世界工业体。
+              .othinfo.clearfloat
+                .cp-jx.fl 
+                  a(href="search-info-true.html") 注塑机
+                .into-time.fr 2018-11-07
+        
+          .news-li.news-li2.weui-flex
+            .news-info.weui-flex__item
+              .wf-md
+                a(href="pt-view.html")
+                  .title 说说选购注塑机你
+                  .defalute 我国被联合国认定为世界工业体。
+              .othinfo.clearfloat
+                .cp-jx.fl 
+                  a(href="search-info-false.html") 注塑机
+                .into-time.fr 2018-11-07
+  .seemore_info 
+    a(href="second-index.html") 查看全部产品资讯 >
+block script
+  script.
+    var swiper_band = new Swiper('.j_band', {
+      slidesPerView: 1.8,
+      loop:true,
+      spaceBetween: 0,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+    });
+    var swiper_nav = new Swiper('.j_nav', { 
+      slidesPerView: 4.5,
+      spaceBetween: 0,
+      freeMode: true,
+      pagination: {
+        clickable: true,
+      },
+    });
+
+    $('.j_nav .swiper-slide').click(function(){
+      var index = $(this).index();
+      $(".active_nav").removeClass("active_nav");
+      $(this).addClass("active_nav");
+      swiper_nav.slideTo(index, 200, false);//切换到第一个slide，速度为1秒
+    })

@@ -1,0 +1,51 @@
+extends component-box
+
+block page_content
+  .band
+    img(src="#{webtop}images/band3.png")
+  .fee_suggest
+    .fee_number
+        img.imgbox(src="#{webtop}images/fee_number1.png")
+    .fee_price
+      img.imgbox(src="#{webtop}images/fee_price_info2.png")
+    .fee_last_time
+      .last_time
+        .day 15
+        .hour 23
+        .minute 29
+        .second 50
+    .fee_droit1
+      img.imgbox(src="#{webtop}images/droit2.png")
+
+  .gofee
+    .gofee-title 您已参团，还差4人拼成
+    .gofee-give 赶快邀请好友来参团吧！
+    .gofee-share
+      .gofee-btn1
+      .gofee-btn2
+
+    .gofee-ul-list
+      .gofee-item
+        .item-img
+          img(src="#{webtop}images/2.png", alt="")
+        .item-name.ellipsis-1 王先生
+      .gofee-item
+        .item-img
+          img(src="#{webtop}images/2.png", alt="")
+        .item-name.ellipsis-1 王先生
+      .gofee-item
+        .item-img
+          img(src="#{webtop}images/1.png", alt="")
+        .item-name.ellipsis-1
+      .gofee-item
+        .item-img
+          img(src="#{webtop}images/1.png", alt="")
+        .item-name.ellipsis-1
+      .gofee-item
+        .item-img
+          img(src="#{webtop}images/1.png", alt="")
+        .item-name.ellipsis-1
+    .gofee-time
+      img(src="#{webtop}images/gofee-time.png", alt="")         
+
+  include component-ruleflow

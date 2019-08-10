@@ -1,0 +1,281 @@
+extends component-box
+
+block css
+  link(rel="stylesheet",type="text/css", href="#{webtop}css/index.css")
+  link(rel="stylesheet",type="text/css",href="//m.zz91.com/zt/1808ztH5/css/comm.css")
+  link(rel="stylesheet",type="text/css", href="//at.alicdn.com/t/font_706810_4im35j13prp.css")
+  
+block content
+  .page_zs
+    header.page-header
+      .header-main.zz-flexbox
+        a.header-left.container(href="javascript:void(0)" onclick="javascript :history.back(-1)")
+          .block_icon
+        .header-content.zz-flexbox-item.container 参展申请
+        .header-right.container
+          a.bm_btn(href="baoming.html") 报名
+    block zs_content
+      .view
+        .zn_content
+          h1.modle_title 参展申请
+          .bmbox
+            .bmform
+              .bmli.zz-div-box
+                .sticon.zz-div-td1 *
+                .bmnr.zz-div-box
+                  .bmname 企业名称
+                  input.npage8_ipt_1.bmnr_input.zz-div-td1.column-cnt(placeholder="请输入企业名称",type="text")
+              .bmli.zz-div-box
+                .sticon.zz-div-td1 *
+                .bmnr.zz-div-box
+                  .bmname 供求类型
+                  .bm_checkbox.zz-div-td1.row-right
+                    label.column-cnt
+                      input.bmnr_check.gqiu-checkbox(type="checkbox",value="供应")
+                      |供应
+                    label.column-cnt
+                      input.bmnr_check.gqiu-checkbox(type="checkbox",value="求购")
+                      |求购
+              .bmli.zz-div-box
+                .sticon.zz-div-td1 *
+                .bmnr.zz-div-box
+                  .bmname 联系人
+                  input.npage8_ipt_2.bmnr_input.zz-div-td1.column-cnt(placeholder="请输入联系人",type="text")
+              .bmli.zz-div-box
+                .sticon.zz-div-td1 *
+                .bmnr.zz-div-box
+                  .bmname 联系方式
+                  input.npage8_ipt_3.bmnr_input.zz-div-td1.column-cnt(placeholder="请输入手机号",type="number")
+              .bmli.zz-div-box
+                .sticon.zz-div-td1 *
+                .bmnr.zz-div-box
+                  .bmname 地址
+                  input.npage8_ipt_6.bmnr_input.zz-div-td1.column-cnt(placeholder="请输入地址",type="text")
+              .bmli.bmtextbox.zz-div-box
+                .sticon.zz-div-td1 *
+                .bmnr
+                  .bmname 主营业务
+                  textarea.npage8_ipt_7.bmnr_text(placeholder="请输入主营业务",rows="5")
+              .bmli.zz-div-box
+                .sticon.zz-div-td1
+                .bmnr
+                  div.zz-div-box
+                    .bmname 广告预定
+                    .bm_checkts.zz-div-td1
+                        img(src="images/check_img.png") 
+              .bmli.bm_pricebox
+                .bmnr.zz-div-box
+                  .bm_checkbox.zz-div-td1
+                    label.column-cnt
+                      input.bmnr_check.regular-checkbox(type="checkbox",value="标准展位")
+                      |标准展位
+                  .bm_pricemain.zz-div-box
+                    span 6800元/位
+                    .bm_pricenum.zz-div-td1(style="display:none")
+                      input.min(type="button",value="-",disabled)
+                      input.text_box(name="goodnum",type="text",value="1")
+                      input.add(type="button",value="+")
+                .bmnr.zz-div-box
+                  .bm_checkbox.zz-div-td1
+                    label.column-cnt
+                      input.bmnr_check.regular-checkbox(type="checkbox",value="废塑料加工机械设备专区")
+                      |废塑料加工机械设备专区
+                  .bm_pricemain.zz-div-box
+                    span 500元/平方米
+                    .bm_pricenum.zz-div-td1(style="display:none")
+                      input.min(type="button",value="-",disabled)
+                      input.text_box(name="goodnum",type="text",value="1")
+                      input.add(type="button",value="+")        
+                .bmnr.zz-div-box  
+                  .bm_checkbox.zz-div-td1
+                    label.column-cnt
+                      input.bmnr_check.regular-checkbox(type="checkbox",value="品牌广告")
+                      |品牌广告
+                  .bm_pricemain.zz-div-box
+                    span 10000元/位
+                    .bm_pricenum.zz-div-td1(style="display:none")
+                      input.min(type="button",value="-",disabled)
+                      input.text_box(name="goodnum",type="text",value="1")
+                      input.add(type="button",value="+")
+                .bmnr.zz-div-box
+                  .bm_checkbox.zz-div-td1
+                    label.column-cnt
+                      input.bmnr_check.regular-checkbox(type="checkbox",value="视频播放推广")
+                      |视频播放推广
+                  .bm_pricemain.zz-div-box
+                    span 15000元/位
+                    .bm_pricenum.zz-div-td1(style="display:none")
+                      input.min(type="button",value="-",disabled)
+                      input.text_box(name="goodnum",type="text",value="1")
+                      input.add(type="button",value="+")         
+                .bmnr.zz-div-box
+                  .bm_checkbox.zz-div-td1
+                    label.column-cnt
+                      input.bmnr_check.regular-checkbox(type="checkbox",value="易拉宝")
+                      |易拉宝
+                  .bm_pricemain.zz-div-box
+                    span 2000元/位
+                    .bm_pricenum.zz-div-td1(style="display:none")
+                      input.min(type="button",value="-",disabled)
+                      input.text_box(name="goodnum",type="text",value="1")
+                      input.add(type="button",value="+")           
+            .zfbtn_box
+              a.zfbtn() 报名
+        
+     - var navindex = 3
+    include component-navbt
+
+block script
+  script(src="//img0.zz91.com/lib/jquery/jquery.cookie.js")
+  script.     
+    $(".add").click(function() {
+        $(this).prev().val(parseInt($(this).prev().val()) + 1);
+        $(this).siblings(".min").attr("disabled",false);
+        if($(this).prev().val()!=1){
+            $(this).parents(".bm_pricemain").siblings(".bm_checkbox").find("input").attr("checked",true);
+        }else{
+            $(this).parents(".bm_pricemain").siblings(".bm_checkbox").find("input").attr("checked",false);
+        }
+    });
+      
+    $(".min").click(function() {
+        if($(this).next().val()<=2){
+            $(this).next().val(1);
+            $(this).attr("disabled",true);
+        }else{
+            $(this).next().val(parseInt($(this).next().val()) - 1);
+        }
+    });
+    
+    $(".zfbtn").on("click", function() {
+        var frim = $(".npage8_ipt_1").val();
+        if(frim.length == 0) {
+            layer.msg("请输入企业名称")
+            return;
+        }
+        var name = $(".npage8_ipt_2").val();
+        if(name.length == 0) {
+            layer.msg("请输入联系人")
+            return;
+        }else{
+            $.cookie('ztcontact', JSON.stringify(name), { expires: 7, path: '/' });
+        }
+    
+        var iphone = $(".npage8_ipt_3").val();
+        var myreg=/^[1][3,4,5,7,8][0-9]{9}$/;
+        if(!myreg.test(iphone)) {
+            layer.msg("请输入正确的手机号码")
+            return;
+        }else{
+                $.cookie('ztmobile', JSON.stringify(iphone), { expires: 7, path: '/' });
+        }
+    
+        var address = $(".npage8_ipt_6").val();
+        if(address.length == 0) {
+            layer.msg("请输入地址")
+            return;
+        }
+            var contentjson=[]
+          
+        <!--var ticket = $(".ticket-radio[type=radio]:checked").val();-->
+        
+        var num = $(".npage8_ipt_7").val();
+        
+        var xq = $(".npage8_ipt_7").val();
+        if(xq.length == 0) {
+            layer.msg("请输入主营业务")
+            return;
+        }
+        
+        var type =""
+        $(".gqiu-checkbox:checked").each(function(i, item) {
+            type += $(item).val() + " "
+        })
+        if (type==""){
+            layer.msg("请选择供求类型")
+          return;
+        }
+        var typetext=''
+            if (type=="供应 "){
+                typetext=0
+            }
+            if (type=="求购 "){
+                typetext=1
+            }
+            if (type=="供应 求购 "){
+                typetext=2
+            }
+            
+            
+        var ggao = "";
+        
+        
+        $(".regular-checkbox:checked").each(function(i, item) {
+                var vname=$(item).val();
+                var vprice=$(item).parents(".bm_checkbox").siblings(".bm_pricemain").find("span").text();
+                var vnum=$(item).parents(".bm_checkbox").siblings(".bm_pricemain").find(".text_box").val();
+            var ll={}
+            ll['vname']=vname;
+            ll['vprice']=vprice.substring(0,vprice.length-3);
+            ll['vunit']=vprice.substring(vprice.length-3,vprice.length);
+            ll['vnum']=vnum;
+            //alert(JSON.stringify(ll))
+            contentjson.push(ll)
+            ggao += vname + " " + vprice + vnum +"个"
+            //ggao +="|"+$(item).val() + "$" +$(item).parents(".bm_checkbox").siblings(".bm_pricemain").find("span").text() + "$"  + $(item).parents(".bm_checkbox").siblings(".bm_pricemain").find(".text_box").val() + "位 ";
+        })
+        $.cookie('contentjson', JSON.stringify(contentjson), { expires: 7, path: '/' });
+                
+        var data = {
+            name: "第19届中国塑料交易会暨91再生·第10届再生塑料展览会",
+            company: frim,
+            contact: name,
+            mobile: iphone,
+            address: address,
+            type: typetext,
+            buy_sell_info: xq,
+        }
+        $.ajax({
+            type: "post",
+            url: "//m.zz91.com/zt/comm/save_api.html",
+            data: data,
+            dataType: "json",
+            success: function(data) {
+                if(data.err == "false") {
+                    var ticketList = ['普通参会 ', 'VIP参会']
+                    var cguan = ["观展", "观展+参会"]
+                    $.ajax({
+                        type: "post",
+                        url: "//m.zz91.com/zt/baomingsave.html?datatype=json",
+                        data: {
+                            title: "第19届中国塑料交易会暨91再生·第10届再生塑料展览会",
+                            contents: "*企业名称：" + frim +
+                                "<br>*联系人：" + name +
+                                "<br>联系电话：" + iphone +
+                                "<br>*供求类型：" + type +
+                                "<br>*主营业务：" + xq +
+                                "<br>*地址：" + address +
+                                "<br>广告预定意向：" + ggao
+                        },
+                        dataType: "json",
+                        success: function(data_dh) {
+                            if(data_dh.err == "false") {
+                                <!--layer.msg('报名成功！');-->
+                                if($(".regular-checkbox:checked").length==0){
+                                  layer.msg('报名成功！')
+                                  return;
+                                }
+                                window.location='zhifu.html';
+                            }
+                        },
+                        error: function(data) {
+                            console.log(data)
+                        }
+                    })
+                }
+            },
+            error: function(data) {
+                console.log(data)
+            }
+        })
+    })
