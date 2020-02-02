@@ -12,7 +12,7 @@ block content
           .block_icon
         .header-content.zz-flexbox-item.container  供需展厅
         .header-right.container
-          a.bm_btn(href="baoming.html") 报名
+          a.bm_btn(href="baoming.html") 供需发布
     block zs_content
         .view
             .gx_content
@@ -67,7 +67,7 @@ block script
             }
             $.ajax({
                 type: "post",
-                url: "//m.zz91.com/zt/2017/zhzhow/fuwu_api.html",
+                url: "/zt/2017/zhzhow/fuwu_api.html",
                 data: {
                     page: page,
                     info_type: type,
@@ -75,6 +75,7 @@ block script
                 },
                 dataType: "json",
                 success: function(data) {
+
                     if(data.length == 0) {
                         if(page == 1){
                             $(".gxinfo-list").html('');
@@ -83,36 +84,45 @@ block script
                         layer.msg('没有更多加载！');
                         return false;
                     }
-                    
-                    var infoHtml = ""
-                    $.each(data, function(i, item) {
-                        var getTpl = $("#dblist").html();
-                        laytpl(getTpl).render(item, function(html) {
-                            infoHtml = infoHtml + html;
-                        })
-                        $.ajax({
-                            type: "post",
-                            url: "//m.zz91.com/zt/getviptype.html",
-                            dataType: "json",
-                            success: function(data) {
-                                if(data.viewFlag != 1){
-                                    //- $(".phone").remove();
-                                    $(".phone").html("仅限91再生高会查看");
-                                    if(data.viewFlag == undefined){
-                                        $(".phone").html("仅限91再生高会查看，立即登录").css({"color":"blue","text-decoration":"underline"});
-                                        $(".phone").on("click", function() {
-                                            window.location='http://m.zz91.com/login/?done=/zt/2019taizhouH5/zn_gongxu.html'
-                                        })
+                    $.ajax({
+                        type: "get",
+                        url: "/zt/2019/sljyh/exhibit_member.html",
+                        dataType: "json",
+                        success: function(res) {
+                            var flag = res.flag
+                            var infoHtml = ""
+                            $.each(data, function(i, item) {
+                                var getTpl = $("#dblist").html();
+                                laytpl(getTpl).render(item, function(html) {
+                                    infoHtml = infoHtml + html;
+                                })
+                                $.ajax({
+                                    type: "post",
+                                    url: "/zt/getviptype.html",
+                                    dataType: "json",
+                                    success: function(data) {
+                                        if(flag==0&&data.viewFlag != 1){
+                                            //- $(".phone").remove();
+                                            $(".phone").html("仅限91再生高会查看");
+                                            if(data.viewFlag == undefined){
+                                                $(".phone").html("仅限91再生高会查看，立即登录").css({"color":"blue","text-decoration":"underline"});
+                                                $(".phone").on("click", function() {
+                                                    window.location='http://m.zz91.com/login/?done=/zt/2019taizhouH5/zn_gongxu.html'
+                                                })
+                                            }
+                                        }
                                     }
-                                }
+                                })
+                            });
+                    
+
+                            if(page == 1) {
+                                $(".gxinfo-list").html(infoHtml);
+                            } else {
+                                $(".gxinfo-list").append(infoHtml);
                             }
-                        })
-                    });
-                    if(page == 1) {
-                        $(".gxinfo-list").html(infoHtml);
-                    } else {
-                        $(".gxinfo-list").append(infoHtml);
-                    }
+                        }
+                    })
                 },
                 error: function(data) {
                     console.log(data)

@@ -14,24 +14,24 @@ html
     block css
     block title
         title 91再生网
-    script.
-        //- 窗口大小变化事件
-        window.onresize = function(){
-            getWinSize();
-        }
-        getWinSize();
-        //- 修改窗口字体
-        function getWinSize(){
-          //- 获取窗口大小
-          var winWidth = $(window).width();
-          var font_Size;
-          if(winWidth<=540){
-              font_Size = winWidth/10;
-          }else{
-              font_Size = 540/10;
-          }
-          document.getElementsByTagName('html')[0].style.fontSize = font_Size + "px";
-        }
+    //- script.
+    //-     //- 窗口大小变化事件
+    //-     window.onresize = function(){
+    //-         getWinSize();
+    //-     }
+    //-     getWinSize();
+    //-     //- 修改窗口字体
+    //-     function getWinSize(){
+    //-       //- 获取窗口大小
+    //-       var winWidth = $(window).width();
+    //-       var font_Size;
+    //-       if(winWidth<=540){
+    //-           font_Size = winWidth/10;
+    //-       }else{
+    //-           font_Size = 540/10;
+    //-       }
+    //-       document.getElementsByTagName('html')[0].style.fontSize = font_Size + "px";
+    //-     }
   body
     img(src="#{shareimg}",style="display:none")         
     block content

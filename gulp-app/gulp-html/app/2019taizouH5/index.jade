@@ -13,7 +13,15 @@ block content
                 .title 倒<br>计<br>时
                 .content 00
                 .util 天
-        
+        //- 现场直击
+        .index_modle
+            h2.detail-title
+                i.title-icon
+                img.title-img(src="./images/title6.png", alt="")
+            .index_modle_main
+                a(href="https://v.alltuu.com/album/1011307023/")         
+                    img.zhiji(src="./images/zhiji.png", alt="")
+                    
         //- 展会背景
         .index_modle
             h2.detail-title
@@ -169,14 +177,7 @@ block content
                                     .swiper-slide
                                         img(src="./images/#{item}",alt="")
 
-        //- 现场直击
-        .index_modle(style="display:none")
-            h2.detail-title
-                i.title-icon
-                img.title-img(src="./images/title6.png", alt="")
-            .index_modle_main
-                a(href="#")         
-                    img.zhiji(src="./images/zhiji.png", alt="")
+        
 
         //- 联系我们
         .index_modle#lnav3
@@ -276,7 +277,7 @@ block script
 
         $.ajax({
             type: "post",
-            url: "//m.zz91.com/zt/exhibitors/company/list.html",
+            url: "/zt/exhibitors/company/list.html",
             data: {},
             dataType: "json",
             success: function(data) {

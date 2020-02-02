@@ -1,0 +1,107 @@
+extends ../component-header
+
+block title
+  title 2019-11-11目标进展表
+
+block css
+  link(rel="stylesheet",type="text/css", href="#{webtop}css/index.css")
+
+block content
+    .pagebox
+        .content
+            .cnt-header. 
+                颠峰盛惠倒计时：<span class="end_time">13<span class="time_unit">天</span>23<span class="time_unit">时</span>59<span class="time_unit">分</span>59<span class="time_unit">秒</span></span>
+            .cnt-goal
+                .goal-vaule.goal-vaule-item
+                    .title 总目标
+                    .num-val 3,500,000
+                .finish-vaule.goal-vaule-item
+                    .title 已完成
+                    .num-val 3,500,000
+                .differ-vaule.goal-vaule-item
+                    .title 总差距
+                    .num-val 3,500,000
+            .cnt-table-list
+                .flex-table
+                    .flex-td-title 新<br>签<br>部
+                    .flex-td-center
+                        .flex-row
+                            .flex-row-td.title 总目标
+                            .flex-row-td.value 800,000
+                        .flex-row
+                            .flex-row-td.title 已完成
+                            .flex-row-td.value 800,000
+                        .flex-row
+                            .flex-row-td.title 差距
+                            .flex-row-td.value 800,000
+                        .flex-row
+                            .flex-row-td.title 部门TOP
+                            .flex-row-td.value 杨雷锋<br>64,876
+                .flex-table
+                    .flex-td-title 续<br>签<br>部
+                    .flex-td-center
+                        .flex-row
+                            .flex-row-td.title 总目标
+                            .flex-row-td.value 800,000
+                        .flex-row
+                            .flex-row-td.title 已完成
+                            .flex-row-td.value 800,000
+                        .flex-row
+                            .flex-row-td.title 差距
+                            .flex-row-td.value 800,000
+                        .flex-row
+                            .flex-row-td.title 部门TOP
+                            .flex-row-td.value 杨雷锋<br>64,876
+                .flex-table
+                    .flex-td-title VAP<br>部
+                    .flex-td-center
+                        .flex-row
+                            .flex-row-td.title 总目标
+                            .flex-row-td.value 800,000
+                        .flex-row
+                            .flex-row-td.title 已完成
+                            .flex-row-td.value 800,000
+                        .flex-row
+                            .flex-row-td.title 差距
+                            .flex-row-td.value 800,000
+                        .flex-row
+                            .flex-row-td.title 部门TOP
+                            .flex-row-td.value 杨雷锋<br>64,876
+                .flex-table.top-table
+                    .flex-td-title TOP<br>榜
+                    .flex-td-center
+                        .flex-row
+                            .flex-row-td.title 总TOP
+                            .flex-row-td.value 杨雷锋<br>800,000
+                        .flex-row
+                            .flex-row-td.title 今日TOP
+                            .flex-row-td.value 杨雷锋<br>800,000
+                        
+            .today-info
+                .title 2019.10.28 <br>今日战报 
+                .today-money 185,048
+block script
+    script.
+        var oSpan = $('.end_time');
+        function tow(n) {
+            return n >= 0 && n < 10 ? '0' + n : '' + n;
+        }
+        function getDate() {
+            var oDate = new Date();//获取日期对象
+            var oldTime = oDate.getTime();//现在距离1970年的毫秒数
+            var newDate = new Date('2019/11/11 24:00:00');
+            var newTime = newDate.getTime();//2019年距离1970年的毫秒数
+            var second = Math.floor((newTime - oldTime) / 1000);//未来时间距离现在的秒数
+            var day = Math.floor(second / 86400);//整数部分代表的是天；一天有24*60*60=86400秒 ；
+            second = second % 86400;//余数代表剩下的秒数；
+            var hour = Math.floor(second / 3600);//整数部分代表小时；
+            second %= 3600; //余数代表 剩下的秒数；
+            var minute = Math.floor(second / 60);
+            second %= 60;
+            var str =`${tow(day)}<span class="time_unit">天</span>${tow(hour)}<span class="time_unit">时</span>${tow(minute)}<span class="time_unit">分</span>${tow(second)}<span class="time_unit">秒</span>`
+            oSpan.html(str);
+        }
+        getDate();
+        setInterval(getDate, 1000);
+                        
+

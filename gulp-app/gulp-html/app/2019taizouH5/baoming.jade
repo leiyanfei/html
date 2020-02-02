@@ -11,13 +11,13 @@ block content
       .header-main.zz-flexbox
         a.header-left.container(href="javascript:void(0)" onclick="javascript :history.back(-1)")
           .block_icon
-        .header-content.zz-flexbox-item.container 参展申请
+        .header-content.zz-flexbox-item.container 供需发布
         .header-right.container
-          a.bm_btn(href="baoming.html") 报名
+          a.bm_btn(href="zn_gongxu.html") 供需展厅
     block zs_content
       .view
         .zn_content
-          h1.modle_title 参展申请
+          h1.modle_title 供需发布
           .bmbox
             .bmform
               .bmli.zz-div-box
@@ -56,14 +56,14 @@ block content
                 .bmnr
                   .bmname 主营业务
                   textarea.npage8_ipt_7.bmnr_text(placeholder="请输入主营业务",rows="5")
-              .bmli.zz-div-box
+              .bmli.zz-div-box(style="display:none")
                 .sticon.zz-div-td1
                 .bmnr
                   div.zz-div-box
                     .bmname 广告预定
                     .bm_checkts.zz-div-td1
                         img(src="images/check_img.png") 
-              .bmli.bm_pricebox
+              .bmli.bm_pricebox(style="display:none")
                 .bmnr.zz-div-box
                   .bm_checkbox.zz-div-td1
                     label.column-cnt
@@ -120,14 +120,13 @@ block content
                       input.text_box(name="goodnum",type="text",value="1")
                       input.add(type="button",value="+")           
             .zfbtn_box
-              a.zfbtn() 报名
+              a.zfbtn() 确认发布
         
      - var navindex = 3
     include component-navbt
 
 block script
-  script(src="//img0.zz91.com/lib/jquery/jquery.cookie.js")
-  script.     
+  script.
     $(".add").click(function() {
         $(this).prev().val(parseInt($(this).prev().val()) + 1);
         $(this).siblings(".min").attr("disabled",false);
@@ -262,7 +261,7 @@ block script
                             if(data_dh.err == "false") {
                                 <!--layer.msg('报名成功！');-->
                                 if($(".regular-checkbox:checked").length==0){
-                                  layer.msg('报名成功！')
+                                  layer.msg('发布成功！')
                                   return;
                                 }
                                 window.location='zhifu.html';

@@ -12,11 +12,11 @@ block content
           .block_icon
         .header-content.zz-flexbox-item.container 展商指南
         .header-right.container
-          a.bm_btn(href="baoming.html") 报名
+          a.bm_btn(href="baoming.html") 供需发布
     block zs_content
       .zs_nav
         //- ,{classname:"znav7",navname:'参展商手册',gohref:"zs_detail_04.html"},{classname:"znav9",navname:'供需展厅',gohref:"zn_gongxu.html"}
-        - var navlist = [{classname:"znav6",navname:'参展申请',gohref:"baoming.html"},{classname:"znav2",navname:'展位分布图',gohref:"zn_fbpic.html"},{classname:"znav8",navname:'展商列表',gohref:"zn_zhanshang.html"}]
+        - var navlist = [{classname:"znav6",navname:'参展申请',gohref:"baoming.html"},{classname:"znav10",navname:'晚宴报名',gohref:"https://m.zz91.com/zt/2019taizhouH5/wy_baom.html"},{classname:"znav2",navname:'展位分布图',gohref:"zn_fbpic.html"},{classname:"znav8",navname:'展商列表',gohref:"zn_zhanshang.html"},{classname:"znav9",navname:'供需展厅',gohref:"zn_gongxu.html"},{classname:"znav7",navname:'现场直击',gohref:"https://v.alltuu.com/album/1011307023/"}]
         each item in navlist
           a(href="#{item.gohref}").zs_nav_li.zz-flexbox
             .zs_icon_box.container

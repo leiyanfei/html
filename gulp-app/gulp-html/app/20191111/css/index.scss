@@ -1,0 +1,144 @@
+body {
+    font-family: "Microsoft YaHei"
+}
+
+$dark_red:#D92D2E;
+.pagebox {
+    height: 1080PX;
+    margin: 0 auto;
+    width: 1920PX;
+    background-image: url('../images/background-img.png');
+    overflow: hidden;
+    .content {
+        width: 1820PX;
+        height: 570PX;
+        margin: 420PX auto 0;
+        overflow: hidden;
+        position: relative;
+    }
+    .cnt-header {
+        text-align: center;
+        font-size: 48PX;
+        color: $dark_red;
+        font-weight: bold;
+        margin-top: 47PX;
+        .time_unit {
+            font-size: 36PX;
+            margin-right: 30PX;
+        }
+    }
+    .cnt-goal {
+        display: flex;
+        justify-content: center;
+        margin-top: 15PX;
+        .goal-vaule-item {
+            text-align: center;
+            color: $dark_red;
+            margin: 0 58PX;
+            .title {
+                font-size: 30PX;
+            }
+            .num-val {
+                font-size: 36PX;
+                font-weight: bold;
+            }
+        }
+    }
+}
+
+$table_bgcolor:#FF7F5D;
+$table_color:#FF4849;
+$table_bgcolor_last:#FF194A;
+.today-info {
+    position: absolute;
+    right: 50PX;
+    top: 26PX;
+    width: 260PX;
+    height: 154PX;
+    background: $table_bgcolor_last;
+    border-radius: 20PX;
+    color: #fff;
+    .title {
+        text-align: center;
+        font-size: 24PX;
+        margin-top: 10PX;
+    }
+    .today-money {
+        text-align: center;
+        font-size: 48PX;
+        font-weight: bold;
+    }
+}
+
+.cnt-table-list {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20PX;
+    .flex-table {
+        display: flex;
+        width: 400PX;
+        height: 300PX;
+        background: $table_bgcolor;
+        &.top-table {
+            background: $table_bgcolor_last;
+            .flex-td-center {
+                .flex-row {
+                    &:last-child {
+                        height: auto;
+                        flex: 1;
+                    }
+                }
+            }
+        }
+        .flex-td-title {
+            width: 90PX;
+            // writing-mode: tb-rl;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30PX;
+            color: #fff;
+            font-weight: bold;
+            line-height: 1.2;
+            text-align: center;
+        }
+        .flex-td-center {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            margin: 5PX 5PX 5PX 0;
+            .flex-row {
+                display: flex;
+                flex: 1;
+                margin-bottom: 2PX;
+                &:last-child {
+                    margin-bottom: 0;
+                    height: 84PX;
+                    flex: none;
+                }
+                .flex-row-td {
+                    display: flex;
+                    background: #fff;
+                    font-size: 24PX;
+                    &.title {
+                        width: 142PX;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+                    &.value {
+                        flex: 1;
+                        margin-left: 2PX;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        color: $table_color;
+                        font-weight: bold;
+                        line-height: 1.2;
+                        text-align: center;
+                    }
+                }
+            }
+        }
+    }
+}

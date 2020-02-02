@@ -145,6 +145,11 @@ body{
           background-image: url(../images/navbt4.png);
           background-size:size(28) size(31);
         }
+        .nav_icon5{
+            @extend .nav_icon1;
+            background-image: url(http://m.zz91.com/zt/2019plastic/images/nav2_.png);
+            background-size:size(28) size(31);
+        }
       }
       .thisnav{
         @extend .nav_li;
@@ -558,6 +563,11 @@ body{
             background-image: url(../images/znav6_.png);
             width: 28px;
             height: 31px;
+        }
+        .znav10{
+            width: 46px;
+            height: 46px;
+            background-image: url(../images/znav10.png);
         }
         .znav7{
             background-image: url(../images/znav7_.png);
@@ -990,4 +1000,40 @@ body{
     .zfbtn{
         margin-top: size(30);
     }
+  }
+
+  .hdlogo{
+      img{
+          width: 100%;
+      }
+  }
+  .saveMsg{
+        font-size: 0.37333rem;
+        font-weight: bold;
+        color: #000;
+        text-align: center;
+        padding: 0.66667rem 0 0;
+        span{
+            color: #aa2a21;
+        }
+  }
+  .fhbox{
+      text-align: center;
+      margin-top: 50px;
+      padding-bottom: 80px;
+      .fhbox_btn{
+          margin: 0 auto;
+          height: 150px;
+          width: 150px;
+          background: $defalutColor;
+          color: #fff;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-radius: 50%;
+          box-shadow: 0 10px  10px rgba($color: $defalutColor, $alpha: 0.4)
+      }
+      .msg{
+          margin-top: 15px
+      }
   }

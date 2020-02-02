@@ -12,7 +12,7 @@ block content
           .block_icon
         .header-content.zz-flexbox-item.container 展商服务
         .header-right.container
-          a.bm_btn(href="baoming.html") 报名
+          a.bm_btn(href="baoming.html") 供需发布
     block zs_content
         .view
             .zn_content
@@ -45,7 +45,7 @@ block script
         });
         $.ajax({
             type: "post",
-            url: "//m.zz91.com/zt/exhibitors/",
+            url: "/zt/exhibitors/company/list.html",
             data: {},
             dataType: "json",
             success: function(data) {

@@ -1,0 +1,222 @@
+@function size($num) {
+    @return $num/75+rem;
+};
+body{
+    background: #EDEDED;
+}
+
+.header{
+    width: 100%;
+    height: size(90);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0 size(32) 0 size(24);
+    z-index: 2;
+    .arrow{
+        width: size(31);
+        height: size(32);
+        background: url(../images/enter.png) no-repeat center;
+        background-size: 100% 100%;
+    }
+    .fxicon{
+        width: size(31);
+        height: size(32);
+        background: url(../images/fenxiang.png) no-repeat center;
+        background-size: 100% 100%;
+    }
+}
+.zbtT_box{
+    width: 100%;
+    box-shadow:0px size(4) size(3) 0px rgba(65,65,65,0.07);
+    .zbtT_main{
+        width: 100%;
+        padding: size(100) size(32) size(40);
+        background: #fff no-repeat top center;
+        background-image: url(../images/fw_bg1.png);
+        background-size: 100%;
+        &:nth-child(2){
+            background-image: url(../images/fw_bg2.png);
+        }
+        &:nth-child(3){
+            background-image: url(../images/zbt_bg3.png);
+        }
+    }
+    .zbtT_tp{
+        display: flex;
+        display: -webkit-flex;
+        justify-content: space-between;
+        align-items: center;
+        .type{
+            img{
+                height: size(66);
+                vertical-align: middle;
+            }
+        }
+        .price{
+            img{
+                height: size(53);
+                vertical-align: middle;
+            }
+        }
+    }
+    .zbtT_txt{
+        font-size: size(26);
+        color: #fff;
+        line-height: size(36);
+        padding-top: size(30);
+    }
+    .zbtT_video{
+        width: size(686);
+        height: size(384);
+        margin: size(65) auto 0;
+        background: rgba($color: #000000, $alpha: 0.5);
+        border-radius: size(12);
+        overflow: hidden;
+    }
+    .pagelist{
+        bottom: size(450);
+        .swiper-pagination-bullet{
+            width: size(120);
+            height: size(2);
+            background: #fff;
+            opacity: 0.3;
+            border-radius: 0;
+            &.swiper-pagination-bullet-active{
+                opacity: 1;
+            }
+        }
+    }
+}
+
+.zbt_mainbox{
+    .zbt_list{
+        background: #fff;
+        box-shadow:0px size(4) size(3) 0px rgba(65,65,65,0.07);
+        margin-top: size(20);
+        padding-bottom: size(40);
+        .tle{
+            font-size: size(36);
+            padding: size(32) 0;
+            position: relative;
+            &::after{
+                position: absolute;
+                content: "";
+                width: 100%;
+                transform: scaleY(0.5);
+                border-bottom: 1px solid #EDEDED;
+                bottom: 0;
+                left: 0;
+            }
+            span{
+                display: inline-block;
+                padding-left: size(24);
+                line-height: size(45);
+                font-weight: bold;
+                position: relative;
+                &::after{
+                    content: "";
+                    position: absolute;
+                    width: size(8);
+                    height: size(34);
+                    background: #70BB47;
+                    left: 0;
+                    top: size(8);
+                }
+            }
+        }
+        .zbt_md{
+            padding: size(34) size(32) 0;
+            .md_tle{
+                font-size: size(34);
+                font-weight: bold;
+                display: flex;
+                display: -webkit-flex;
+                align-items: center;
+                i{
+                    display: inline-block;
+                    width: size(20);
+                    height: size(20);
+                    background: url(../images/zbt_point.png) no-repeat center;
+                    background-size: 100% 100%;
+                    margin-right: size(11);
+                }
+                span{
+                    font-weight: bold;
+                    color: #F5443F;
+                }
+            }
+            .md_cont{
+                font-size: size(30);
+                color: #999999;
+                line-height: size(42);
+                padding-top: size(15);
+                span{
+                    font-weight: bold;
+                    color: #F5443F;
+                }
+            }
+            .md_img{
+                width: 100%;
+                position: relative;
+                margin-top: size(24);
+                .md_imgTle{
+                    position: absolute;
+                    background: #fff;
+                    border-radius: size(8) 0 size(30) 0;
+                    font-size: size(30);
+                    color: #222;
+                    height: size(60);
+                    line-height: size(60);
+                    padding: 0 size(35) 0 size(18);
+                    border-top: 1px solid #EDEDED;
+                    border-left: 1px solid #EDEDED;
+                }
+                img{
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+.footbox{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: size(100);
+    border-top: 1px solid #EDEDED;
+    background: #fff;
+    font-size: size(30);
+    display: flex;
+    display: -webkit-flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 size(11) 0 size(36);
+    .ft_price{
+        color: #19964E;
+        font-weight: bold;
+        sup{
+            vertical-align: top;
+            display: inline-block;
+            padding-top: size(5);
+        }
+        span{
+            font-size: size(60);
+            padding: 0 size(14) 0 size(8);
+        }
+    }
+    .ft_btn{
+        background: #33B369;
+        color: #fff;
+        width: size(224);
+        height: size(76);
+        line-height: size(76);
+        text-align: center;
+        border-radius: size(38);
+        font-weight: bold;
+    }
+}

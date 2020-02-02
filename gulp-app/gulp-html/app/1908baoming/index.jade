@@ -1,0 +1,92 @@
+extends ../component-header
+
+block title
+    title 废纸全国巡回沙龙-91再生交易中心
+
+block css
+    link(rel="stylesheet",type="text/css", href="#{webtop}css/index.css")
+    link(rel="stylesheet", href="//at.alicdn.com/t/font_820820_qfn05hygd7s.css")
+
+
+block content
+    .formbox
+        .form-item
+            .item-title 您的姓名
+            .item-ipt 
+                input.ipt.firmname(placeholder="请输入您的姓名")
+        .form-item
+            .item-title 您的手机
+            .item-ipt 
+                input.ipt.phone(placeholder="请输入您的手机")
+        .form-item
+            .item-title 您的地区
+            .item-ipt
+                input.ipt.area(placeholder="请输入您所在的省市")
+        .form-item
+            .item-title 
+            .item-ipt
+                button.sbmbt  报名
+
+
+  
+  
+block script
+    script(src='https://unpkg.com/axios@0.18.0/dist/axios.min.js')
+    script.
+        $(".sbmbt").on("click",function(){
+            let firmname = $('.firmname').val()
+            let phone = $('.phone').val()
+            let area = $('.area').val()
+            if(firmname===''){
+                layer.msg('请输入姓名!');
+                return;
+            }
+            if(phone===''){
+                layer.msg('请输入手机!');
+                return;
+            }
+            if(area===''){
+                layer.msg('请输入所在地区!');
+                return;
+            }
+            
+            //- axios.post({
+            //-     method: 'post',
+            //-     url: '/zt/baomingsave.html?datatype=json',
+            //-     data: data
+            //- })
+            //- .then( (response)=> {
+            //-     if(response.status===200){
+            //-         $('input').val('')
+            //-         $('select').val('')
+            //-         layer.msg('提交成功!');
+            //-     }
+            //- })
+            //- .catch(function (error) {
+            //-     console.log(error);
+            //- });
+
+
+            
+            $.ajax({
+                type: "post",
+                url: "//m.zz91.com/zt/baomingsave.html?datatype=json",
+                data: {
+                    title: "8月24日废纸全国巡回沙龙",
+                    contents: "*姓名：" + firmname +
+                            "<br>*手机：" + phone +
+                            "<br>地区：" + area
+                },
+                dataType: "json",
+                success: function(data_dh) {
+                    if(data_dh.err == "false") {
+                        $('input').val('')
+                        layer.msg('提交成功!');
+                    }
+                },
+                error: function(data) {
+                    console.log(data)
+                }
+                    
+            })
+        })
